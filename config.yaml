@@ -76,7 +76,7 @@ params:
 
   theme:
     # disableThemeToggle: true
-    defaultTheme: "dark" # dark
+    defaultTheme: "auto" # dark
 
   font:
     fontSize: 1rem # default: 1rem
@@ -84,21 +84,21 @@ params:
     lineHeight: 1.5 # default: 1.5
     textAlign: left # default: left
 
-  # color preference
-  # When using hex codes for colors, quotations must be used along with the # sign
+  # Based on Catpuccin Latte
   color:
-    textColor: "#343a40"
-    secondaryTextColor: "#6c757d"
-    textLinkColor: "#007bff"
+    textColor: "#292c3c"
+    secondaryTextColor: "#4c4f69"
+    textLinkColor: "#e64553" # Catpuccin Latte Maroon
     backgroundColor: "#eaedf0"
     secondaryBackgroundColor: "#64ffda1a"
     primaryColor: "#000000"
     secondaryColor: "#f8f9fa"
 
+    # Based on Catpuccin Frappe
     darkmode:
-      textColor: "#e4e6eb"
-      secondaryTextColor: "#b0b3b8"
-      textLinkColor: "#ffffff"
+      textColor: "#EAECF2FF"
+      secondaryTextColor: "#e7ebf0ff"
+      textLinkColor: "#ee99a0" # Catpuccin Frappe Maroon
       backgroundColor: "#18191a"
       secondaryBackgroundColor: "#212529"
       primaryColor: "#ffffff"
