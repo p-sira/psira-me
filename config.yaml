@@ -53,7 +53,7 @@ Menus:
     #   weight: 2
 
 params:
-  title: "Hugo Profile"
+  title: "Psira"
   description: Text about my cool site
   # staticPath: ""  # The path to serve the static files from
   favicon: "logo/logo-universal.svg"
@@ -111,7 +111,7 @@ params:
     brandLogoLight: "logo/logo-light.svg"
     # showBrandLogo: false # Show brand logo in nav bar | default is true
     brandName: "sira" # Brand name for the brand | default is the title variable
-    disableSearch: false
+    disableSearch: true
     # searchPlaceholder: "Search"
     stickyNavBar:
       enable : true
@@ -130,8 +130,8 @@ params:
     enable: true
     intro: "MD-M.Eng Student"
     title: "Sira Pornsiriprasert"
-    subtitle: "I build things for the web"
-    content: "A passionate web app developer. I tend to make use of modern web technologies to build websites that look great, feel fantastic, and function correctly."
+    subtitle: "I code, sing, do medicine, and build robots."
+    content: "something."
     image: "/images/white-coat.jpg"
     # roundImage: true # Make hero image circular | default false
     button:
@@ -169,6 +169,42 @@ params:
         - "React"
         - "Node"
         - "Express"
+
+  # Education
+  education:
+    enable: true
+    # title: "Custom Name"
+    index: false
+    items:
+      - title: "Doctor of Medicine"
+        school:
+          name: "Ramathibodi Hospital, Mahidol University"
+          url: "https://www.rama.mahidol.ac.th/en"
+        date: "2021 - Ongoing"
+        # GPA: ""
+        #   content: |-
+        #     Extracurricular Activities
+        #       - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        #       - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+      - title: "Master of Biomedical Engineering"
+        school:
+          name: "Mahidol University"
+          url: "https://www.eg.mahidol.ac.th/egmu_eng/"
+        date: "2024 - Ongoing"
+        # GPA: ""
+        # content: |-
+        #   I Publiced two papers in the ACM SIGCHI Conference on Artificial Intelligence.
+        #   - [Fast and Accurate Object Detection with a Single Convolutional Neural Network](https://example.com)
+        #   - Face mask detection using a single convolutional neural network.
+
+        #   Extracurricular Activities
+        #     - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        #     - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+        # featuredLink:
+        #   enable: true
+        #   name: "My academic record"
+        #   url: "https://example.com"
+
 
   # Experience
   experience:
@@ -234,41 +270,6 @@ params:
         companyUrl: "https://example.com"
         date: "Feb 2016 - Mar 2017"
         content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
-
-  # Education
-  education:
-    enable: true
-    # title: "Custom Name"
-    index: false
-    items:
-      - title: "Doctor of Medicine"
-        school:
-          name: "Ramathibodi Hospital, Mahidol University"
-          url: "https://www.rama.mahidol.ac.th/"
-        date: "2021 - Ongoing"
-        GPA: "4.0 (Preclinical Years)"
-        content: |-
-          Extracurricular Activities
-            - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
-      - title: "Master of Biomedical Engineering"
-        school:
-          name: "Mahidol University"
-          url: "https://mahidol.ac.th/"
-        date: "2024 - Ongoing"
-        # GPA: "-"
-        content: |-
-          I Publiced two papers in the ACM SIGCHI Conference on Artificial Intelligence.
-          - [Fast and Accurate Object Detection with a Single Convolutional Neural Network](https://example.com)
-          - Face mask detection using a single convolutional neural network.
-
-          Extracurricular Activities
-            - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
-        # featuredLink:
-        #   enable: true
-        #   name: "My academic record"
-        #   url: "https://example.com"
 
   # Achievements
   achievements:
