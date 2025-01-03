@@ -114,15 +114,15 @@ params:
     disableSearch: true
     # searchPlaceholder: "Search"
     stickyNavBar:
-      enable : true
-      showOnScrollUp : true
+      enable: true
+      showOnScrollUp: true
     enableSeparator: false
     menus:
       disableAbout: false
       disableExperience: false
-      disableEducation: false
-      disableProjects: false
-      disableAchievements: false
+      disableEducation: true
+      disableProjects: true
+      disableAchievements: true
       disableContact: false
 
   # Hero
@@ -130,8 +130,8 @@ params:
     enable: true
     intro: "MD-M.Eng Student"
     title: "Sira Pornsiriprasert"
-    subtitle: "I code, sing, do medicine, and build robots."
-    content: "something."
+    subtitle: "I code, sing, and do medicine."
+    content: "Naturally curious and always expanding my horizon. I also advocate for education rights and engage in educational projects, like teaching and creating learning resources, to make education fair for all."
     image: "/images/white-coat.jpg"
     # roundImage: true # Make hero image circular | default false
     button:
@@ -159,18 +159,16 @@ params:
       I am a software developer with a passion for web development. I have a background in computer science and mathematics, and I have a strong interest in the intersection of technology and art. I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA.
 
       I am currently working on a project that will be used to help people find the best way to get around the city.
-    
+
       Talk to me in: 🇬🇧 🇹🇭 🇨🇳 🇫🇷
     skills:
       enable: true
-      title: "what"
+      title: "See my:"
       items:
-        - "HTML"
-        - "CSS"
-        - "JavaScript"
-        - "React"
-        - "Node"
-        - "Express"
+        - "[Code](/code)"
+        - "[Research](/research)"
+        - "[Projects](/projects)"
+        - "..."
 
   # Education
   education:
@@ -207,10 +205,9 @@ params:
         #   name: "My academic record"
         #   url: "https://example.com"
 
-
-# projects
+  # projects
   projects:
-    enable: true
+    enable: false
     # title: "Custom Name"
     items:
       - title: Hugo Profile
@@ -257,7 +254,6 @@ params:
         links:
           - icon: fab fa-github
             url: https://github.com/gurusabarish/HugoProfileV2
-
 
   # Experience
   experience:
@@ -324,7 +320,6 @@ params:
         date: "Feb 2016 - Mar 2017"
         content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
 
-
   # Achievements
   achievements:
     enable: true
@@ -346,7 +341,6 @@ params:
       - title: Google Summer of Code
         content: Contributed to a open source project.
         url: https://example.com
-
 
   #Contact
   contact:
