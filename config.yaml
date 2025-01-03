@@ -24,17 +24,30 @@ markup:
 
 Menus:
   main:
-    - identifier: code
-      name: Code
-      title: Code
-      url: /code
-      weight: 1
     - identifier: gallery
       name: Gallery
       title: Blog posts
       url: /gallery
+      weight: 1
+    - identifier: code
+      name: Code
+      title: Code
+      url: /code
       weight: 2
-    #Dropdown menu
+    - identifier: projects
+      name: Projects
+      title: Projects
+      url: /projects
+      weight: 3
+    - identifier: about
+      name: About Me
+      title: About Me
+      url: /#about
+    - identifier: contact
+      name: Contact
+      title: Contact
+      url: /#contact
+      #Dropdown menu
     # - identifier: dropdown
     #   title: Example dropdown menu
     #   name: Dropdown
@@ -118,12 +131,12 @@ params:
       showOnScrollUp: true
     enableSeparator: false
     menus:
-      disableAbout: false
-      disableExperience: false
+      disableAbout: true
+      disableExperience: true
       disableEducation: true
       disableProjects: true
       disableAchievements: true
-      disableContact: false
+      disableContact: true
 
   # Hero
   hero:
@@ -142,13 +155,10 @@ params:
       newPage: false
     socialLinks:
       fontAwesomeIcons:
+        - icon: fab fa-instagram
+          url: https://www.instagram.com/_psira_/
         - icon: fab fa-github
-          url: https://example.com
-        - icon: fab fa-x-twitter
-          url: https://example.com
-      customIcons:
-        - icon: logo/logo-universal.svg
-          url: "https://example.com"
+          url: https://github.com/p-sira
 
   # About
   about:
@@ -181,17 +191,15 @@ params:
           name: "Ramathibodi Hospital, Mahidol University, Thailand"
           url: "https://www.rama.mahidol.ac.th/en"
         date: "2021 - Ongoing"
-        # GPA: ""
-        #   content: |-
-        #     Extracurricular Activities
-        #       - Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        #       - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+        content: |-
+          - Best Academic Performance Award
+          - [Dean's Research Award](https://www.rama.mahidol.ac.th/nurturing_talent/th/tonkla/Sira)
+          - Best Epidemiology Presentation 2022
       - title: "Master of Biomedical Engineering"
         school:
           name: "Mahidol University, Thailand"
           url: "https://www.eg.mahidol.ac.th/egmu_eng/"
         date: "2024 - Ongoing"
-        # GPA: ""
         # content: |-
         #   I Publiced two papers in the ACM SIGCHI Conference on Artificial Intelligence.
         #   - [Fast and Accurate Object Detection with a Single Convolutional Neural Network](https://example.com)
@@ -208,52 +216,6 @@ params:
   # projects
   projects:
     enable: false
-    # title: "Custom Name"
-    items:
-      - title: Hugo Profile
-        content: A highly customizable and mobile first Hugo template for personal portfolio and blog.
-        image: /images/projects/profile.png
-        featured:
-          name: Demo
-          link: https://hugo-profile.netlify.app
-        badges:
-          - "Hugo"
-          - "Bootstrap"
-          - "Javascript"
-        links:
-          - icon: fa fa-envelope
-            url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
-          - icon: fab fa-github
-            url: https://github.com/gurusabarish/hugo-profile
-          - icon: fab fa-twitter
-            url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
-
-      - title: Image Converter
-        content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.
-        image: /images/projects/converter.jpg
-        featured:
-          name: Demo
-          link: https://django-converter.herokuapp.com
-        badges:
-          - "Django"
-          - "Bootstrap"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/gurusabarish/converter
-
-      - title: Hugo Profile V2
-        content: A clean and simple Hugo template for personal portfolio and blog.
-        image: /images/projects/profile2.jpg
-        featured:
-          name: Demo V2
-          link: https://hugo-profile-2.netlify.app
-        badges:
-          - "Hugo"
-          - "Bootstrap"
-          - "Javascript"
-        links:
-          - icon: fab fa-github
-            url: https://github.com/gurusabarish/HugoProfileV2
 
   # Experience
   experience:
@@ -325,28 +287,25 @@ params:
     enable: true
     # title: "Custom Name"
     items:
-      - title: Google kickstart runner
-        content: I solved all problems with optimal solution.
-        url: https://example.com
-        image: /images/achievment.jpg
-      - title: Facebook Hackathon Winner
-        content: Developed a product using Artificial Intelligence.
-        image: /images/achievment.jpg
-      - title: Hugo Profile
-        content: Developed a theme and getting 1K+ downloads per month.
-        url: "https://github.com/gurusabarish/hugo-profile"
-        image: /images/achievment.jpg
-      - title: Microsoft Imagine Runner
-        content: We are developed a product which can help others.
-      - title: Google Summer of Code
-        content: Contributed to a open source project.
-        url: https://example.com
+      - title: "Scientific and Mathematical Literacy 2020: Gold Medal"
+        content: "Awarded by the IPST"
+        url: https://www.ipst.ac.th/ipsten
+      - title: "Thailand Geography Olympiad 2020: Gold Medal"
+        content: "Awarded by the POSN"
+        url: https://www.posn.or.th/
+      - title: "Thailand Physics Olympiad 2020: Declaration of Honor"
+        content: "Awarded by the POSN"
+        url: https://www.posn.or.th/
+      # - title: Hugo Profile
+      # content: Developed a theme and getting 1K+ downloads per month.
+      # url: "https://github.com/gurusabarish/hugo-profile"
+      # image: /images/achievment.jpg
 
   #Contact
   contact:
     enable: true
     # title: "Custom Name"
-    content: My inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+    content: I do not accept sponsors related to medical or health products.
     btnName: Mail me
     btnLink: mailto:gurusabarisha@gmail.com
     # formspree:
@@ -364,10 +323,10 @@ params:
       enable: true
       disableFeaturedImage: false
     socialNetworks:
+      instagram: https://www.instagram.com/_psira_/
       github: https://github.com
       linkedin: https://linkedin.com
       twitter: https://twitter.com
-      instagram: https://instagram.com
       facebook: https://facebook.com
 
   # List pages like blogs and posts
@@ -381,7 +340,7 @@ params:
       enable: true
       content: "min read"
     scrollprogress:
-      enable: true
+      enable: false
     tags:
       openInNewTab: true
 
