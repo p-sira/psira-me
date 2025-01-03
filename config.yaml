@@ -24,29 +24,36 @@ markup:
 
 Menus:
   main:
-    - identifier: gallery
-      name: Gallery
-      title: Blog posts
-      url: /gallery
+    - identifier: projects
+      name: Projects
+      title: Projects
+      url: /projects
+      weight: 1
+    - identifier: research
+      name: Research
+      title: Research
+      url: /research
       weight: 1
     - identifier: code
       name: Code
       title: Code
       url: /code
-      weight: 2
-    - identifier: projects
-      name: Projects
-      title: Projects
-      url: /projects
+      weight: 3
+    - identifier: gallery
+      name: Gallery
+      title: Blog posts
+      url: /gallery
       weight: 3
     - identifier: about
       name: About Me
       title: About Me
       url: /#about
+      weight: 4
     - identifier: contact
       name: Contact
       title: Contact
       url: /#contact
+      weight: 5
       #Dropdown menu
     # - identifier: dropdown
     #   title: Example dropdown menu
@@ -175,10 +182,12 @@ params:
       enable: true
       title: "See my:"
       items:
-        - "[Code](/code)"
-        - "[Research](/research)"
         - "[Projects](/projects)"
-        - "..."
+        - "[Research](/research)"
+        - "[Code](/code)"
+        - "[Gallery](/gallery)"
+        - "[Experience](/#experience)"
+        - "[Contact](/contact)"
 
   # Education
   education:
@@ -305,9 +314,12 @@ params:
   contact:
     enable: true
     # title: "Custom Name"
-    content: I do not accept sponsors related to medical or health products.
-    btnName: Mail me
-    btnLink: mailto:gurusabarisha@gmail.com
+    content: |-
+      General: [contact@psira.me](mailto:contact@psira.me) &nbsp; | &nbsp; Code: [code@psira.me](mailto:code@psira.me) &nbsp; | &nbsp; Research: [research@psira.me](mailto:research@psira.me)
+
+      I do not accept sponsors related to medical or health products.
+    # btnName: Mail me
+    # btnLink: mailto:
     # formspree:
     #   enable: true # `contact.email` value will be ignored
     #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
