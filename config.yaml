@@ -150,16 +150,16 @@ params:
     enable: true
     intro: "MD-M.Eng Student"
     title: "Sira Pornsiriprasert"
-    subtitle: "I code, sing, and do medicine."
-    content: "Naturally curious and always expanding my horizon. I also advocate for education rights and engage in educational projects, like teaching and creating learning resources, to make education fair for all."
+    subtitle: "Psira"
+    content: "I'm a medical and master of engineering student, who likes to sing, code, and explore the world scientifically and philosophically."
     image: "/images/white-coat.jpg"
     # roundImage: true # Make hero image circular | default false
     button:
       enable: true
-      name: "Resume"
-      url: "#"
-      download: true
-      newPage: false
+      name: "Music (YT)"
+      url: "https://www.youtube.com/@psira_music"
+      download: false
+      newPage: true
     socialLinks:
       fontAwesomeIcons:
         - icon: fab fa-instagram
@@ -231,66 +231,32 @@ params:
     enable: true
     # title: "Custom Name"
     items:
-      - job: "Senior Software Developer"
-        company: "Facebook"
-        companyUrl: "https://example.com"
-        date: "Jan 2022 - present"
+      - job: "Head of RAMA Open House 2022 and Co-Head of RAMA Open House 2021"
+        company: "RAMA Open House"
+        companyUrl: "https://www.facebook.com/RAMAbyD/videos/rama-open-house-2022/1178326516112329/"
+        date: "2022 and 2021"
         featuredLink:
-          enable: true
-          name: "View the project"
-          url: "https://example.com"
-        content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
-
-      - job: "Software Developer"
-        company: "Amazon"
-        companyUrl: "https://example.com"
-        date: "Sep 2020 - Dec 2021"
-        featuredLink:
-          enable: true
-          url: "https://example.com"
-        info:
-          enable: true
-          content: I worked as a software developer for more than one year in Amazon.
-        content: |
-          I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
-
-          - Lead backend developer for a product.
-          - Created a frontend design for a product.
-
-      - job: "Junior Software Developer"
-        company: "Apple"
-        companyUrl: "https://example.com"
-        date: "Jan 2020 - Aug 2020"
-        info:
           enable: false
-        featuredLink:
-          enable: true
-          url: "https://example.com"
+          # name: "RAMA OPH 2022"
+          # url: "https://www.facebook.com/RAMAbyD/videos/rama-open-house-2022/1178326516112329/"
         content: |
-          I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
-
-          - Lead backend developer for a product.
-          - Created a frontend design for a product.
-
-      - job: "UI/UX Designer"
-        company: "Netflix"
-        companyUrl: "https://example.com"
-        date: "June 2017 - Nov 2019"
+          The RAMA Open House was a large-scale event. After serving as the co-head in 2021, I reflected on the challenges and areas for improvement. These insights and experience were applied when I led the RAMA Open House 2022, resulting in more efficient management and stronger team coordination.
+          - The team structure consisted of 6 teams: Activity, Human Resources and Registration, Document, Art, Technology and Production, and Public Relations teams, totaling over 200 members from multiple class years. Furthermore, the team collaborated with various departments, student clubs, and administrative staff.
+          - The key aspects I was responsible for were team coordination, event planning, communication with the public and stakeholders, budgeting, logistics, and problem-solving. The RAMA Open House 2022 was the first on-site event after several years of pause. The COVID-19 pandemic introduced additional complexities to ensure rigorous health protocols.
+          - During RAMA Open House 2022, all 700 available tickets were sold out within one minute. The event received positive feedback and valuable learning points from the participants and staff.
+      - job: "BMAT Physics and Problem Solving Educator"
+        company: "RAdiator"
+        companyUrl: https://www.youtube.com/@radiator5264
+        date: "May - August 2021"
         featuredLink:
-          enable: true
-          url: "https://example.com"
+          enable: false
         content: |
-          I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city.
-
-          - Lead backend developer for a product.
-          - Created a frontend design for a product.
-
-      - job: "Product Designer"
-        company: "Google"
-        companyUrl: "https://example.com"
-        date: "Feb 2016 - Mar 2017"
-        content: "I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA. I am currently working on a project that will be used to help people find the best way to get around the city."
-
+          <a href="https://www.youtube.com/watch?v=NhHpJJA9EfM&list=PLQskSFI79tG7-CPLJlzhSxZMjz26Kijm2&index=2" target="_blank">BMAT Physics</a> | <a href="https://www.youtube.com/watch?v=kPQHRUsnPC8&list=PLQskSFI79tG67KYfAesRPppvGWhX3zm2Q" target="_blank">BMAT Problem Solving</a> 
+          
+          The RAdiator is an educational platform targeting Thai high school students. We aim to provide free educational resources for university admission preparation. The RAdiator is a collaboration project by the first-year medical students at the Faculty of Medicine, Ramathibodi Hospital.
+          - I worked on the Problem Solving part of the BMAT Section 1 and Physics of Section 2. In addition to teaching, I arranged the material and analyzed past papers to create custom practice problems to reinforce learning. 
+          - The core principle I used was making challenging concepts more accessible through clear and intuitive explanations.
+          - In total, I produced 10 videos, adding up to about 7 hours, receiving over 30,000 views.
   # Achievements
   achievements:
     enable: true
@@ -332,14 +298,15 @@ params:
       path: "blogs"
       count: 3
       title: Recent Posts
-      enable: true
+      enable: false
       disableFeaturedImage: false
     socialNetworks:
+      youtube: https://github.com/p-sira
       instagram: https://www.instagram.com/_psira_/
-      github: https://github.com
-      linkedin: https://linkedin.com
-      twitter: https://twitter.com
-      facebook: https://facebook.com
+      github: https://github.com/p-sira
+      # linkedin: https://linkedin.com
+      # twitter: https://twitter.com
+      # facebook: https://facebook.com
 
   # List pages like blogs and posts
   listPages:
