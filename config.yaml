@@ -24,26 +24,26 @@ markup:
 
 Menus:
   main:
-    - identifier: projects
-      name: Projects
-      title: Projects
-      url: /projects
-      weight: 1
-    - identifier: research
-      name: Research
-      title: Research
-      url: /research
-      weight: 1
+    # - identifier: projects
+    #   name: Projects
+    #   title: Projects
+    #   url: /projects
+    #   weight: 1
+    # - identifier: research
+    #   name: Research
+    #   title: Research
+    #   url: /research
+    #   weight: 1
     - identifier: code
       name: Code
       title: Code
       url: /code
       weight: 3
-    - identifier: gallery
-      name: Gallery
-      title: Blog posts
-      url: /gallery
-      weight: 3
+    # - identifier: gallery
+    #   name: Gallery
+    #   title: Blog posts
+    #   url: /gallery
+    #   weight: 3
     - identifier: about
       name: About Me
       title: About Me
@@ -151,7 +151,7 @@ params:
     intro: "MD-M.Eng Student"
     title: "Sira Pornsiriprasert"
     subtitle: "Psira"
-    content: "I'm a medical and master of engineering student, who likes to sing, code, and explore the world scientifically and philosophically."
+    content: "I am a medical and master of engineering student, who likes to sing, code, and explore the world scientifically and philosophically."
     image: "/images/white-coat.jpg"
     # roundImage: true # Make hero image circular | default false
     button:
@@ -171,21 +171,26 @@ params:
   about:
     enable: true
     title: "About Me"
-    image: "/images/me.png"
+    image: "/images/suit.jpg"
     content: |-
-      I am a software developer with a passion for web development. I have a background in computer science and mathematics, and I have a strong interest in the intersection of technology and art. I am currently working as a software developer at [example org.](https://example.com) in San Francisco, CA.
+      I am a medical student at the Faculty of Medicine, Ramathibodi Hospital, Thailand,
+      Currently, a member of the Center for Biomedical and Robotics Technology
+      at Mahidol University, I am pursuing a master degree in Biomedical Engineering.
 
-      I am currently working on a project that will be used to help people find the best way to get around the city.
+      I am naturally curious and constantly broadening my horizon. Among various
+      interests, I enjoy learning languages, exploring the world, and meeting people
+      across diverse culture. I strongly believe in and advocate for education rights.
+      One of my life goals is to make education accessible and fair for everyone.
 
       Talk to me in: 🇬🇧 🇹🇭 🇨🇳 🇫🇷
     skills:
       enable: true
       title: "See my:"
       items:
-        - "[Projects](/projects)"
-        - "[Research](/research)"
+        # - "[Projects](/projects)"
+        # - "[Research](/research)"
         - "[Code](/code)"
-        - "[Gallery](/gallery)"
+        # - "[Gallery](/gallery)"
         - "[Experience](/#experience)"
         - "[Contact](/contact)"
 
@@ -257,6 +262,20 @@ params:
           - I worked on the Problem Solving part of the BMAT Section 1 and Physics of Section 2. In addition to teaching, I arranged the material and analyzed past papers to create custom practice problems to reinforce learning. 
           - The core principle I used was making challenging concepts more accessible through clear and intuitive explanations.
           - In total, I produced 10 videos, adding up to about 7 hours, receiving over 30,000 views.
+      - job: "Open Source Project Contributor"
+        company: "Open Source"
+        companyUrl: https://www.psira.me/code
+        date: "Since 2021"
+        featuredLink:
+          enable: true
+          name: "See more"
+          url: https://www.psira.me/code
+        content: |
+          Since I was young, I have always dreamed of writing my own libraries. Today, I am an active contributor to open source projects. I believe that strong community leads to robust and impactful code.
+          - I like optimizing existing ideas and tackling unsolved problems with elegant solutions. I gravitate toward more fundamental libraries that serve as building blocks for scientific research. 
+          - My interests are algorithms, science, medical applications, and cryptography. I am open to exploring new fields to enhance multidisciplinary approaches.
+          - I code in several languages, but I am most proficient in Python and Rust.
+
   # Achievements
   achievements:
     enable: true
@@ -301,9 +320,9 @@ params:
       enable: false
       disableFeaturedImage: false
     socialNetworks:
-      youtube: https://github.com/p-sira
-      instagram: https://www.instagram.com/_psira_/
-      github: https://github.com/p-sira
+      # youtube: https://github.com/p-sira
+      # instagram: https://www.instagram.com/_psira_/
+      # github: https://github.com/p-sira
       # linkedin: https://linkedin.com
       # twitter: https://twitter.com
       # facebook: https://facebook.com
@@ -326,7 +345,7 @@ params:
   # For translations
   terms:
     read: "Read"
-    toc: "Table Of Contents"
+    toc: "Table of Contents"
     copyright: "All rights reserved"
     pageNotFound: "Page not found"
     emailText: "Check out this site"
