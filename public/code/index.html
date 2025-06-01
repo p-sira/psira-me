@@ -102,9 +102,11 @@
 
 
 
-<meta name="description" content="code">
-<link rel="stylesheet" href="/css/single.css">
+<meta name="description" content="Code of Psira">
 
+<link rel="stylesheet" href="/css/index.css" media="all">
+<link rel="stylesheet" href="/css/code.css" media="all">
+<script src="/viewer/viewer.min.js"></script>
 
 <script defer src="/fontawesome-6/all-6.4.2.js"></script>
 
@@ -212,39 +214,9 @@ Code | Psira
                     
                     
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/projects" title="Projects">
-                            
-                            Projects
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/research" title="Research">
-                            
-                            Research
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li class="nav-item navbar-text">
                         <a class="nav-link" href="/code" title="Code">
                             
                             Code
-                        </a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="/gallery" title="Blog posts">
-                            
-                            Gallery
                         </a>
                     </li>
                     
@@ -301,123 +273,457 @@ Code | Psira
     </nav>
 </header>
 <div id="content">
-<section id="single">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-sm-12 col-md-12 col-lg-9">
-        <div class="pr-lg-4">
-          <div class="title mb-5">
-            <h1 class="text-center mb-4">Code</h1>
-            <div class="text-center">
-              
-              Jan 1, 0001
-
-              
-              <span id="readingTime">
-                min read
-              </span>
-              
-            </div>
-          </div>
-          
-          <article class="page-content  p-2">
-          
-          </article>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-12 col-lg-3">
-        <div id="stickySideBar" class="sticky-sidebar">
-          
-          <aside class="toc">
-              <h5>
-                Table Of Contents
-              </h5>
-              <div class="toc-content">
-                <nav id="TableOfContents"></nav>
-              </div>
-          </aside>
-          
-
-          
-
-          
-          <aside class="social">
-            <h5>Social</h5>
-            <div class="social-content">
-              <ul class="list-inline">
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2flocalhost%3a1313%2fcode%2f">
-                    <i class="fab fa-linkedin"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://twitter.com/share?text=Code&url=http%3a%2f%2flocalhost%3a1313%2fcode%2f">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href="https://api.whatsapp.com/send?text=Code: http%3a%2f%2flocalhost%3a1313%2fcode%2f">
-                    <i class="fab fa-whatsapp"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item text-center">
-                  <a target="_blank" href='mailto:?subject=Code&amp;body=Check%20out%20this%20site http%3a%2f%2flocalhost%3a1313%2fcode%2f'>
-                    <i class="fa fa-envelope"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </aside>
-          
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-9 p-4">
+<section id="projects" class="py-5">
+    <div class="container">
+        <h3 class="text-center">Code</h3>
         
-      </div>
+        
+        
+        
+        <div class="mb-4">
+            <h4 data-bs-toggle="collapse" data-bs-target="#activeProjects" aria-expanded="true" class="cursor-pointer">
+                <i class="fas fa-chevron-down me-2 "></i> Active Projects
+            </h4>
+            <div class="collapse show" id="activeProjects">
+                <div class="row justify-content-center px-3 px-md-5">
+                    
+                    
+                    <div class="col-lg-4 col-md-6 my-3">
+                        <div class="card my-3 h-100" title="Ellip">
+                            <div class="card-head">
+                                <img class="card-img-top" src="/images/code/ellip-logo.svg" alt="Ellip">
+                            </div>
+                            <div class="card-body bg-transparent p-3">
+                                <div class="pb-2 bg-transparent">
+                                    
+                                    <span class="badge badge-secondary">Mathematics</span>
+                                    
+                                    <span class="badge badge-secondary">Elliptic Integrals</span>
+                                    
+                                    <span class="badge badge-secondary">Rust</span>
+                                    
+                                </div>
+                                <h5 class="card-title bg-transparent mt-1">Ellip</h5>
+                                <div class="card-text bg-transparent secondary-font">
+                                    A pure-Rust implementation of elliptic integrals. Applications of the elliptic integrals include computing the lengths of plane curves, magnetism, astrophysics, and string theory.
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer py-3">
+                                
+                                <span class="m-1 mx-2">
+                                    <a href="https://github.com/p-sira/ellip" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </span>
+                                
+                                <span class="m-1 mx-2">
+                                    <a href="https://crates.io/crates/ellip" target="_blank">
+                                        <i class="fab fa-rust"></i>
+                                    </a>
+                                </span>
+                                
+                                
+                                <span class="float-end">
+                                    <a class="btn btn-sm" href="https://docs.rs/ellip/latest/ellip/" target="_blank">
+                                        Docs
+                                    </a>
+                                </span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-lg-4 col-md-6 my-3">
+                        <div class="card my-3 h-100" title="Magba">
+                            <div class="card-head">
+                                <img class="card-img-top" src="/images/code/magba-logo.svg" alt="Magba">
+                            </div>
+                            <div class="card-body bg-transparent p-3">
+                                <div class="pb-2 bg-transparent">
+                                    
+                                    <span class="badge badge-secondary">Magnetism</span>
+                                    
+                                    <span class="badge badge-secondary">Simulation</span>
+                                    
+                                    <span class="badge badge-secondary">Analytical</span>
+                                    
+                                    <span class="badge badge-secondary">Physics</span>
+                                    
+                                    <span class="badge badge-secondary">Rust</span>
+                                    
+                                </div>
+                                <h5 class="card-title bg-transparent mt-1">Magba</h5>
+                                <div class="card-text bg-transparent secondary-font">
+                                    Magba is a performant analytical magnetic computation library for Rust.
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer py-3">
+                                
+                                <span class="m-1 mx-2">
+                                    <a href="https://github.com/p-sira/magba/" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </span>
+                                
+                                <span class="m-1 mx-2">
+                                    <a href="https://crates.io/crates/magba/" target="_blank">
+                                        <i class="fab fa-rust"></i>
+                                    </a>
+                                </span>
+                                
+                                
+                                <span class="float-end">
+                                    <a class="btn btn-sm" href="https://docs.rs/magba/" target="_blank">
+                                        Docs
+                                    </a>
+                                </span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-lg-4 col-md-6 my-3">
+                        <div class="card my-3 h-100" title="PyMagba">
+                            <div class="card-head">
+                                <img class="card-img-top" src="/images/code/pymagba-logo-fit.svg" alt="PyMagba">
+                            </div>
+                            <div class="card-body bg-transparent p-3">
+                                <div class="pb-2 bg-transparent">
+                                    
+                                    <span class="badge badge-secondary">Magnetism</span>
+                                    
+                                    <span class="badge badge-secondary">Simulation</span>
+                                    
+                                    <span class="badge badge-secondary">Analytical</span>
+                                    
+                                    <span class="badge badge-secondary">Physics</span>
+                                    
+                                    <span class="badge badge-secondary">Python</span>
+                                    
+                                </div>
+                                <h5 class="card-title bg-transparent mt-1">PyMagba</h5>
+                                <div class="card-text bg-transparent secondary-font">
+                                    PyMagba is a performant Python library for analytical magnetic computation powered by Rust. It is still in the infancy stage but all the calculations should be correct. Stay tuned for PyMagba 0.2.0!
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer py-3">
+                                
+                                <span class="m-1 mx-2">
+                                    <a href="https://github.com/p-sira/pymagba/" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </span>
+                                
+                                <span class="m-1 mx-2">
+                                    <a href="https://pypi.org/project/pymagba/" target="_blank">
+                                        <i class="fab fa-python"></i>
+                                    </a>
+                                </span>
+                                
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="mb-4">
+            <h4 data-bs-toggle="collapse" data-bs-target="#maintainedProjects" aria-expanded="true" class="cursor-pointer">
+                <i class="fas fa-chevron-down me-2"></i>Projects Under Support
+            </h4>
+            <div class="collapse show" id="maintainedProjects">
+                <div class="row justify-content-center px-3 px-md-5">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <div class="col-lg-4 col-md-6 my-3">
+                        <div class="card my-3 h-100" title="DeepLabCut2Yolo">
+                            <div class="card-head">
+                                <img class="card-img-top" src="/images/code/d2y.jpg" alt="DeepLabCut2Yolo">
+                            </div>
+                            <div class="card-body bg-transparent p-3">
+                                <div class="pb-2 bg-transparent">
+                                    
+                                    <span class="badge badge-secondary">AI</span>
+                                    
+                                    <span class="badge badge-secondary">DeepLabCut</span>
+                                    
+                                    <span class="badge badge-secondary">YOLO</span>
+                                    
+                                    <span class="badge badge-secondary">Pose Estimation</span>
+                                    
+                                    <span class="badge badge-secondary">Python</span>
+                                    
+                                </div>
+                                <h5 class="card-title bg-transparent mt-1">DeepLabCut2Yolo</h5>
+                                <div class="card-text bg-transparent secondary-font">
+                                    Deeplabcut2yolo automatically converts DeepLabCut (DLC) labels to the YOLO format, while providing customizability for more advanced users, so you can spend your energy on what matters!
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer py-3">
+                                
+                                <span class="m-1 mx-2">
+                                    <a href="https://github.com/p-sira/deeplabcut2yolo/" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </span>
+                                
+                                <span class="m-1 mx-2">
+                                    <a href="https://pypi.org/project/deeplabcut2yolo/" target="_blank">
+                                        <i class="fab fa-python"></i>
+                                    </a>
+                                </span>
+                                
+                                
+                                <span class="float-end">
+                                    <a class="btn btn-sm" href="https://p-sira.github.io/deeplabcut2yolo/" target="_blank">
+                                        Docs
+                                    </a>
+                                </span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-lg-4 col-md-6 my-3">
+                        <div class="card my-3 h-100" title="Hycrypt">
+                            <div class="card-head">
+                                <img class="card-img-top" src="/images/code/hycrypt.svg" alt="Hycrypt">
+                            </div>
+                            <div class="card-body bg-transparent p-3">
+                                <div class="pb-2 bg-transparent">
+                                    
+                                    <span class="badge badge-secondary">Cryptography</span>
+                                    
+                                    <span class="badge badge-secondary">Hybrid Cryptosystem</span>
+                                    
+                                    <span class="badge badge-secondary">Python</span>
+                                    
+                                </div>
+                                <h5 class="card-title bg-transparent mt-1">Hycrypt</h5>
+                                <div class="card-text bg-transparent secondary-font">
+                                    Hycrypt is a stateless-overwrite hybrid cryptosystem for secure communication and storage systems where only the recipient can decrypt the data — yet the data can be updated without the password.
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer py-3">
+                                
+                                <span class="m-1 mx-2">
+                                    <a href="https://github.com/p-sira/hycrypt/" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </span>
+                                
+                                <span class="m-1 mx-2">
+                                    <a href="https://pypi.org/project/hycrypt/" target="_blank">
+                                        <i class="fab fa-python"></i>
+                                    </a>
+                                </span>
+                                
+                                
+                                <span class="float-end">
+                                    <a class="btn btn-sm" href="https://p-sira.github.io/hycrypt/" target="_blank">
+                                        Docs
+                                    </a>
+                                </span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-lg-4 col-md-6 my-3">
+                        <div class="card my-3 h-100" title="LINE for Linux">
+                            <div class="card-head">
+                                <img class="card-img-top" src="/images/code/winehq_logo_glass.png" alt="LINE for Linux">
+                            </div>
+                            <div class="card-body bg-transparent p-3">
+                                <div class="pb-2 bg-transparent">
+                                    
+                                    <span class="badge badge-secondary">Wine</span>
+                                    
+                                    <span class="badge badge-secondary">Emulation</span>
+                                    
+                                    <span class="badge badge-secondary">Linux</span>
+                                    
+                                </div>
+                                <h5 class="card-title bg-transparent mt-1">LINE for Linux</h5>
+                                <div class="card-text bg-transparent secondary-font">
+                                    LINE is widely used communication application. However, it is not officially supported on Linux. This project provides installation instructions and troubleshooting guides, enabling near-native experience on Linux.
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer py-3">
+                                
+                                <span class="m-1 mx-2">
+                                    <a href="https://appdb.winehq.org/objectManager.php?sClass=application&amp;iId=13986" target="_blank">
+                                        <i class="fas fa-wine-glass"></i>
+                                    </a>
+                                </span>
+                                
+                                <span class="m-1 mx-2">
+                                    <a href="https://line.me/" target="_blank">
+                                        <i class="fab fa-line"></i>
+                                    </a>
+                                </span>
+                                
+                                
+                                <span class="float-end">
+                                    <a class="btn btn-sm" href="https://appdb.winehq.org/objectManager.php?sClass=version&amp;iId=42184" target="_blank">
+                                        AppDB
+                                    </a>
+                                </span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="col-lg-4 col-md-6 my-3">
+                        <div class="card my-3 h-100" title="num-lazy">
+                            <div class="card-head">
+                                <img class="card-img-top" src="/images/code/num-lazy.png" alt="num-lazy">
+                            </div>
+                            <div class="card-body bg-transparent p-3">
+                                <div class="pb-2 bg-transparent">
+                                    
+                                    <span class="badge badge-secondary">Numerics</span>
+                                    
+                                    <span class="badge badge-secondary">Macro</span>
+                                    
+                                    <span class="badge badge-secondary">Rust</span>
+                                    
+                                </div>
+                                <h5 class="card-title bg-transparent mt-1">num-lazy</h5>
+                                <div class="card-text bg-transparent secondary-font">
+                                    num-lazy helps you write numbers for generic-typed functions, reduce typing, and improve readability!
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer py-3">
+                                
+                                <span class="m-1 mx-2">
+                                    <a href="https://github.com/p-sira/num-lazy/" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </span>
+                                
+                                <span class="m-1 mx-2">
+                                    <a href="https://crates.io/crates/num-lazy/" target="_blank">
+                                        <i class="fab fa-rust"></i>
+                                    </a>
+                                </span>
+                                
+                                
+                                <span class="float-end">
+                                    <a class="btn btn-sm" href="https://docs.rs/num-lazy/" target="_blank">
+                                        Docs
+                                    </a>
+                                </span>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="mb-4">
+            <h4 data-bs-toggle="collapse" data-bs-target="#archivedProjects" aria-expanded="true" class="cursor-pointer">
+                <i class="fas fa-chevron-down me-2"></i>Archived Projects
+            </h4>
+            <div class="collapse show" id="archivedProjects">
+                <div class="row justify-content-center px-3 px-md-5">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        
+        
+        
+        
+        
     </div>
-  </div>
-  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
-    <i class="fas fa-angle-up"></i>
-  </button>
 </section>
 
-
+<style>
+.cursor-pointer {
+    cursor: pointer;
+}
+</style>
 
 <script>
-  var topScroll = document.getElementById("topScroll");
-  window.onscroll = function() {scrollFunction()};
 
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      topScroll.style.display = "block";
-    } else {
-      topScroll.style.display = "none";
-    }
-  }
-
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-
-  
-  let stickySideBarElem = document.getElementById("stickySideBar");
-  let stickyNavBar =  true ;
-  if(stickyNavBar) {
-    let headerElem = document.getElementById("profileHeader");
-    let headerHeight = headerElem.offsetHeight + 15;
-    stickySideBarElem.style.top = headerHeight + "px";
-  } else {
-    stickySideBarElem.style.top = "50px";
-  }
+document.addEventListener('DOMContentLoaded', function() {
+    const collapseElements = document.querySelectorAll('.collapse');
+    collapseElements.forEach(function(element) {
+        element.addEventListener('show.bs.collapse', function() {
+            const icon = document.querySelector('[data-bs-target="#' + this.id + '"] i');
+            icon.classList.remove('fa-chevron-right');
+            icon.classList.add('fa-chevron-down');
+        });
+        element.addEventListener('hide.bs.collapse', function() {
+            const icon = document.querySelector('[data-bs-target="#' + this.id + '"] i');
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-right');
+        });
+    });
+});
 </script>
-
-
-<script src="/js/readingTime.js"></script>
-
-
 
   </div><footer>
     
@@ -425,65 +731,11 @@ Code | Psira
 
 <div class="text-center pt-2">
     
-    <span class="px-1">
-        <a href="https://github.com/p-sira" aria-label="github">
-            <svg xmlns="http://www.w3.org/2000/svg" width="2.7em" height="2.7em" viewBox="0 0 1792 1792">
-                <path id="footer-socialNetworks-github-svg-path"
-                    d="M522 1352q-8 9-20-3-13-11-4-19 8-9 20 3 12 11 4 19zm-42-61q9 12 0 19-8 6-17-7t0-18q9-7 17 6zm-61-60q-5 7-13 2-10-5-7-12 3-5 13-2 10 5 7 12zm31 34q-6 7-16-3-9-11-2-16 6-6 16 3 9 11 2 16zm129 112q-4 12-19 6-17-4-13-15t19-7q16 5 13 16zm63 5q0 11-16 11-17 2-17-11 0-11 16-11 17-2 17 11zm58-10q2 10-14 14t-18-8 14-15q16-2 18 9zm964-956v960q0 119-84.5 203.5t-203.5 84.5h-224q-16 0-24.5-1t-19.5-5-16-14.5-5-27.5v-239q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-121-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-86-13.5q-44 113-7 204-79 85-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-40 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 103t.5 68q0 22-11 33.5t-22 13-33 1.5h-224q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z" />
-
-                <metadata>
-                    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/">
-                        <rdf:Description about="https://iconscout.com/legal#licenses"
-                            dc:title="Github, Online, Project, Hosting, Square"
-                            dc:description="Github, Online, Project, Hosting, Square" dc:publisher="Iconscout"
-                            dc:date="2016-12-14" dc:format="image/svg+xml" dc:language="en">
-                            <dc:creator>
-                                <rdf:Bag>
-                                    <rdf:li>Font Awesome</rdf:li>
-                                </rdf:Bag>
-                            </dc:creator>
-                        </rdf:Description>
-                    </rdf:RDF>
-                </metadata>
-            </svg>
-        </a>
-    </span>
-    
 
     
 
     
 
-    
-    <a href="https://www.instagram.com/_psira_/" aria-label="instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
-            <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899"
-                gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#fd5" />
-                <stop offset=".328" stop-color="#ff543f" />
-                <stop offset=".348" stop-color="#fc5245" />
-                <stop offset=".504" stop-color="#e64771" />
-                <stop offset=".643" stop-color="#d53e91" />
-                <stop offset=".761" stop-color="#cc39a4" />
-                <stop offset=".841" stop-color="#c837ab" />
-            </radialGradient>
-            <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
-                d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
-            <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813"
-                gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse">
-                <stop offset="0" stop-color="#4168c9" />
-                <stop offset=".999" stop-color="#4168c9" stop-opacity="0" />
-            </radialGradient>
-            <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
-                d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z" />
-            <path fill="#fff"
-                d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z" />
-            <circle cx="31.5" cy="16.5" r="1.5" fill="#fff" />
-            <path fill="#fff"
-                d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z" />
-        </svg>
-    </a>
     
 
     
