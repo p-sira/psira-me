@@ -74,9 +74,10 @@ Menus:
 
 params:
   title: "Psira"
-  description: Text about my cool site
+  description: Sira Pornsiriprasert, MD-MEng Student
   # staticPath: ""  # The path to serve the static files from
   favicon: "/logo/logo-universal.svg"
+  socialPreview: "/images/white-coat.jpg"
 
   # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
   # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
@@ -148,7 +149,7 @@ params:
   # Hero
   hero:
     enable: true
-    intro: "MD-M.Eng Student"
+    intro: "MD-MEng Student"
     title: "Sira Pornsiriprasert"
     subtitle: "Psira"
     content: "I am a medical and master of engineering student, who likes to sing, code, and explore the world scientifically and philosophically."
