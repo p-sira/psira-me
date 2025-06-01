@@ -1,0 +1,242 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Title }} of {{ .Site.Title }}">
+{{ if .Params.viewer | default true }}
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/index.css" media="all">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/code.css" media="all">
+<script src="{{ .Site.Params.staticPath }}/viewer/viewer.min.js"></script>
+{{ end }}
+<script defer src="{{ .Site.Params.staticPath }}/fontawesome-6/all-6.4.2.js"></script>
+{{ end }}
+
+{{ define "title" }}
+{{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section id="projects" class="py-5">
+    <div class="container">
+        <h3 class="text-center">{{ .Params.projects.title | default .Title | default "Projects" }}</h3>
+        
+        {{ if .Params.projects.enable }}
+        
+        <!-- Active Projects -->
+        <div class="mb-4">
+            <h4 data-bs-toggle="collapse" data-bs-target="#activeProjects" aria-expanded="true" class="cursor-pointer">
+                <i class="fas fa-chevron-down me-2 "></i> Active Projects
+            </h4>
+            <div class="collapse show" id="activeProjects">
+                <div class="row justify-content-center px-3 px-md-5">
+                    {{ range .Params.projects.items }}
+                    {{ if eq .status "active" }}
+                    <div class="col-lg-4 col-md-6 my-3">
+                        <div class="card my-3 h-100" title="{{ .title }}">
+                            <div class="card-head">
+                                <img class="card-img-top" src="{{ .image }}" alt="{{ .title }}">
+                            </div>
+                            <div class="card-body bg-transparent p-3">
+                                <div class="pb-2 bg-transparent">
+                                    {{ range .badges }}
+                                    <span class="badge badge-secondary">{{ . }}</span>
+                                    {{ end }}
+                                </div>
+                                <h5 class="card-title bg-transparent mt-1">{{ .title }}</h5>
+                                <div class="card-text bg-transparent secondary-font">
+                                    {{ .content }}
+                                </div>
+                            </div>
+                            {{ if or (.links) (.featured) }}
+                            <div class="card-footer py-3">
+                                {{ range .links }}
+                                <span class="m-1 mx-2">
+                                    <a href="{{ .url }}" target="_blank">
+                                        <i class="{{ .icon }}"></i>
+                                    </a>
+                                </span>
+                                {{ end }}
+                                {{ if .featured }}
+                                <span class="float-end">
+                                    <a class="btn btn-sm" href="{{ .featured.link }}" target="_blank">
+                                        {{ .featured.name }}
+                                    </a>
+                                </span>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Maintained Projects -->
+        <div class="mb-4">
+            <h4 data-bs-toggle="collapse" data-bs-target="#maintainedProjects" aria-expanded="true" class="cursor-pointer">
+                <i class="fas fa-chevron-down me-2"></i>Projects Under Support
+            </h4>
+            <div class="collapse show" id="maintainedProjects">
+                <div class="row justify-content-center px-3 px-md-5">
+                    {{ range .Params.projects.items }}
+                    {{ if eq .status "maintained" }}
+                    <div class="col-lg-4 col-md-6 my-3">
+                        <div class="card my-3 h-100" title="{{ .title }}">
+                            <div class="card-head">
+                                <img class="card-img-top" src="{{ .image }}" alt="{{ .title }}">
+                            </div>
+                            <div class="card-body bg-transparent p-3">
+                                <div class="pb-2 bg-transparent">
+                                    {{ range .badges }}
+                                    <span class="badge badge-secondary">{{ . }}</span>
+                                    {{ end }}
+                                </div>
+                                <h5 class="card-title bg-transparent mt-1">{{ .title }}</h5>
+                                <div class="card-text bg-transparent secondary-font">
+                                    {{ .content }}
+                                </div>
+                            </div>
+                            {{ if or (.links) (.featured) }}
+                            <div class="card-footer py-3">
+                                {{ range .links }}
+                                <span class="m-1 mx-2">
+                                    <a href="{{ .url }}" target="_blank">
+                                        <i class="{{ .icon }}"></i>
+                                    </a>
+                                </span>
+                                {{ end }}
+                                {{ if .featured }}
+                                <span class="float-end">
+                                    <a class="btn btn-sm" href="{{ .featured.link }}" target="_blank">
+                                        {{ .featured.name }}
+                                    </a>
+                                </span>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Archived Projects -->
+        <div class="mb-4">
+            <h4 data-bs-toggle="collapse" data-bs-target="#archivedProjects" aria-expanded="true" class="cursor-pointer">
+                <i class="fas fa-chevron-down me-2"></i>Archived Projects
+            </h4>
+            <div class="collapse show" id="archivedProjects">
+                <div class="row justify-content-center px-3 px-md-5">
+                    {{ range .Params.projects.items }}
+                    {{ if eq .status "archived" }}
+                    <div class="col-lg-4 col-md-6 my-3">
+                        <div class="card my-3 h-100" title="{{ .title }}">
+                            <div class="card-head">
+                                <img class="card-img-top" src="{{ .image }}" alt="{{ .title }}">
+                            </div>
+                            <div class="card-body bg-transparent p-3">
+                                <div class="pb-2 bg-transparent">
+                                    {{ range .badges }}
+                                    <span class="badge badge-secondary">{{ . }}</span>
+                                    {{ end }}
+                                </div>
+                                <h5 class="card-title bg-transparent mt-1">{{ .title }}</h5>
+                                <div class="card-text bg-transparent secondary-font">
+                                    {{ .content }}
+                                </div>
+                            </div>
+                            {{ if or (.links) (.featured) }}
+                            <div class="card-footer py-3">
+                                {{ range .links }}
+                                <span class="m-1 mx-2">
+                                    <a href="{{ .url }}" target="_blank">
+                                        <i class="{{ .icon }}"></i>
+                                    </a>
+                                </span>
+                                {{ end }}
+                                {{ if .featured }}
+                                <span class="float-end">
+                                    <a class="btn btn-sm" href="{{ .featured.link }}" target="_blank">
+                                        {{ .featured.name }}
+                                    </a>
+                                </span>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+
+        {{ end }}
+        
+        <!-- Additional projects from separate markdown files -->
+        {{ range ( where .Site.RegularPages "Type" "projects" ) }}
+        {{ if .Params.showInHome | default true }}
+        <div class="col-lg-4 col-md-6 my-3">
+            <div class="card my-3 h-100" title="{{ .Title }}">
+                <div class="card-head">
+                    <img class="card-img-top" src="{{ .Params.image }}" alt="{{ .Title }}">
+                </div>
+                <div class="card-body bg-transparent p-3">
+                    <div class="pb-2 bg-transparent">
+                        {{ range .Params.badges }}
+                        <span class="badge badge-secondary">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    <h5 class="card-title bg-transparent">{{ .Title | truncate 50 }}</h5>
+                    <div class="card-text bg-transparent secondary-font">
+                        {{ .Summary | truncate 100 | safeHTML }}
+                    </div>
+                </div>
+                <div class="card-footer py-3">
+                    {{ range .Params.links }}
+                    <span class="m-1 mx-2">
+                        <a href="{{ .url }}" target="_blank">
+                            <i class="{{ .icon }}"></i>
+                        </a>
+                    </span>
+                    {{ end }}
+                    <span class="float-end">
+                        <a class="btn btn-sm" href="{{ .RelPermalink }}">
+                            Know more
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        {{ end }}
+        
+    </div>
+</section>
+
+<style>
+.cursor-pointer {
+    cursor: pointer;
+}
+</style>
+
+<script>
+// Toggle chevron icons on collapse
+document.addEventListener('DOMContentLoaded', function() {
+    const collapseElements = document.querySelectorAll('.collapse');
+    collapseElements.forEach(function(element) {
+        element.addEventListener('show.bs.collapse', function() {
+            const icon = document.querySelector('[data-bs-target="#' + this.id + '"] i');
+            icon.classList.remove('fa-chevron-right');
+            icon.classList.add('fa-chevron-down');
+        });
+        element.addEventListener('hide.bs.collapse', function() {
+            const icon = document.querySelector('[data-bs-target="#' + this.id + '"] i');
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-right');
+        });
+    });
+});
+</script>
+{{ end }}

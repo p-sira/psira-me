@@ -7,48 +7,128 @@ params:
     enable: true
     # title: "Custom Name"
     items:
-      - title: Hugo Profile
-        content: A highly customizable and mobile first Hugo template for personal portfolio and blog.
-        image: /images/projects/profile.png
+      - title: Ellip
+        status: active
+        content: A pure-Rust implementation of elliptic integrals. Applications of the elliptic integrals include computing the lengths of plane curves, magnetism, astrophysics, and string theory.
+        image: /images/code/ellip-logo.svg
         featured:
-          name: Demo
-          link: https://hugo-profile.netlify.app
+          name: Docs
+          link: https://docs.rs/ellip/latest/ellip/
         badges:
-          - "Hugo"
-          - "Bootstrap"
-          - "Javascript"
+          - "Mathematics"
+          - "Elliptic Integrals"
+          - "Rust"
         links:
-          - icon: fa fa-envelope
-            url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
           - icon: fab fa-github
-            url: https://github.com/gurusabarish/hugo-profile
-          - icon: fab fa-twitter
-            url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
+            url: https://github.com/p-sira/ellip
+          - icon: fab fa-rust
+            url: https://crates.io/crates/ellip
 
-      - title: Image Converter
-        content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.
-        image: /images/projects/converter.jpg
+      - title: Magba
+        status: active
+        content: Magba is a performant analytical magnetic computation library for Rust.
+        image: /images/code/magba-logo.svg
         featured:
-          name: Demo
-          link: https://django-converter.herokuapp.com
+          name: Docs
+          link: https://docs.rs/magba/
         badges:
-          - "Django"
-          - "Bootstrap"
+          - "Magnetism"
+          - "Simulation"
+          - "Analytical"
+          - "Physics"
+          - "Rust"
         links:
           - icon: fab fa-github
-            url: https://github.com/gurusabarish/converter
+            url: https://github.com/p-sira/magba/
+          - icon: fab fa-rust
+            url: https://crates.io/crates/magba/
 
-      - title: Hugo Profile V2
-        content: A clean and simple Hugo template for personal portfolio and blog.
-        image: /images/projects/profile2.jpg
-        featured:
-          name: Demo V2
-          link: https://hugo-profile-2.netlify.app
+      - title: PyMagba
+        status: active
+        content: PyMagba is a performant Python library for analytical magnetic computation powered by Rust. It is still in the infancy stage but all the calculations should be correct. Stay tuned for PyMagba 0.2.0!
+        image: /images/code/pymagba-logo-fit.svg
+        # featured:
+        #   name: Docs
+        #   link: https://p-sira.github.io/pymagba/
         badges:
-          - "Hugo"
-          - "Bootstrap"
-          - "Javascript"
+          - "Magnetism"
+          - "Simulation"
+          - "Analytical"
+          - "Physics"
+          - "Python"
         links:
           - icon: fab fa-github
-            url: https://github.com/gurusabarish/HugoProfileV2
+            url: https://github.com/p-sira/pymagba/
+          - icon: fab fa-python
+            url: https://pypi.org/project/pymagba/
+
+      - title: DeepLabCut2Yolo
+        status: maintained
+        content: Deeplabcut2yolo automatically converts DeepLabCut (DLC) labels to the YOLO format, while providing customizability for more advanced users, so you can spend your energy on what matters!
+        image: /images/code/d2y.jpg
+        featured:
+          name: Docs
+          link: https://p-sira.github.io/deeplabcut2yolo/
+        badges:
+          - "AI"
+          - "DeepLabCut"
+          - "YOLO"
+          - "Pose Estimation"
+          - "Python"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/p-sira/deeplabcut2yolo/
+          - icon: fab fa-python
+            url: https://pypi.org/project/deeplabcut2yolo/
+
+      - title: Hycrypt
+        status: maintained
+        content: Hycrypt is a stateless-overwrite hybrid cryptosystem for secure communication and storage systems where only the recipient can decrypt the data — yet the data can be updated without the password.
+        image: /images/code/hycrypt.svg
+        featured:
+          name: Docs
+          link: https://p-sira.github.io/hycrypt/
+        badges:
+          - "Cryptography"
+          - "Hybrid Cryptosystem"
+          - "Python"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/p-sira/hycrypt/
+          - icon: fab fa-python
+            url: https://pypi.org/project/hycrypt/
+
+      - title: LINE for Linux
+        status: maintained
+        content: LINE is widely used communication application. However, it is not officially supported on Linux. This project provides installation instructions and troubleshooting guides, enabling near-native experience on Linux. 
+        image: /images/code/winehq_logo_glass.png
+        featured:
+          name: AppDB
+          link: https://appdb.winehq.org/objectManager.php?sClass=version&iId=42184
+        badges:
+          - "Wine"
+          - "Emulation"
+          - "Linux"
+        links:
+          - icon: fas fa-wine-glass
+            url: https://appdb.winehq.org/objectManager.php?sClass=application&iId=13986
+          - icon: fab fa-line
+            url: https://line.me/
+
+      - title: num-lazy
+        status: maintained
+        content: num-lazy helps you write numbers for generic-typed functions, reduce typing, and improve readability!
+        image: /images/code/num-lazy.png
+        featured:
+          name: Docs
+          link: https://docs.rs/num-lazy/
+        badges:
+          - "Numerics"
+          - "Macro"
+          - "Rust"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/p-sira/num-lazy/
+          - icon: fab fa-rust
+            url: https://crates.io/crates/num-lazy/
 ---
