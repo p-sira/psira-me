@@ -1,6 +1,6 @@
 baseURL: "https://psira.me/"
 languageCode: "en-us"
-title: "Psira"
+title: "Psira - Sira Pornsiriprasert"
 theme: hugo-profile
 
 outputs:
@@ -73,7 +73,7 @@ Menus:
     #   weight: 2
 
 params:
-  title: "Psira - Sira Pornsiriprasert"
+  title: "Psira"
   description: Personal website of Sira Pornsiriprasert, an MD-MEng student
   # staticPath: ""  # The path to serve the static files from
   favicon: "/logo/logo-universal.svg"
