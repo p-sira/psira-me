@@ -265,12 +265,12 @@ params:
           - In total, I produced 10 videos, adding up to about 7 hours, receiving over 30,000 views.
       - job: "Open Source Project Contributor"
         company: "Open Source"
-        companyUrl: https://www.psira.me/code
+        companyUrl: https://psira.me/code
         date: "Since 2021"
         featuredLink:
           enable: true
           name: "See more"
-          url: https://www.psira.me/code
+          url: https://psira.me/code
         content: |
           Since I was young, I have always dreamed of writing my own libraries. Today, I am an active contributor to open source projects. I believe that strong community leads to robust and impactful code.
           - I like optimizing existing ideas and tackling unsolved problems with elegant solutions. I gravitate toward more fundamental libraries that serve as building blocks for scientific research. 
