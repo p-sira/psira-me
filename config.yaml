@@ -274,8 +274,22 @@ params:
         content: |
           Since I was young, I have always dreamed of writing my own libraries. Today, I am an active contributor to open source projects. I believe that strong community leads to robust and impactful code.
           - I like optimizing existing ideas and tackling unsolved problems with elegant solutions. I gravitate toward more fundamental libraries that serve as building blocks for scientific research. 
-          - My interests are algorithms, science, medical applications, and cryptography. I am open to exploring new fields to enhance multidisciplinary approaches.
-          - I code in several languages, but I am most proficient in Python and Rust. List of languages I have experience in: 
+          - My interests are algorithms, science, medical applications, and cryptography. Recently, I took interest in agentic AI. I am open to exploring new fields to enhance multidisciplinary approaches.
+          - I code in several languages, but I am most proficient in Python and Rust.
+          <i class="fab fa-python" title="Python"></i>
+          <i class="fab fa-rust" title="Rust"></i>
+          C++
+          C
+          <iconify-icon icon="file-icons:matlab" title="MATLAB"></iconify-icon>
+          <i class="fab fa-golang" title="GoLang"></i>
+          <i class="fa fa-terminal" title="bash"></i>
+          C#
+          <i class="fab fa-html5" title="HTML+CSS"></i>
+          <iconify-icon icon="devicon-plain:hugo" title="Hugo"></iconify-icon>
+          <i class="fab fa-java" title="Java"></i>
+          <iconify-icon icon="file-icons:arduino" title="Arduino and ESP-IDF"></iconify-icon>
+          <iconify-icon icon="file-icons:wolfram" title="Wolfram"></iconify-icon>
+          - I used to do Minecraft command blocks and redstone if you would count.
 
   # Achievements
   achievements:
