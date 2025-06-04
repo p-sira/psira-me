@@ -1,5 +1,5 @@
 ---
-title: "Code | Psira"
+title: "Code"
 description: "Coding projects by Psira (Sira Pornsiriprasert)"
 layout: "code"
 params:
@@ -131,4 +131,18 @@ params:
             url: https://github.com/p-sira/num-lazy/
           - icon: fab fa-rust
             url: https://crates.io/crates/num-lazy/
+
+      - title: psira.me
+        status: active
+        content: 
+          My personal website as you see here. Custom built with Hugo for rapid development. Featuring modified hugo-profile theme and modified Catppuccin color palette for light and dark mode. Supports responsive experience on both mobile and desktop.
+        image: /images/code/psira-me.jpg
+        badges:
+          - "Portfolio"
+          - "HTML/CSS"
+          - "JS"
+          - "Hugo"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/p-sira/psira-me/
 ---
