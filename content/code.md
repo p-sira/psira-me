@@ -1,5 +1,5 @@
 ---
-title: "Code | Psira"
+title: "Code"
 description: "Coding projects by Psira (Sira Pornsiriprasert)"
 layout: "code"
 params:
