@@ -1,0 +1,76 @@
+/* light mode */
+.light > *{
+    /* background-color: var(--background-color); */
+    color: var(--text-color);
+}
+
+.light > #footer-socialNetworks-github-svg-path{
+    fill: none;
+}
+
+/* dark mode */
+.dark {
+    --background-color: var(--background-color-dark);
+    --secondary-background-color: var(--secondary-background-color-dark);
+    --text-color: var(--text-color-dark);
+    --text-secondary-color: var(--text-secondary-color-dark);
+    --text-link-color: var(--text-link-color-dark);
+    --primary-color: var(--primary-color-dark);
+    --secondary-color: var(--secondary-color-dark);
+}
+
+.dark #footer-socialNetworks-github-svg-path{
+    fill: #FFFFFF;
+}
+
+.text-secondary {
+    color: var(--text-secondary-color) !important;
+}
+
+#theme-toggle:focus {
+    outline: 0;
+}
+
+#theme-toggle svg {
+    position: absolute;
+    top: 45%;
+    height: 18px;
+}
+
+@media screen and (max-width: 990px) {
+    #theme-toggle svg {
+        position: relative;
+        top: -12%;
+    }
+}
+
+button#theme-toggle {
+    border: none;
+    font-size: 26px;
+    margin: auto 4px;
+}
+
+body.dark #moon {
+    display: none;
+}
+
+body:not(.dark) #sun {
+    display: none;
+}
+
+body *::selection {
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+
+body.light {
+    background: url("/images/wallpaper/an-ordinary-day-blur-hq.jpg") no-repeat center center fixed, 
+                url("/images/wallpaper/an-ordinary-day-blur-small.jpg") no-repeat center center fixed;
+    background-size: cover, cover;
+} 
+
+body.dark {
+    background: url("/images/wallpaper/reflection-blur-hq.jpg") no-repeat center center fixed, 
+                url("/images/wallpaper/reflection-blur-small.jpg") no-repeat center center fixed;
+    background-size: cover, cover;
+}
