@@ -119,7 +119,7 @@ params:
     darkmode:
       textColor: "#EAECF2FF"
       secondaryTextColor: "#e7ebf0ff"
-      textLinkColor: "#ee99a0" # Catpuccin Frappe Maroon
+      textLinkColor: "#e64553" # Catpuccin Latte Maroon
       backgroundColor: "#18191a"
       secondaryBackgroundColor: "#212529"
       primaryColor: "#ffffff"
