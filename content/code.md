@@ -84,7 +84,7 @@ params:
       - title: Hycrypt
         status: maintained
         content: Hycrypt is a stateless-overwrite hybrid cryptosystem for secure communication and storage systems where only the recipient can decrypt the data — yet the data can be updated without the password.
-        image: /images/code/hycrypt.svg
+        image: /images/code/hycrypt.jpg
         featured:
           name: Docs
           link: https://p-sira.github.io/hycrypt/
@@ -118,7 +118,7 @@ params:
       - title: num-lazy
         status: maintained
         content: num-lazy helps you write numbers for generic-typed functions, reduce typing, and improve readability!
-        image: /images/code/num-lazy.png
+        image: /images/code/num-lazy.jpg
         featured:
           name: Docs
           link: https://docs.rs/num-lazy/
