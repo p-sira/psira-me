@@ -4,26 +4,26 @@
   <div class="flex w-full max-w-6xl justify-between">
 
     <!-- Left Column -->
-    <div class="flex flex-col justify-center items-center w-1/3 relative">
-      <button class="arc-button w-20 h-12 mb-8" style="transform: translateY(-30px);">About</button>
+    <div class="flex flex-col justify-center items-center w-1/3 relative -translate-y-24">
+      <button class="arc-button w-20 h-12 mb-8 bg-secondary-bg rounded-md" style="transform: translateY(-30px);">About</button>
       <button class="arc-button w-20 h-12 mb-8" style="transform: translateY(10px);">Research</button>
       <button class="arc-button w-20 h-12" style="transform: translateY(50px);">Achievements</button>
     </div>
 
     <!-- Center Column -->
-    <div class="flex flex-col justify-center items-center w-1/3">
-      <div class="relative justify-center items-center h-48 w-48 mb-4">
+    <div class="flex flex-col justify-center items-center w-1/3 -translate-y-12">
+      <div class="relative justify-center h-48 w-48 mb-4">
         <img src="images/white-coat.jpg" alt="Profile Picture Light"
           class="absolute h-full w-full object-cover rounded-full border-4 border-accent shadow-2xl transition-opacity duration-500 ease-in-out opacity-100 dark:opacity-0 pointer-events-none">
         <img src="images/suit.jpg" alt="Profile Picture Dark"
           class="absolute h-full w-full object-cover rounded-full border-4 border-accent shadow-2xl transition-opacity duration-500 ease-in-out opacity-0 dark:opacity-100 pointer-events-none">
       </div>
-      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-2">Sira Pornsiriprasert</h1>
-      <p class="text-xl text-primary-secondary">Computer Science Student</p>
+      <h1 class="text-4xl font-bold text-primary mb-2">Sira Pornsiriprasert</h1>
+      <p class="text-xl text-secondary">Computer Science Student</p>
     </div>
 
     <!-- Right Column -->
-    <div class="flex flex-col justify-center items-center w-1/3 relative">
+    <div class="flex flex-col justify-center items-center w-1/3 relative -translate-y-24">
       <button class="arc-button w-20 h-12 mb-8" style="transform: translateY(-40px);">Code</button>
       <button class="arc-button w-20 h-12 mb-8" style="transform: translateY(0px);">Experience</button>
       <button class="arc-button w-20 h-12" style="transform: translateY(40px);">Contact</button>
@@ -43,26 +43,26 @@
     class="popup-card fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-75 w-11/12 max-w-4xl max-h-[90vh] bg-primary-bg border border-primary-border rounded-2xl p-8 shadow-2xl opacity-0 invisible transition-all duration-400 z-50 overflow-y-auto"
     id="about-card">
     <button
-      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-primary-accent-secondary text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
+      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-secondary-accent text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
     <h2 class="text-3xl font-bold text-primary-text mb-6 text-center border-b-2 border-primary-accent pb-4">About Me
     </h2>
     <div class="max-w-4xl mx-auto">
-      <p class="text-primary-text-secondary text-lg leading-relaxed mb-6">Hello! I'm Sira Pornsiriprasert, a passionate
+      <p class="text-secondary-text text-lg leading-relaxed mb-6">Hello! I'm Sira Pornsiriprasert, a passionate
         computer science student with a deep love for technology and innovation. I'm currently pursuing my Bachelor's
         degree in Computer Science, focusing on software engineering, data structures, and machine learning.</p>
 
       <h3 class="text-2xl font-semibold text-primary-text mb-4">My Journey</h3>
-      <p class="text-primary-text-secondary text-lg leading-relaxed mb-6">My journey in technology began during high
+      <p class="text-secondary-text text-lg leading-relaxed mb-6">My journey in technology began during high
         school when I discovered the power of programming. What started as curiosity about how websites work has evolved
         into a comprehensive understanding of full-stack development, cloud computing, and artificial intelligence.</p>
 
       <h3 class="text-2xl font-semibold text-primary-text mb-4">Interests & Hobbies</h3>
-      <p class="text-primary-text-secondary text-lg leading-relaxed mb-6">When I'm not coding, you can find me exploring
+      <p class="text-secondary-text text-lg leading-relaxed mb-6">When I'm not coding, you can find me exploring
         new technologies, contributing to open-source projects, or experimenting with machine learning models. I also
         enjoy photography, hiking, and playing guitar.</p>
 
       <h3 class="text-2xl font-semibold text-primary-text mb-4">Philosophy</h3>
-      <p class="text-primary-text-secondary text-lg leading-relaxed">I believe that technology should be accessible,
+      <p class="text-secondary-text text-lg leading-relaxed">I believe that technology should be accessible,
         intuitive, and make a positive impact on people's lives. My goal is to create solutions that not only solve
         problems but also inspire others to explore the endless possibilities of technology.</p>
     </div>
@@ -72,19 +72,19 @@
     class="popup-card fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-75 w-11/12 max-w-4xl max-h-[90vh] bg-primary-bg border border-primary-border rounded-2xl p-8 shadow-2xl opacity-0 invisible transition-all duration-400 z-50 overflow-y-auto"
     id="research-card">
     <button
-      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-primary-accent-secondary text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
+      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-secondary-accent text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
     <h2 class="text-3xl font-bold text-primary-text mb-6 text-center border-b-2 border-primary-accent pb-4">Research
     </h2>
     <div class="max-w-4xl mx-auto">
-      <p class="text-primary-text-secondary text-lg leading-relaxed mb-6">My research interests focus on machine
+      <p class="text-secondary-text text-lg leading-relaxed mb-6">My research interests focus on machine
         learning, artificial intelligence, and their applications in solving real-world problems.</p>
 
       <h3 class="text-2xl font-semibold text-primary-text mb-4">Current Research</h3>
-      <p class="text-primary-text-secondary text-lg leading-relaxed mb-6">I'm currently working on developing novel
+      <p class="text-secondary-text text-lg leading-relaxed mb-6">I'm currently working on developing novel
         approaches to natural language processing and computer vision applications.</p>
 
       <h3 class="text-2xl font-semibold text-primary-text mb-4">Publications</h3>
-      <p class="text-primary-text-secondary text-lg leading-relaxed">Working on my first research paper about deep
+      <p class="text-secondary-text text-lg leading-relaxed">Working on my first research paper about deep
         learning applications in healthcare technology.</p>
     </div>
   </div>
@@ -93,19 +93,19 @@
     class="popup-card fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-75 w-11/12 max-w-4xl max-h-[90vh] bg-primary-bg border border-primary-border rounded-2xl p-8 shadow-2xl opacity-0 invisible transition-all duration-400 z-50 overflow-y-auto"
     id="code-card">
     <button
-      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-primary-accent-secondary text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
+      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-secondary-accent text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
     <h2 class="text-3xl font-bold text-primary-text mb-6 text-center border-b-2 border-primary-accent pb-4">Code &
       Projects</h2>
     <div class="max-w-4xl mx-auto">
-      <p class="text-primary-text-secondary text-lg leading-relaxed mb-6">Here are some of my notable coding projects
+      <p class="text-secondary-text text-lg leading-relaxed mb-6">Here are some of my notable coding projects
         and contributions to the developer community.</p>
 
       <h3 class="text-2xl font-semibold text-primary-text mb-4">Featured Projects</h3>
-      <p class="text-primary-text-secondary text-lg leading-relaxed mb-6">From web applications to machine learning
+      <p class="text-secondary-text text-lg leading-relaxed mb-6">From web applications to machine learning
         models, I enjoy building solutions that make a difference.</p>
 
       <h3 class="text-2xl font-semibold text-primary-text mb-4">Open Source</h3>
-      <p class="text-primary-text-secondary text-lg leading-relaxed">Active contributor to various open-source projects
+      <p class="text-secondary-text text-lg leading-relaxed">Active contributor to various open-source projects
         and maintainer of several useful libraries.</p>
     </div>
   </div>
@@ -114,19 +114,19 @@
     class="popup-card fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-75 w-11/12 max-w-4xl max-h-[90vh] bg-primary-bg border border-primary-border rounded-2xl p-8 shadow-2xl opacity-0 invisible transition-all duration-400 z-50 overflow-y-auto"
     id="experience-card">
     <button
-      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-primary-accent-secondary text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
+      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-secondary-accent text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
     <h2 class="text-3xl font-bold text-primary-text mb-6 text-center border-b-2 border-primary-accent pb-4">Experience
     </h2>
     <div class="max-w-4xl mx-auto">
-      <p class="text-primary-text-secondary text-lg leading-relaxed mb-6">My professional journey and the experiences
+      <p class="text-secondary-text text-lg leading-relaxed mb-6">My professional journey and the experiences
         that have shaped my career in technology.</p>
 
       <h3 class="text-2xl font-semibold text-primary-text mb-4">Work Experience</h3>
-      <p class="text-primary-text-secondary text-lg leading-relaxed mb-6">From internships to freelance work, I've
+      <p class="text-secondary-text text-lg leading-relaxed mb-6">From internships to freelance work, I've
         gained valuable experience in software development and project management.</p>
 
       <h3 class="text-2xl font-semibold text-primary-text mb-4">Leadership</h3>
-      <p class="text-primary-text-secondary text-lg leading-relaxed">Active in student organizations and tech
+      <p class="text-secondary-text text-lg leading-relaxed">Active in student organizations and tech
         communities, leading initiatives and mentoring fellow students.</p>
     </div>
   </div>
@@ -135,19 +135,19 @@
     class="popup-card fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-75 w-11/12 max-w-4xl max-h-[90vh] bg-primary-bg border border-primary-border rounded-2xl p-8 shadow-2xl opacity-0 invisible transition-all duration-400 z-50 overflow-y-auto"
     id="achievements-card">
     <button
-      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-primary-accent-secondary text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
+      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-secondary-accent text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
     <h2 class="text-3xl font-bold text-primary-text mb-6 text-center border-b-2 border-primary-accent pb-4">Achievements
     </h2>
     <div class="max-w-4xl mx-auto">
-      <p class="text-primary-text-secondary text-lg leading-relaxed mb-6">Recognition and accomplishments that highlight
+      <p class="text-secondary-text text-lg leading-relaxed mb-6">Recognition and accomplishments that highlight
         my dedication to excellence in computer science.</p>
 
       <h3 class="text-2xl font-semibold text-primary-text mb-4">Awards & Recognition</h3>
-      <p class="text-primary-text-secondary text-lg leading-relaxed mb-6">Dean's List, Hackathon Winner, and various
+      <p class="text-secondary-text text-lg leading-relaxed mb-6">Dean's List, Hackathon Winner, and various
         academic and professional recognitions.</p>
 
       <h3 class="text-2xl font-semibold text-primary-text mb-4">Certifications</h3>
-      <p class="text-primary-text-secondary text-lg leading-relaxed">Professional certifications in cloud computing,
+      <p class="text-secondary-text text-lg leading-relaxed">Professional certifications in cloud computing,
         data analysis, and software development.</p>
     </div>
   </div>
@@ -156,18 +156,18 @@
     class="popup-card fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-75 w-11/12 max-w-4xl max-h-[90vh] bg-primary-bg border border-primary-border rounded-2xl p-8 shadow-2xl opacity-0 invisible transition-all duration-400 z-50 overflow-y-auto"
     id="contact-card">
     <button
-      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-primary-accent-secondary text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
+      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-secondary-accent text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
     <h2 class="text-3xl font-bold text-primary-text mb-6 text-center border-b-2 border-primary-accent pb-4">Contact</h2>
     <div class="max-w-4xl mx-auto">
-      <p class="text-primary-text-secondary text-lg leading-relaxed mb-6">Let's connect! I'm always interested in new
+      <p class="text-secondary-text text-lg leading-relaxed mb-6">Let's connect! I'm always interested in new
         opportunities, collaborations, and meaningful conversations about technology.</p>
 
       <h3 class="text-2xl font-semibold text-primary-text mb-4">Get In Touch</h3>
-      <p class="text-primary-text-secondary text-lg leading-relaxed mb-6">Whether you have a project idea, want to
+      <p class="text-secondary-text text-lg leading-relaxed mb-6">Whether you have a project idea, want to
         collaborate, or just want to chat about technology, I'd love to hear from you.</p>
 
       <h3 class="text-2xl font-semibold text-primary-text mb-4">Social Links</h3>
-      <p class="text-primary-text-secondary text-lg leading-relaxed">Connect with me on LinkedIn, GitHub, and other
+      <p class="text-secondary-text text-lg leading-relaxed">Connect with me on LinkedIn, GitHub, and other
         platforms to stay updated on my latest projects and thoughts.</p>
     </div>
   </div>
@@ -176,7 +176,7 @@
     class="popup-card fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-75 w-11/12 max-w-4xl max-h-[90vh] bg-primary-bg border border-primary-border rounded-2xl p-8 shadow-2xl opacity-0 invisible transition-all duration-400 z-50 overflow-y-auto"
     id="projects-card">
     <button
-      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-primary-accent-secondary text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
+      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-secondary-accent text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
     <h2 class="text-3xl font-bold text-primary-text mb-6 text-center border-b-2 border-primary-accent pb-4">Projects
     </h2>
     <div class="tab-container max-w-4xl mx-auto">
@@ -308,7 +308,7 @@
     class="popup-card fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-75 w-11/12 max-w-4xl max-h-[90vh] bg-primary-bg border border-primary-border rounded-2xl p-8 shadow-2xl opacity-0 invisible transition-all duration-400 z-50 overflow-y-auto"
     id="skills-card">
     <button
-      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-primary-accent-secondary text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
+      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-secondary-accent text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
     <h2 class="text-3xl font-bold text-primary-text mb-6 text-center border-b-2 border-primary-accent pb-4">Skills &
       Technologies</h2>
     <div style="max-width: 1000px; margin: 0 auto;">
@@ -383,7 +383,7 @@
     class="popup-card fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-75 w-11/12 max-w-4xl max-h-[90vh] bg-primary-bg border border-primary-border rounded-2xl p-8 shadow-2xl opacity-0 invisible transition-all duration-400 z-50 overflow-y-auto"
     id="experience-card">
     <button
-      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-primary-accent-secondary text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
+      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-secondary-accent text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
     <h2 class="text-3xl font-bold text-primary-text mb-6 text-center border-b-2 border-primary-accent pb-4">Professional
       Experience</h2>
     <div style="max-width: 800px; margin: 0 auto;">
@@ -427,7 +427,7 @@
     class="popup-card fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-75 w-11/12 max-w-4xl max-h-[90vh] bg-primary-bg border border-primary-border rounded-2xl p-8 shadow-2xl opacity-0 invisible transition-all duration-400 z-50 overflow-y-auto"
     id="contact-card">
     <button
-      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-primary-accent-secondary text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
+      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-secondary-accent text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
     <h2 class="text-3xl font-bold text-primary-text mb-6 text-center border-b-2 border-primary-accent pb-4">Get In Touch
     </h2>
     <div style="max-width: 800px; margin: 0 auto; text-align: center;">
@@ -476,7 +476,7 @@
     class="popup-card fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-75 w-11/12 max-w-4xl max-h-[90vh] bg-primary-bg border border-primary-border rounded-2xl p-8 shadow-2xl opacity-0 invisible transition-all duration-400 z-50 overflow-y-auto"
     id="education-card">
     <button
-      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-primary-accent-secondary text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
+      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-secondary-accent text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
     <h2 class="text-3xl font-bold text-primary-text mb-6 text-center border-b-2 border-primary-accent pb-4">Education &
       Certifications</h2>
     <div style="max-width: 800px; margin: 0 auto;">
@@ -521,7 +521,7 @@
     class="popup-card fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-75 w-11/12 max-w-4xl max-h-[90vh] bg-primary-bg border border-primary-border rounded-2xl p-8 shadow-2xl opacity-0 invisible transition-all duration-400 z-50 overflow-y-auto"
     id="blog-card">
     <button
-      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-primary-accent-secondary text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
+      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-secondary-accent text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
     <h2 class="text-3xl font-bold text-primary-text mb-6 text-center border-b-2 border-primary-accent pb-4">Blog &
       Writing</h2>
     <div style="max-width: 800px; margin: 0 auto;">
@@ -571,7 +571,7 @@
     class="popup-card fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-75 w-11/12 max-w-4xl max-h-[90vh] bg-primary-bg border border-primary-border rounded-2xl p-8 shadow-2xl opacity-0 invisible transition-all duration-400 z-50 overflow-y-auto"
     id="resume-card">
     <button
-      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-primary-accent-secondary text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
+      class="close-btn absolute top-4 right-4 bg-primary-accent hover:bg-secondary-accent text-primary-bg w-10 h-10 rounded-full flex items-center justify-center text-xl transition-all duration-300 hover:scale-110 z-10">×</button>
     <h2 class="text-3xl font-bold text-primary-text mb-6 text-center border-b-2 border-primary-accent pb-4">Resume & CV
     </h2>
     <div style="max-width: 800px; margin: 0 auto; text-align: center;">

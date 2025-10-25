@@ -23,8 +23,10 @@
     }
 </script>
 
-<link rel="stylesheet" href="css/colors.css">
-<link rel="stylesheet" href="css/theme-toggle.css">
+{{ $colors := resources.Get "css/colors.css" }}
+{{ $themeToggle := resources.Get "css/theme-toggle.css" }}
+{{ $css := slice $colors $themeToggle | resources.Concat "css/custom.css" }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
