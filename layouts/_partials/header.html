@@ -28,20 +28,17 @@
 </script>
 
 <header>
-    <nav class="w-full py-3 bg-primary shadow-sm transition-colors duration-500">
+    <nav class="w-full py-3 bg-primary shadow-sm transition-colors duration-1000">
         <div class="container mx-auto px-4 flex items-center justify-between">
             <!-- Brand -->
             <a href="{{ .Site.BaseURL | relURL }}"
-                class="flex items-center space-x-1 text-xl font-semibold text-primary transition-colors duration-500">
-
-                <div id="logo-container" class="flex items-center space-x-1 opacity-0 transition-opacity duration-500">
-                    <img id="logo" src="/logo/logo.svg" alt="P" class="w-8 h-8 block dark:hidden"
-                        onload="document.getElementById('logo-container').classList.add('opacity-100')">
-                    <img id="logo" src="/logo/logo-dark.svg" alt="P" class="w-8 h-8 hidden dark:block"
-                        onload="document.getElementById('logo-container').classList.add('opacity-100')">
+                class="flex items-center space-x-1 text-xl font-semibold text-primary transition-colors duration-1000">
+                <div id="logo-container" class="flex items-center space-x-1 transition-colors duration-1000">
+                    <div id="logo-image-container" class="fill w-8 h-8">
+                        {{ readFile "assets/logo/logo-inline.svg" | safeHTML }}
+                    </div>
                     <span>sira</span>
                 </div>
-
             </a>
 
             <!-- Theme toggle -->
