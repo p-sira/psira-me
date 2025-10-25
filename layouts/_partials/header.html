@@ -2,13 +2,21 @@
     document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("theme-toggle").addEventListener("click", () => {
             const isDark = document.documentElement.classList.contains('dark');
+            const sunIcon = document.getElementById('sun');
+            const moonIcon = document.getElementById('moon');
 
             if (isDark) {
                 document.documentElement.classList.remove('dark');
                 localStorage.setItem("pref-theme", 'light');
+                // Trigger sun rising animation
+                sunIcon.classList.add('rising-sun');
+                setTimeout(() => sunIcon.classList.remove('rising-sun'), 1000);
             } else {
                 document.documentElement.classList.add('dark');
                 localStorage.setItem("pref-theme", 'dark');
+                // Trigger moon rising animation
+                moonIcon.classList.add('rising-moon');
+                setTimeout(() => moonIcon.classList.remove('rising-moon'), 1000);
             }
         });
 
@@ -39,26 +47,28 @@
             <!-- Theme toggle -->
             <button id="theme-toggle"
                 class="p-2 rounded-lg text-primary hover:bg-primary-secondary transition duration-500">
-                <!-- Moon -->
-                <svg id="moon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden dark:block" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                </svg>
+                <span class="icon-wrapper">
+                    <!-- Moon -->
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
 
-                <!-- Sun -->
-                <svg id="sun" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 block dark:hidden" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
+                    <!-- Sun -->
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke-linecap="round" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="2.5"></line>
+                        <line x1="12" y1="21.5" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.28" y2="5.28"></line>
+                        <line x1="18.72" y1="18.72" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="2.5" y2="12"></line>
+                        <line x1="21.5" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.28" y2="18.72"></line>
+                        <line x1="18.72" y1="5.28" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </span>
             </button>
         </div>
     </nav>

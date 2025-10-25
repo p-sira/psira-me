@@ -15,6 +15,9 @@
     }
 
     if (!saved) localStorage.setItem('pref-theme', 'auto');
+
+    // Add smooth transition class for better Classic toggle animation
+    root.classList.add('theme-transition');
 })();
 
 // Listen to OS theme changes
