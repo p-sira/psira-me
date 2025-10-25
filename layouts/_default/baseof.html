@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" class="h-full">
+
+<head>
+    {{- partial "head.html" . -}}
+</head>
+
+<body class="h-full bg-primary text-primary transition-colors duration-500">
+    
+    {{ partial "header.html" . }}
+
+    <main class="min-h-screen">
+        {{ block "content" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    <!-- Other JavaScripts -->
+    <script src="{{ "js/popup.js" | relURL }}"></script>
+</body>
+
+</html>

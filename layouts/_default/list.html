@@ -1,0 +1,29 @@
+{{ define "content" }}
+<section class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <header class="mb-8">
+      <h1 class="text-4xl font-bold text-primary-text mb-4">
+        <a class="hover:text-primary-accent transition-colors duration-200" href="{{ .Permalink | safeURL }}">
+          {{- if eq .Kind "term" -}}
+            {{- i18n .Data.Plural 1 | title -}}
+            {{- print ": " -}}
+          {{- end -}}
+          {{- i18n (lower .Title) | default .Title | title -}}
+        </a>
+      </h1>
+    </header>
+    <div class="prose prose-lg dark:prose-invert max-w-none mb-8">
+      {{ .Content }}
+    </div>
+    <ul class="space-y-4">
+      {{ range .Paginator.Pages }}
+      <li class="flex flex-col sm:flex-row sm:items-center justify-between py-4 border-b border-primary-border hover:bg-primary-surface transition-colors duration-200 rounded-lg px-4">
+        <div class="flex-1">
+          <a class="text-lg font-medium text-primary-text hover:text-primary-accent transition-colors duration-200" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
+        </div>
+        <span class="text-sm text-primary-text-tertiary mt-2 sm:mt-0 sm:ml-4">{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+      </li>
+      {{ end }}
+    </ul>
+    {{ partial "pagination.html" . }}
+</section>
+{{ end }}

@@ -1,0 +1,31 @@
+{{ define "content" }}
+<article class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <header class="mb-8">
+        <h1 class="text-4xl font-bold text-primary-text mb-4">{{ .Title }}</h1>
+        {{ if .Date }}
+        <div class="text-primary-text-secondary text-sm mb-6">
+            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}
+            </time>
+            {{ if .Params.author }}
+            <span> • {{ .Params.author }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+    </header>
+    
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+        {{ .Content }}
+    </div>
+    
+    {{ if .Params.tags }}
+    <footer class="mt-12 pt-8 border-t border-primary-border">
+        <div class="flex flex-wrap gap-2">
+            {{ range .Params.tags }}
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-accent/10 text-primary-accent">{{ . }}</span>
+            {{ end }}
+        </div>
+    </footer>
+    {{ end }}
+</article>
+{{ end }}

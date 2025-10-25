@@ -1,0 +1,40 @@
+@import url('catppuccin.css');
+
+:root {
+    /* Catppuccin Latte (Light Theme) */
+    --bg-primary: var(--ctp-latte-base);
+    --bg-secondary: var(--ctp-latte-mantle);
+    --bg-tertiary: var(--ctp-latte-crust);
+
+    --text-primary: var(--ctp-latte-text);
+    --text-secondary: var(--ctp-latte-subtext1);
+    --text-tertiary: var(--ctp-latte-subtext0);
+
+    --accent-primary: var(--ctp-latte-maroon);
+    --accent-secondary: var(--ctp-latte-lavender);
+    --accent-tertiary: var(--ctp-latte-blue);
+
+    --surface: var(--ctp-latte-surface0);
+    --border: var(--ctp-latte-overlay1);
+    --shadow: rgba(76, 79, 105, 0.1);
+}
+
+[data-theme="dark"],
+.dark {
+    /* Catppuccin Mocha (Dark Theme) */
+    --bg-primary: var(--ctp-mocha-base);
+    --bg-secondary: var(--ctp-mocha-mantle);
+    --bg-tertiary: var(--ctp-mocha-crust);
+
+    --text-primary: var(--ctp-mocha-text);
+    --text-secondary: var(--ctp-mocha-subtext1);
+    --text-tertiary: var(--ctp-mocha-subtext0);
+
+    --accent-primary: var(--ctp-mocha-red);
+    --accent-secondary: var(--ctp-mocha-mauve);
+    --accent-tertiary: var(--ctp-mocha-blue);
+
+    --surface: var(--ctp-mocha-surface0);
+    --border: var(--ctp-mocha-overlay1);
+    --shadow: rgba(0, 0, 0, 0.3);
+}
