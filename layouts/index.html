@@ -1,14 +1,7 @@
 {{ define "content" }}
 
-<section class="min-h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-  <div class="text-center mb-12">
-    <img src="{{ " images/profile.svg" | relURL }}" alt="Profile Picture"
-      class="w-48 h-48 rounded-full border-4 border-accent mx-auto mb-6 shadow-2xl transition-transform duration-300">
-    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-2">Sira Pornsiriprasert</h1>
-    <p class="text-xl text-primary-secondary">Computer Science Student</p>
-  </div>
-
-  <div class="relative w-96 h-96 mx-auto">
+<section class="min-h-screen flex items-center justify-center px-4">
+  <div class="relative">
     <button
       class="arc-button absolute w-20 h-12 bg-accent hover:bg-accent-secondary text-primary font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center text-sm"
       data-card="about" style="top: 5%; left: 50%; transform: translateX(-50%);">About</button>
@@ -18,6 +11,18 @@
     <button
       class="arc-button absolute w-20 h-12 bg-accent hover:bg-accent-secondary text-primary font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center text-sm"
       data-card="code" style="top: 50%; right: 5%; transform: translateY(-50%);">Code</button>
+  </div>
+  <div>
+    <div class="relative justify-center items-center h-48 w-48">
+        <img src="images/white-coat.jpg" alt="Profile Picture Light"
+          class="absolute h-full object-cover rounded-full border-4 border-accent shadow-2xl transition-opacity duration-500 ease-in-out opacity-100 dark:opacity-0 pointer-events-none">
+        <img src="images/suit.jpg" alt="Profile Picture Dark"
+          class="absolute h-full object-cover rounded-full border-4 border-accent shadow-2xl transition-opacity duration-500 ease-in-out opacity-0 dark:opacity-100 pointer-events-none">
+    </div>
+    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-2">Sira Pornsiriprasert</h1>
+    <p class="text-xl text-primary-secondary">Computer Science Student</p>
+  </div>
+  <div class="relative">
     <button
       class="arc-button absolute w-20 h-12 bg-accent hover:bg-accent-secondary text-primary font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center text-sm"
       data-card="experience" style="bottom: 20%; right: 10%;">Experience</button>
@@ -27,6 +32,16 @@
     <button
       class="arc-button absolute w-20 h-12 bg-accent hover:bg-accent-secondary text-primary font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center text-sm"
       data-card="contact" style="bottom: 20%; left: 10%;">Contact</button>
+  </div>
+</section>
+
+<section class="min-h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  <div class="text-center mb-12">
+
+  </div>
+
+  <div class="relative w-96 h-96 mx-auto">
+
   </div>
 
   <!-- Popup backdrop -->
