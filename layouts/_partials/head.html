@@ -4,6 +4,10 @@
 <meta name="description"
     content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
+{{ with resources.Get "logo/favicon.svg" }}
+<link rel="icon" type="image/svg+xml" href="{{ .RelPermalink }}">
+{{ end }}
+
 <script>
     let localStorageValue = localStorage.getItem("pref-theme");
     let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -43,7 +47,7 @@
 
 <!-- Tailwind CSS -->
 {{ with (templates.Defer (dict "key" "global")) }}
-    {{ partial "css.html" . }}
+{{ partial "css.html" . }}
 {{ end }}
 
 <!-- RSS -->

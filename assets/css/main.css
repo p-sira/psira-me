@@ -87,3 +87,5 @@
     .dark .bg-surface { background-color: var(--surface); }
     .dark .border-primary { border-color: var(--border); }
 }
+
+@import "./base.css";
