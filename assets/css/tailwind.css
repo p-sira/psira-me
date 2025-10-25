@@ -976,22 +976,19 @@
   .bg-primary {
     background-color: var(--bg-primary);
   }
-  .bg-primary-secondary {
+  .bg-secondary {
     background-color: var(--bg-secondary);
   }
-  .bg-secondary-bg {
-    background-color: var(--bg-secondary);
-  }
-  .bg-primary-tertiary {
+  .bg-tertiary {
     background-color: var(--bg-tertiary);
   }
   .text-primary {
     color: var(--text-primary);
   }
-  .text-primary-secondary {
+  .text-secondary {
     color: var(--text-secondary);
   }
-  .text-primary-tertiary {
+  .text-tertiary {
     color: var(--text-tertiary);
   }
   .text-accent {
@@ -1033,10 +1030,10 @@
   .dark .text-primary {
     color: var(--text-primary);
   }
-  .dark .text-primary-secondary {
+  .dark .text-secondary {
     color: var(--text-secondary);
   }
-  .dark .text-primary-tertiary {
+  .dark .text-tertiary {
     color: var(--text-tertiary);
   }
   .dark .text-accent {

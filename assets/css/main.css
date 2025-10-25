@@ -48,13 +48,12 @@
 /* Custom utility classes for the color scheme */
 @layer utilities {
     .bg-primary { background-color: var(--bg-primary); }
-    .bg-primary-secondary { background-color: var(--bg-secondary); }
-    .bg-secondary-bg { background-color: var(--bg-secondary); }
-    .bg-primary-tertiary { background-color: var(--bg-tertiary); }
+    .bg-secondary { background-color: var(--bg-secondary); }
+    .bg-tertiary { background-color: var(--bg-tertiary); }
     
     .text-primary { color: var(--text-primary); }
-    .text-primary-secondary { color: var(--text-secondary); }
-    .text-primary-tertiary { color: var(--text-tertiary); }
+    .text-secondary { color: var(--text-secondary); }
+    .text-tertiary { color: var(--text-tertiary); }
     
     .text-accent { color: var(--accent-primary); }
     .text-accent-secondary { color: var(--accent-secondary); }
@@ -74,8 +73,8 @@
     .dark .bg-primary-tertiary { background-color: var(--bg-tertiary); }
     
     .dark .text-primary { color: var(--text-primary); }
-    .dark .text-primary-secondary { color: var(--text-secondary); }
-    .dark .text-primary-tertiary { color: var(--text-tertiary); }
+    .dark .text-secondary { color: var(--text-secondary); }
+    .dark .text-tertiary { color: var(--text-tertiary); }
     
     .dark .text-accent { color: var(--accent-primary); }
     .dark .text-accent-secondary { color: var(--accent-secondary); }

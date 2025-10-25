@@ -52,8 +52,8 @@ Use the custom colors in your HTML with the utility classes:
 
 <!-- Text colors -->
 <div class="text-primary">Primary text</div>
-<div class="text-primary-secondary">Secondary text</div>
-<div class="text-primary-tertiary">Tertiary text</div>
+<div class="text-secondary">Secondary text</div>
+<div class="text-tertiary">Tertiary text</div>
 
 <!-- Accent colors -->
 <div class="text-accent">Accent text</div>
@@ -66,7 +66,7 @@ Use the custom colors in your HTML with the utility classes:
 ## Available Utility Classes
 
 - **Background**: `.bg-primary`, `.bg-primary-secondary`, `.bg-primary-tertiary`, `.bg-surface`
-- **Text**: `.text-primary`, `.text-primary-secondary`, `.text-primary-tertiary`
+- **Text**: `.text-primary`, `.text-secondary`, `.text-tertiary`
 - **Accent**: `.text-accent`, `.text-accent-secondary`, `.text-accent-tertiary`, `.bg-accent`, `.bg-accent-secondary`, `.bg-accent-tertiary`
 - **Border**: `.border-primary`
 
