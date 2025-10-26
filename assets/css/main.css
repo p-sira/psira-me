@@ -59,9 +59,9 @@
     .text-accent-secondary { color: var(--accent-secondary); }
     .text-accent-tertiary { color: var(--accent-tertiary); }
     
-    .bg-accent { background-color: var(--accent-primary); }
-    .bg-accent-secondary { background-color: var(--accent-secondary); }
-    .bg-accent-tertiary { background-color: var(--accent-tertiary); }
+    /* .bg-accent { background-color: var(--bg-accent); } */
+    /* .bg-accent-secondary { background-color: var(--accent-secondary); } */
+    /* .bg-accent-tertiary { background-color: var(--accent-tertiary); } */
     
     .bg-surface { background-color: var(--surface); }
     .border-primary { border-color: var(--border); }
@@ -80,9 +80,9 @@
     .dark .text-accent-secondary { color: var(--accent-secondary); }
     .dark .text-accent-tertiary { color: var(--accent-tertiary); }
     
-    .dark .bg-accent { background-color: var(--accent-primary); }
-    .dark .bg-accent-secondary { background-color: var(--accent-secondary); }
-    .dark .bg-accent-tertiary { background-color: var(--accent-tertiary); }
+    /* .dark .bg-accent { background-color: var(--bg-accent); } */
+    /* .dark .bg-accent-secondary { background-color: var(--accent-secondary); } */
+    /* .dark .bg-accent-tertiary { background-color: var(--accent-tertiary); } */
     
     .dark .bg-surface { background-color: var(--surface); }
     .dark .border-primary { border-color: var(--border); }

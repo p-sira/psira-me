@@ -981,15 +981,6 @@
   .text-accent-tertiary {
     color: var(--accent-tertiary);
   }
-  .bg-accent {
-    background-color: var(--accent-primary);
-  }
-  .bg-accent-secondary {
-    background-color: var(--accent-secondary);
-  }
-  .bg-accent-tertiary {
-    background-color: var(--accent-tertiary);
-  }
   .bg-surface {
     background-color: var(--surface);
   }
@@ -1025,15 +1016,6 @@
   }
   .dark .text-accent-tertiary {
     color: var(--accent-tertiary);
-  }
-  .dark .bg-accent {
-    background-color: var(--accent-primary);
-  }
-  .dark .bg-accent-secondary {
-    background-color: var(--accent-secondary);
-  }
-  .dark .bg-accent-tertiary {
-    background-color: var(--accent-tertiary);
   }
   .dark .bg-surface {
     background-color: var(--surface);
