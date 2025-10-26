@@ -2,10 +2,22 @@
 
 /* Arc Buttons */
 .arc-button {
-    @apply flex px-4 py-2 mb-8 rounded-md cursor-pointer relative overflow-hidden;
+    @apply flex px-3 py-2 sm:px-4 sm:py-2 mb-4 sm:mb-6 lg:mb-8 rounded-md cursor-pointer relative overflow-hidden;
     transform: scale(1);
     transition: transform 100ms, background-color 1s;
     background-color: var(--surface);
+    min-height: 44px; /* Minimum touch target size for mobile */
+    min-width: 120px; /* Ensure buttons are wide enough for touch */
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500;
+}
+
+@media (min-width: 640px) {
+    .arc-button {
+        font-size: 1rem; /* text-base */
+    }
 }
 
 .arc-button::before {
@@ -15,7 +27,13 @@
 }
 
 .arc-button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05); /* Reduced scale for better mobile experience */
+}
+
+@media (min-width: 640px) {
+    .arc-button:hover {
+        transform: scale(1.1);
+    }
 }
 
 .arc-button:hover::before {
@@ -24,4 +42,9 @@
 
 .dark .arc-button:hover::before {
     opacity: 0.8;
+}
+
+/* Active state for mobile touch */
+.arc-button:active {
+    transform: scale(0.95);
 }

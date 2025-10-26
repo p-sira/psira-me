@@ -87,3 +87,79 @@
 
 @import "./base.css";
 @import "./font.css";
+@import "./mobile.css";
+
+/* Responsive utilities */
+@layer utilities {
+    /* Mobile-first responsive spacing */
+    .mobile-padding {
+        @apply px-4 sm:px-6 lg:px-8;
+    }
+    
+    .mobile-margin {
+        @apply mx-4 sm:mx-6 lg:mx-8;
+    }
+    
+    /* Touch-friendly sizing */
+    .touch-target {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Responsive text sizing */
+    .responsive-text-xs {
+        @apply text-xs sm:text-sm;
+    }
+    
+    .responsive-text-sm {
+        @apply text-sm sm:text-base;
+    }
+    
+    .responsive-text-base {
+        @apply text-base sm:text-lg;
+    }
+    
+    .responsive-text-lg {
+        @apply text-lg sm:text-xl;
+    }
+    
+    .responsive-text-xl {
+        @apply text-xl sm:text-2xl;
+    }
+    
+    .responsive-text-2xl {
+        @apply text-2xl sm:text-3xl lg:text-4xl;
+    }
+    
+    .responsive-text-3xl {
+        @apply text-3xl sm:text-4xl lg:text-5xl;
+    }
+    
+    /* Responsive container */
+    .responsive-container {
+        @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+    
+    /* Mobile-optimized flex layouts */
+    .mobile-stack {
+        @apply flex flex-col lg:flex-row;
+    }
+    
+    .mobile-center {
+        @apply flex flex-col items-center lg:items-start;
+    }
+    
+    /* Safe area handling for mobile devices */
+    .safe-area-padding {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+    
+    .safe-area-padding-top {
+        padding-top: env(safe-area-inset-top);
+    }
+    
+    .safe-area-padding-bottom {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
