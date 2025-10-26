@@ -57,11 +57,16 @@
 /* Popup Card */
 @layer components {
     .popup-card {
-        @apply absolute bg-[var(--surface)] rounded-2xl shadow-2xl w-[1000px] max-w-[90vw] h-[800px] max-h-[90vh] overflow-hidden opacity-0 invisible transition-all duration-300 ease-in-out pointer-events-none relative z-50 p-4 rounded-2xl border border-[var(--border)] backdrop-blur-lg shadow-xl;
+        @apply fixed bg-[var(--surface)] rounded-2xl shadow-2xl w-[1000px] max-w-[90vw] h-[800px] max-h-[90vh] overflow-hidden opacity-0 invisible transition-all duration-300 ease-in-out pointer-events-none z-50 border border-[var(--border)] backdrop-blur-lg;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05);
     }
 
     .popup-card.visible {
         @apply opacity-100 visible pointer-events-auto;
+        transform: translate(-50%, -50%) scale(1);
     }
 
     .popup-card .close-btn {
@@ -87,20 +92,37 @@
 
     .tab-panel {
         display: none;
-        animation: fadeIn 0.3s ease-in-out;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
     }
 
     .tab-panel.active {
         display: block;
+        opacity: 1;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
         .popup-card {
-            @apply m-2 p-3 rounded-xl;
             width: 95vw;
-            height: auto;
+            height: 90vh;
             max-height: calc(100vh - 2rem);
+            transform: translate(-50%, -50%) scale(0.95);
+        }
+
+        .popup-card.visible {
+            transform: translate(-50%, -50%) scale(1);
         }
 
         #research-card .w-48 {

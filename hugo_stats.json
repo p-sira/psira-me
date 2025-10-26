@@ -266,11 +266,13 @@
       "w-6",
       "w-full",
       "w-screen",
+      "z-40",
       "z-50"
     ],
     "ids": [
       "about-card",
       "about-this-site",
+      "about-title",
       "achievements-card",
       "base-template-baseofhtml",
       "code-card",
