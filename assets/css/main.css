@@ -19,7 +19,7 @@
     --accent-tertiary: var(--ctp-latte-blue);
 
     --surface: var(--ctp-latte-surface0);
-    --border: var(--ctp-latte-overlay1);
+    --border-primary: var(--ctp-latte-overlay2);
     --shadow: rgba(76, 79, 105, 0.1);
 }
 
@@ -39,7 +39,7 @@
     --accent-tertiary: var(--ctp-mocha-blue);
 
     --surface: var(--ctp-mocha-surface0);
-    --border: var(--ctp-mocha-overlay1);
+    --border-primary: var(--ctp-mocha-overlay2);
     --shadow: rgba(0, 0, 0, 0.3);
 }
 
@@ -59,18 +59,13 @@
     .text-accent-secondary { color: var(--accent-secondary); }
     .text-accent-tertiary { color: var(--accent-tertiary); }
     
-    /* .bg-accent { background-color: var(--bg-accent); } */
-    /* .bg-accent-secondary { background-color: var(--accent-secondary); } */
-    /* .bg-accent-tertiary { background-color: var(--accent-tertiary); } */
-    
     .bg-surface { background-color: var(--surface); }
-    .border-primary { border-color: var(--border); }
+    .border-primary { border-color: var(--border-primary); }
     
     /* Dark mode variants */
     .dark .bg-primary { background-color: var(--bg-primary); }
-    .dark .bg-primary-secondary { background-color: var(--bg-secondary); }
-    .dark .bg-secondary-bg { background-color: var(--bg-secondary); }
-    .dark .bg-primary-tertiary { background-color: var(--bg-tertiary); }
+    .dark .bg-secondary { background-color: var(--bg-secondary); }
+    .dark .bg-tertiary { background-color: var(--bg-tertiary); }
     
     .dark .text-primary { color: var(--text-primary); }
     .dark .text-secondary { color: var(--text-secondary); }
@@ -80,12 +75,8 @@
     .dark .text-accent-secondary { color: var(--accent-secondary); }
     .dark .text-accent-tertiary { color: var(--accent-tertiary); }
     
-    /* .dark .bg-accent { background-color: var(--bg-accent); } */
-    /* .dark .bg-accent-secondary { background-color: var(--accent-secondary); } */
-    /* .dark .bg-accent-tertiary { background-color: var(--accent-tertiary); } */
-    
     .dark .bg-surface { background-color: var(--surface); }
-    .dark .border-primary { border-color: var(--border); }
+    .dark .border-primary { border-color: var(--border-primary); }
 }
 
 @import "./base.css";
