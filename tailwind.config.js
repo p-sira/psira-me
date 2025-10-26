@@ -25,11 +25,6 @@ module.exports = {
         'primary-border': 'var(--border)',
         'primary-shadow': 'var(--shadow)',
       },
-      fontFamily: {
-        sans: ['Roboto', 'ui-sans-serif', 'system-ui'],
-        serif: ['Lora', 'ui-serif', 'Georgia'],
-        display: ['Alata', 'sans-serif'],
-      },
     }
   },
   plugins: []
