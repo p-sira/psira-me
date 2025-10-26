@@ -1,3 +1,6 @@
+/* Base Classes */
+
+/* Arc Buttons */
 .arc-button {
     @apply flex px-4 py-2 mb-8 rounded-md cursor-pointer relative overflow-hidden;
     transform: scale(1);
