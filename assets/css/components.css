@@ -1,0 +1,122 @@
+@tailwind components;
+
+/* Arc Buttons */
+.arc-button {
+    @apply flex px-3 py-2 sm:px-4 sm:py-2 mb-4 sm:mb-6 lg:mb-8 rounded-md cursor-pointer relative overflow-hidden;
+    transform: scale(1);
+    transition: transform 100ms, background-color 1s;
+    background-color: var(--surface);
+    min-height: 44px;
+    /* Minimum touch target size for mobile */
+    min-width: 120px;
+    /* Ensure buttons are wide enough for touch */
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    /* text-sm */
+    font-weight: 500;
+}
+
+@media (min-width: 640px) {
+    .arc-button {
+        font-size: 1rem;
+        /* text-base */
+    }
+}
+
+.arc-button::before {
+    @apply absolute inset-0 opacity-0 -z-10 transition-opacity duration-[800ms];
+    background: linear-gradient(135deg, var(--accent-tertiary-inverted) 0%, var(--accent-secondary-inverted) 100%);
+    content: '';
+}
+
+.arc-button:hover {
+    transform: scale(1.05);
+    /* Reduced scale for better mobile experience */
+}
+
+@media (min-width: 640px) {
+    .arc-button:hover {
+        transform: scale(1.1);
+    }
+}
+
+.arc-button:hover::before {
+    opacity: 1;
+}
+
+.dark .arc-button:hover::before {
+    opacity: 0.8;
+}
+
+/* Active state for mobile touch */
+.arc-button:active {
+    transform: scale(0.95);
+}
+
+/* Popup Card */
+@layer components {
+    .popup-card {
+        @apply absolute bg-[var(--surface)] rounded-2xl shadow-2xl w-[1000px] max-w-[90vw] h-[800px] max-h-[90vh] overflow-hidden opacity-0 invisible transition-all duration-300 ease-in-out pointer-events-none relative z-50 p-4 rounded-2xl border border-[var(--border)] backdrop-blur-lg shadow-xl;
+    }
+
+    .popup-card.visible {
+        @apply opacity-100 visible pointer-events-auto;
+    }
+
+    .popup-card .close-btn {
+        @apply cursor-pointer select-none transition-transform duration-200 ease-in-out;
+    }
+
+    .popup-card .close-btn:hover {
+        @apply scale-110;
+    }
+
+    /* Tab Styles */
+    .tab-button {
+        @apply relative transition-all duration-200 ease-in-out;
+    }
+
+    .tab-button.active {
+        @apply bg-[var(--bg-tertiary)] border-l-4 border-[var(--accent-primary)];
+    }
+
+    .tab-button:hover:not(.active) {
+        @apply bg-[var(--bg-tertiary)] opacity-80;
+    }
+
+    .tab-panel {
+        display: none;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .tab-panel.active {
+        display: block;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .popup-card {
+            @apply m-2 p-3 rounded-xl;
+            width: 95vw;
+            height: auto;
+            max-height: calc(100vh - 2rem);
+        }
+
+        #research-card .w-48 {
+            width: 8rem;
+        }
+
+        #research-card .w-48 nav {
+            @apply p-2;
+        }
+
+        #research-card .w-48 .tab-button {
+            @apply p-2 mb-1;
+        }
+
+        #research-card .w-48 .tab-button span {
+            @apply text-xs;
+        }
+    }
+}

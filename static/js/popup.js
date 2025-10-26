@@ -5,32 +5,38 @@ const backdrop = document.getElementById('popup-backdrop');
 
 function closeAllPopups() {
     popupCards.forEach(card => {
-        card.classList.remove('opacity-100', 'visible', 'scale-100');
-        card.classList.add('opacity-0', 'invisible', 'scale-75');
+        card.classList.remove('visible');
     });
     if (backdrop) {
-        backdrop.classList.remove('opacity-100', 'visible');
+        backdrop.classList.remove('opacity-35', 'visible');
         backdrop.classList.add('opacity-0', 'invisible');
+    }
+    // Prevent body scroll when popup is open
+    document.body.style.overflow = 'auto';
+}
+
+function openPopup(cardId) {
+    const targetCard = document.getElementById(cardId + '-card');
+    
+    // Close all other popup cards first
+    closeAllPopups();
+    
+    // Show backdrop and target card
+    if (backdrop) {
+        backdrop.classList.remove('opacity-0', 'invisible');
+        backdrop.classList.add('opacity-35', 'visible');
+    }
+    if (targetCard) {
+        targetCard.classList.add('visible');
+        // Prevent body scroll when popup is open
+        document.body.style.overflow = 'hidden';
     }
 }
 
 arcButtons.forEach(button => {
     button.addEventListener('click', () => {
         const cardId = button.getAttribute('data-card');
-        const targetCard = document.getElementById(cardId + '-card');
-
-        // Close all other popup cards
-        closeAllPopups();
-
-        // Show backdrop and target card
-        if (backdrop) {
-            backdrop.classList.remove('opacity-0', 'invisible');
-            backdrop.classList.add('opacity-100', 'visible');
-        }
-        if (targetCard) {
-            targetCard.classList.remove('opacity-0', 'invisible', 'scale-75');
-            targetCard.classList.add('opacity-100', 'visible', 'scale-100');
-        }
+        openPopup(cardId);
     });
 });
 
@@ -51,7 +57,7 @@ if (backdrop) {
     });
 }
 
-// Tab functionality for projects popup
+// Tab functionality for research popup
 const tabButtons = document.querySelectorAll('.tab-button');
 const tabPanels = document.querySelectorAll('.tab-panel');
 
@@ -69,5 +75,19 @@ tabButtons.forEach(button => {
         if (targetPanel) {
             targetPanel.classList.add('active');
         }
+    });
+});
+
+// Keyboard support for closing popups
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closeAllPopups();
+    }
+});
+
+// Prevent popup from closing when clicking inside the popup content
+popupCards.forEach(card => {
+    card.addEventListener('click', (event) => {
+        event.stopPropagation();
     });
 });
