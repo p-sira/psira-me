@@ -38,35 +38,12 @@
 <section>
   <!-- Popup Backdrop -->
   <div id="popup-backdrop"
-    class="fixed inset-0 bg-black opacity-0 invisible transition-all duration-300 ease-in-out z-40"
-    aria-hidden="true"></div>
+    class="fixed inset-0 bg-black opacity-0 invisible transition-all duration-300 ease-in-out z-40" aria-hidden="true">
+  </div>
 
   <!-- Popup Cards -->
   <div class="fixed inset-0 z-50 w-screen h-screen pointer-events-none" aria-live="polite">
-
-    <!-- About Card -->
-    <div id="about-card" class="popup-card" role="dialog" aria-labelledby="about-title" aria-hidden="true">
-      <div class="p-6 sm:p-8 lg:p-12">
-        <div class="flex justify-between items-start mb-6">
-          <h2 id="about-title" class="text-3xl sm:text-4xl font-bold text-primary">About Me</h2>
-          <button
-            class="close-btn text-secondary hover:text-primary transition-colors duration-200 text-2xl font-bold"
-            aria-label="Close About Me dialog">&times;</button>
-        </div>
-        <div class="prose prose-lg max-w-none text-secondary">
-          <p class="text-lg leading-relaxed mb-4">
-            I'm Sira Pornsiriprasert, an M.D.-M.Eng. student passionate about bridging the gap between medicine and
-            technology.
-            My journey combines clinical medicine with engineering innovation to create solutions that improve patient
-            care.
-          </p>
-          <p class="text-lg leading-relaxed">
-            I believe in the power of interdisciplinary collaboration and am constantly exploring new ways to apply
-            technology to solve complex medical challenges.
-          </p>
-        </div>
-      </div>
-    </div>
+    {{ partial "popup_cards/about_card" . }}
 
     <!-- Research Card with Tabs -->
     <div id="research-card" class="popup-card">
@@ -160,30 +137,7 @@
       </div>
     </div>
 
-    <!-- Achievements Card -->
-    <div id="achievements-card" class="popup-card">
-      <div class="p-6 sm:p-8 lg:p-12">
-        <div class="flex justify-between items-start mb-6">
-          <h2 class="text-3xl sm:text-4xl font-bold text-primary">Achievements</h2>
-          <button
-            class="close-btn text-secondary hover:text-primary transition-colors duration-200 text-2xl font-bold">&times;</button>
-        </div>
-        <div class="space-y-6">
-          <div class="border-l-4 border-accent-primary pl-4">
-            <h3 class="text-xl font-semibold text-primary mb-2">Dean's List</h3>
-            <p class="text-secondary">Maintained academic excellence throughout the M.D.-M.Eng. program</p>
-          </div>
-          <div class="border-l-4 border-accent-secondary pl-4">
-            <h3 class="text-xl font-semibold text-primary mb-2">Research Excellence Award</h3>
-            <p class="text-secondary">Recognized for outstanding contributions to medical engineering research</p>
-          </div>
-          <div class="border-l-4 border-accent-tertiary pl-4">
-            <h3 class="text-xl font-semibold text-primary mb-2">Innovation Challenge Winner</h3>
-            <p class="text-secondary">First place in the university's healthcare innovation competition</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    {{ partial "popup_cards/achievements_card" . }}
 
     <!-- Code Card -->
     <div id="code-card" class="popup-card">
@@ -215,65 +169,7 @@
       </div>
     </div>
 
-    <!-- Experience Card -->
-    <div id="experience-card" class="popup-card">
-      <div class="p-6 sm:p-8 lg:p-12">
-        <div class="flex justify-between items-start mb-6">
-          <h2 class="text-3xl sm:text-4xl font-bold text-primary">Experience</h2>
-          <button
-            class="close-btn text-secondary hover:text-primary transition-colors duration-200 text-2xl font-bold">&times;</button>
-        </div>
-        <div class="space-y-6">
-          <div class="border-l-4 border-accent-primary pl-4">
-            <h3 class="text-xl font-semibold text-primary mb-2">Research Assistant</h3>
-            <p class="text-secondary mb-2">Medical Engineering Lab, 2022-Present</p>
-            <p class="text-tertiary">Leading research projects on AI applications in medical diagnosis and treatment
-              planning.</p>
-          </div>
-          <div class="border-l-4 border-accent-secondary pl-4">
-            <h3 class="text-xl font-semibold text-primary mb-2">Clinical Rotation</h3>
-            <p class="text-secondary mb-2">University Hospital, 2021-2023</p>
-            <p class="text-tertiary">Gained hands-on clinical experience while developing technology solutions for
-              patient care.</p>
-          </div>
-          <div class="border-l-4 border-accent-tertiary pl-4">
-            <h3 class="text-xl font-semibold text-primary mb-2">Teaching Assistant</h3>
-            <p class="text-secondary mb-2">Biomedical Engineering Department, 2021-Present</p>
-            <p class="text-tertiary">Mentoring undergraduate students in medical device design and clinical
-              applications.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Contact Card -->
-    <div id="contact-card" class="popup-card">
-      <div class="p-6 sm:p-8 lg:p-12">
-        <div class="flex justify-between items-start mb-6">
-          <h2 class="text-3xl sm:text-4xl font-bold text-primary">Contact</h2>
-          <button
-            class="close-btn text-secondary hover:text-primary transition-colors duration-200 text-2xl font-bold">&times;</button>
-        </div>
-        <div class="space-y-6">
-          <div class="border-l-4 border-accent-primary pl-4">
-            <h3 class="text-xl font-semibold text-primary mb-2">Email</h3>
-            <p class="text-secondary">sira.pornsiriprasert@university.edu</p>
-          </div>
-          <div class="border-l-4 border-accent-secondary pl-4">
-            <h3 class="text-xl font-semibold text-primary mb-2">LinkedIn</h3>
-            <p class="text-secondary">linkedin.com/in/sira-pornsiriprasert</p>
-          </div>
-          <div class="border-l-4 border-accent-tertiary pl-4">
-            <h3 class="text-xl font-semibold text-primary mb-2">GitHub</h3>
-            <p class="text-secondary">github.com/sira-pornsiriprasert</p>
-          </div>
-          <div class="border-l-4 border-accent-primary pl-4">
-            <h3 class="text-xl font-semibold text-primary mb-2">Location</h3>
-            <p class="text-secondary">Boston, MA</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    {{ partial "popup_cards/experience_card" .}}
 
   </div>
 </section>

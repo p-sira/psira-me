@@ -1,0 +1,14 @@
+{{ define "popup_card" }}
+<div id="{{ .ID }}" class="popup-card" role="dialog" aria-labelledby="{{ .ID }}-title" aria-hidden="true">
+  <div class="p-6 sm:p-8 lg:p-12">
+    <div class="flex justify-between items-start mb-6">
+      <h2 id="{{ .ID }}-title" class="text-3xl sm:text-4xl font-bold text-primary">{{ .Title }}</h2>
+      <button class="close-btn text-secondary hover:text-primary transition-colors duration-200 text-2xl font-bold"
+        aria-label="Close {{ .Title }} dialog">&times;</button>
+    </div>
+    <div class="space-y-6">
+      {{ template "popup_content" . }}
+    </div>
+  </div>
+</div>
+{{ end }}
