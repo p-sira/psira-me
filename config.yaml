@@ -1,13 +1,13 @@
 baseURL: "https://psira.me/"
 languageCode: "en-us"
 title: "Psira"
-description: "Personal website of Sira Pornsiriprasert"
+description: "Personal website of Sira Pornsiriprasert (สิร พรศิริประเสริฐ)"
 
 params:
   dateFormat: "January 2, 2006"
   author: "Sira Pornsiriprasert"
   sitename: "Sira Pornsiriprasert - Psira"
-  description: "Sira Pornsiriprasert is studying Doctor of Medicine at Ramathibodi Hospital and Master of Biomedical Engineering at Mahidol University, Thailand."
+  description: "Sira Pornsiriprasert (สิร พรศิริประเสริฐ) is studying Doctor of Medicine at Ramathibodi Hospital and Master of Biomedical Engineering at Mahidol University, Thailand."
 
 build:
   buildStats:

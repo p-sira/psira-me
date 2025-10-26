@@ -1,6 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
 
 <title>{{ .Title }} - {{ .Site.Title }}</title>
 <meta name="description"
@@ -11,6 +12,7 @@
 <link rel="icon" type="image/svg+xml" href="{{ .RelPermalink }}">
 {{ end }}
 
+<!-- Social Preview -->
 <meta property="og:url" content="https://psira.me/">
 <meta property="og:sitename" content="{{ .Site.Params.sitename }}">
 <meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
@@ -21,6 +23,7 @@
 <meta name="twitter:title" content="{{ .Site.Params.sitename }}">
 <meta property="og:image" content="/images/white-coat-social-preview.jpg">
 
+<!-- Light/Dark Mode -->
 <script>
     let localStorageValue = localStorage.getItem("pref-theme");
     let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -40,11 +43,13 @@
     }
 </script>
 
+<!-- CSS -->
 {{ $colors := resources.Get "css/colors.css" }}
 {{ $themeToggle := resources.Get "css/theme-toggle.css" }}
 {{ $css := slice $colors $themeToggle | resources.Concat "css/custom.css" }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style"
