@@ -385,12 +385,12 @@
     --tw-translate-y: calc(var(--spacing) * -12);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
-  .-translate-y-24 {
-    --tw-translate-y: calc(var(--spacing) * -24);
+  .-translate-y-20 {
+    --tw-translate-y: calc(var(--spacing) * -20);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
-  .translate-y-18 {
-    --tw-translate-y: calc(var(--spacing) * 18);
+  .translate-y-12 {
+    --tw-translate-y: calc(var(--spacing) * 12);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .scale-75 {
@@ -1025,16 +1025,39 @@
   }
 }
 .arc-button {
+  position: relative;
   margin-bottom: calc(var(--spacing) * 8);
   display: flex;
+  cursor: pointer;
+  overflow: hidden;
   border-radius: var(--radius-md);
   padding-inline: calc(var(--spacing) * 4);
   padding-block: calc(var(--spacing) * 2);
-  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+  transform: scale(1);
+  transition: transform 100ms, background-color 1s;
+  background-color: var(--surface);
+}
+.arc-button::before {
+  position: absolute;
+  inset: calc(var(--spacing) * 0);
+  z-index: calc(10 * -1);
+  opacity: 0%;
+  transition-property: opacity;
   transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
   transition-duration: var(--tw-duration, var(--default-transition-duration));
-  --tw-duration: 1000ms;
-  transition-duration: 1000ms;
+  --tw-duration: 800ms;
+  transition-duration: 800ms;
+  background: linear-gradient(135deg, var(--accent-tertiary-inverted) 0%, var(--accent-secondary-inverted) 100%);
+  content: '';
+}
+.arc-button:hover {
+  transform: scale(1.1);
+}
+.arc-button:hover::before {
+  opacity: 1;
+}
+.dark .arc-button:hover::before {
+  opacity: 0.8;
 }
 @property --tw-translate-x {
   syntax: "*";

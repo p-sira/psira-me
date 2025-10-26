@@ -7,7 +7,7 @@ params:
   dateFormat: "January 2, 2006"
   author: "Sira Pornsiriprasert"
   sitename: "Sira Pornsiriprasert - Psira"
-  description: "Sira Pornsiriprasert (สิร พรศิริประเสริฐ) is studying Doctor of Medicine at Ramathibodi Hospital and Master of Biomedical Engineering at Mahidol University, Thailand."
+  description: "Sira Pornsiriprasert (สิร พรศิริประเสริฐ) is a medical student at Ramathibodi Hospital and a Master of Biomedical Engineering candidate at Mahidol University, Thailand."
 
 build:
   buildStats:

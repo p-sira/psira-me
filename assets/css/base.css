@@ -1,3 +1,24 @@
 .arc-button {
-    @apply flex px-4 py-2 mb-8 rounded-md transition-colors duration-1000
+    @apply flex px-4 py-2 mb-8 rounded-md cursor-pointer relative overflow-hidden;
+    transform: scale(1);
+    transition: transform 100ms, background-color 1s;
+    background-color: var(--surface);
+}
+
+.arc-button::before {
+    @apply absolute inset-0 opacity-0 -z-10 transition-opacity duration-[800ms];
+    background: linear-gradient(135deg, var(--accent-tertiary-inverted) 0%, var(--accent-secondary-inverted) 100%);
+    content: '';
+}
+
+.arc-button:hover {
+    transform: scale(1.1);
+}
+
+.arc-button:hover::before {
+    opacity: 1;
+}
+
+.dark .arc-button:hover::before {
+    opacity: 0.8;
 }
