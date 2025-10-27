@@ -1,0 +1,21 @@
+{{ template "popup_card" dict "ID" "code-card" "Title" "Code & Projects" }}
+
+{{ define "popup_content" }}
+<div class="border-l-4 border-accent-primary pl-4">
+    <h3 class="text-xl font-semibold text-primary mb-2">Medical AI Platform</h3>
+    <p class="text-secondary mb-2">Python, TensorFlow, React</p>
+    <p class="text-tertiary">A comprehensive platform for developing and deploying AI models in clinical
+        settings.</p>
+</div>
+<div class="border-l-4 border-accent-secondary pl-4">
+    <h3 class="text-xl font-semibold text-primary mb-2">Patient Data Visualization Tool</h3>
+    <p class="text-secondary mb-2">JavaScript, D3.js, Node.js</p>
+    <p class="text-tertiary">Interactive dashboard for visualizing patient data and treatment outcomes.</p>
+</div>
+<div class="border-l-4 border-accent-tertiary pl-4">
+    <h3 class="text-xl font-semibold text-primary mb-2">Clinical Decision Support System</h3>
+    <p class="text-secondary mb-2">Python, FastAPI, PostgreSQL</p>
+    <p class="text-tertiary">Real-time system providing evidence-based recommendations for clinical decisions.
+    </p>
+</div>
+{{ end }}
