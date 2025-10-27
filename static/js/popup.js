@@ -1,5 +1,5 @@
 // Popup card functionality (for home page)
-const arcButtons = document.querySelectorAll('.arc-button');
+const popupButtons = document.querySelectorAll('.popup-button');
 const popupCards = document.querySelectorAll('.popup-card');
 const backdrop = document.getElementById('popup-backdrop');
 
@@ -49,7 +49,7 @@ function initializePopups() {
         }
     }
 
-    arcButtons.forEach(button => {
+    popupButtons.forEach(button => {
         button.addEventListener('click', () => {
             const cardId = button.getAttribute('data-card');
             openPopup(cardId);
