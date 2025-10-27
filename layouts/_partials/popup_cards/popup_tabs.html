@@ -1,0 +1,41 @@
+{{ define "popup_tabs" }}
+<div id="{{ .ID }}" class="popup-card popup-tabs" role="dialog" aria-labelledby="{{ .ID }}-title" aria-hidden="true">
+  <div class="flex h-full">
+    <!-- Tab Navigation -->
+    <div class="w-48 bg-secondary flex flex-col">
+      <div class="p-6 border-b border-border">
+        <h2 id="{{ .ID }}-title" class="text-2xl font-bold text-primary mb-2">{{ .Title }}</h2>
+        <button class="close-btn text-secondary hover:text-primary transition-colors duration-200 text-xl font-bold"
+          aria-label="Close {{ .Title }} dialog">&times;</button>
+      </div>
+      <nav class="flex-1 p-4">
+        {{ range $index, $tab := .Tabs }}
+        <button
+          class="tab-button w-full text-left p-3 rounded-lg mb-2 hover:bg-tertiary transition-colors duration-200 {{ if eq $index 0 }}active{{ end }}"
+          data-tab="{{ $tab.ID }}">
+          <span class="text-sm font-medium text-primary">{{ $tab.Label }}</span>
+        </button>
+        {{ end }}
+      </nav>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="flex-1 overflow-y-auto">
+      {{ range $index, $tab := .Tabs }}
+      <div id="{{ $tab.ID }}-tab" class="tab-panel p-6 sm:p-8 lg:p-12 {{ if eq $index 0 }}active{{ end }}">
+        <h3 class="text-2xl font-bold text-primary mb-6">{{ $tab.Label }}</h3>
+        <div class="space-y-6">
+          {{ range $item := $tab.Items }}
+          <div class="border-l-4 border-{{ $item.BorderColor }} pl-4">
+            <h4 class="text-lg font-semibold text-primary mb-2">{{ $item.Title }}</h4>
+            <p class="text-secondary mb-2">{{ $item.Subtitle }}</p>
+            <p class="text-tertiary">{{ $item.Description }}</p>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

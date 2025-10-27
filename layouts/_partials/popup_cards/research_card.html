@@ -1,0 +1,60 @@
+{{ template "research_card" dict 
+    "ID" "research-card" 
+    "Title" "Research" 
+    "Tabs" (slice 
+        (dict 
+            "ID" "publications" 
+            "Label" "Publications" 
+            "Items" (slice 
+                (dict 
+                    "Title" "Medical AI Applications in Clinical Practice" 
+                    "Subtitle" "Journal of Medical Engineering, 2024" 
+                    "Description" "A comprehensive study on implementing AI solutions in clinical workflows to improve diagnostic accuracy and patient outcomes." 
+                    "BorderColor" "accent-primary"
+                ) 
+                (dict 
+                    "Title" "Interdisciplinary Approaches to Healthcare Innovation" 
+                    "Subtitle" "Nature Medicine, 2023" 
+                    "Description" "Exploring the intersection of medical practice and engineering principles to develop novel healthcare technologies." 
+                    "BorderColor" "accent-secondary"
+                )
+            )
+        ) 
+        (dict 
+            "ID" "conferences" 
+            "Label" "Conferences" 
+            "Items" (slice 
+                (dict 
+                    "Title" "International Conference on Medical Engineering" 
+                    "Subtitle" "Boston, MA - March 2024" 
+                    "Description" "Presented research on AI-driven diagnostic tools and their implementation in clinical settings." 
+                    "BorderColor" "accent-tertiary"
+                ) 
+                (dict 
+                    "Title" "Healthcare Innovation Summit" 
+                    "Subtitle" "San Francisco, CA - September 2023" 
+                    "Description" "Keynote speaker on the future of interdisciplinary medical education and practice." 
+                    "BorderColor" "accent-primary"
+                )
+            )
+        ) 
+        (dict 
+            "ID" "services" 
+            "Label" "Academic Services" 
+            "Items" (slice 
+                (dict 
+                    "Title" "Peer Reviewer" 
+                    "Subtitle" "Journal of Medical Engineering, 2023-Present" 
+                    "Description" "Reviewing manuscripts on medical device innovation and clinical engineering applications." 
+                    "BorderColor" "accent-secondary"
+                ) 
+                (dict 
+                    "Title" "Student Advisory Board Member" 
+                    "Subtitle" "M.D.-M.Eng. Program, 2022-Present" 
+                    "Description" "Advising on curriculum development and student support initiatives for the dual-degree program." 
+                    "BorderColor" "accent-tertiary"
+                )
+            )
+        )
+    )
+}}
