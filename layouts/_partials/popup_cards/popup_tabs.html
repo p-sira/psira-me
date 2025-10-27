@@ -3,11 +3,7 @@
   <div class="flex h-full">
     <!-- Tab Navigation -->
     <div class="w-48 bg-secondary flex flex-col">
-      <div class="p-6 border-b border-border">
-        <h2 id="{{ .ID }}-title" class="text-2xl font-bold text-primary mb-2">{{ .Title }}</h2>
-        <button class="close-btn text-secondary hover:text-primary transition-colors duration-200 text-xl font-bold"
-          aria-label="Close {{ .Title }} dialog">&times;</button>
-      </div>
+      <h2 id="{{ .ID }}-title" class="text-2xl font-bold text-primary mb-2 p-6 border-b border-border">{{ .Title }}</h2>
       <nav class="flex-1 p-4">
         {{ range $index, $tab := .Tabs }}
         <button
@@ -23,7 +19,10 @@
     <div class="flex-1 overflow-y-auto">
       {{ range $index, $tab := .Tabs }}
       <div id="{{ $tab.ID }}-tab" class="tab-panel p-6 sm:p-8 lg:p-12 {{ if eq $index 0 }}active{{ end }}">
-        <h3 class="text-2xl font-bold text-primary mb-6">{{ $tab.Label }}</h3>
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-2xl font-bold text-primary">{{ $tab.Label }}</h3>
+          {{ template "close_btn" dict "Title" "{{ .Title }}" }}
+        </div>
         <div class="space-y-6">
           {{ range $item := $tab.Items }}
           <div class="border-l-4 border-{{ $item.BorderColor }} pl-4">
