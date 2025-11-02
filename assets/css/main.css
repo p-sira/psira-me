@@ -47,6 +47,8 @@
 
     --surface: var(--ctp-mocha-surface0);
     --border: var(--ctp-mocha-overlay1);
+
+    --bg-highlight: rgb(32, 32, 48);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
