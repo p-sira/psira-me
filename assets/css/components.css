@@ -2,10 +2,8 @@
 
 /* Arc Buttons */
 .arc-button {
-    @apply flex px-3 py-2 sm:px-4 sm:py-2 mb-4 sm:mb-6 lg:mb-8 rounded-md cursor-pointer relative overflow-hidden;
-    transform: scale(1);
+    @apply flex px-3 py-2 sm:px-4 sm:py-2 mb-4 sm:mb-6 lg:mb-8 rounded-md bg-[var(--surface)] border-[var(--border-primary)] scale-100 cursor-pointer relative overflow-hidden;
     transition: transform 100ms, background-color 1s;
-    background-color: var(--surface);
     min-height: 44px;
     /* Minimum touch target size for mobile */
     min-width: 120px;
