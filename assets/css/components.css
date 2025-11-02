@@ -148,5 +148,5 @@
 }
 
 .profile-image {
-    @apply absolute h-full w-full object-cover rounded-full border-4 border-[var(--primary-border)] shadow-2xl transition-opacity duration-500 ease-in-out pointer-events-none z-20;
+    @apply absolute h-full w-full object-cover rounded-full border-3 border-[var(--primary-border)] shadow-2xl transition-opacity duration-500 ease-in-out pointer-events-none z-20;
 }

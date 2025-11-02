@@ -1,54 +1,60 @@
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind utilities;
+
 /* Catppuccin color variables */
 @import "./catppuccin.css";
 
-/* Custom color variables */
-:root {
-    /* Catppuccin Latte (Light Theme) */
-    --bg-primary: var(--ctp-latte-base);
-    --bg-secondary: var(--ctp-latte-mantle);
-    --bg-tertiary: var(--ctp-latte-crust);
+@layer base {
 
-    --text-primary: var(--ctp-latte-text);
-    --text-secondary: var(--ctp-latte-subtext1);
-    --text-tertiary: var(--ctp-latte-subtext0);
+    /* Custom color variables */
+    :root {
+        /* Catppuccin Latte (Light Theme) */
+        --bg-primary: var(--ctp-latte-base);
+        --bg-secondary: var(--ctp-latte-mantle);
+        --bg-tertiary: var(--ctp-latte-crust);
 
-    --accent-primary: var(--ctp-latte-maroon);
-    --accent-secondary: var(--ctp-latte-lavender);
-    --accent-tertiary: var(--ctp-latte-sapphire);
+        --text-primary: var(--ctp-latte-text);
+        --text-secondary: var(--ctp-latte-subtext1);
+        --text-tertiary: var(--ctp-latte-subtext0);
 
-    --accent-primary-inverted: var(--ctp-mocha-red);
-    --accent-secondary-inverted: var(--ctp-mocha-mauve);
-    --accent-tertiary-inverted: var(--ctp-mocha-sapphire);
+        --accent-primary: var(--ctp-latte-maroon);
+        --accent-secondary: var(--ctp-latte-lavender);
+        --accent-tertiary: var(--ctp-latte-sapphire);
 
-    --surface: var(--ctp-latte-surface0);
-    --border: var(--ctp-latte-overlay1);
-}
+        --accent-primary-inverted: var(--ctp-mocha-red);
+        --accent-secondary-inverted: var(--ctp-mocha-mauve);
+        --accent-tertiary-inverted: var(--ctp-mocha-sapphire);
 
-[data-theme="dark"],
-.dark {
-    /* Catppuccin Mocha (Dark Theme) */
-    --bg-primary: var(--ctp-mocha-base);
-    --bg-secondary: var(--ctp-mocha-mantle);
-    --bg-tertiary: var(--ctp-mocha-crust);
+        --surface: var(--ctp-latte-surface0);
+        --border: var(--ctp-latte-overlay1);
+    }
 
-    --text-primary: var(--ctp-mocha-text);
-    --text-secondary: var(--ctp-mocha-subtext1);
-    --text-tertiary: var(--ctp-mocha-subtext0);
+    [data-theme="dark"],
+    .dark {
+        /* Catppuccin Mocha (Dark Theme) */
+        --bg-primary: var(--ctp-mocha-base);
+        --bg-secondary: var(--ctp-mocha-mantle);
+        --bg-tertiary: var(--ctp-mocha-crust);
 
-    --accent-primary: var(--ctp-mocha-red);
-    --accent-secondary: var(--ctp-mocha-mauve);
-    --accent-tertiary: var(--ctp-mocha-sapphire);
+        --text-primary: var(--ctp-mocha-text);
+        --text-secondary: var(--ctp-mocha-subtext1);
+        --text-tertiary: var(--ctp-mocha-subtext0);
 
-    --accent-primary-inverted: var(--ctp-latte-maroon);
-    --accent-secondary-inverted: var(--ctp-latte-mauve);
-    --accent-tertiary-inverted: var(--ctp-latte-sapphire);
+        --accent-primary: var(--ctp-mocha-red);
+        --accent-secondary: var(--ctp-mocha-mauve);
+        --accent-tertiary: var(--ctp-mocha-sapphire);
 
-    --surface: var(--ctp-mocha-surface0);
-    --border: var(--ctp-mocha-overlay1);
+        --accent-primary-inverted: var(--ctp-latte-maroon);
+        --accent-secondary-inverted: var(--ctp-latte-mauve);
+        --accent-tertiary-inverted: var(--ctp-latte-sapphire);
 
-    --bg-highlight: rgb(32, 32, 48);
+        --surface: var(--ctp-mocha-surface0);
+        --border: var(--ctp-mocha-overlay1);
+
+        --bg-highlight: rgb(32, 32, 48);
+    }
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
