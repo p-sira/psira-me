@@ -109,12 +109,50 @@ You can customize the color scheme by modifying the CSS variables in `static/css
 ✅ **Color Consistency**: Unified semantic color scheme across all components
 ✅ **Custom Color Scheme**: Site-specific color mapping in `color.css`
 
-## Browser Support
+## Research Data
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+This directory contains static research data that will appear in the research card after ORCID data.
+The template reads from `data/research.toml`. This is a clean, structured approach for managing static research.
+
+### File Structure
+
+```toml
+[[publications]]
+title = "Publication Title"
+subtitle = "Journal Name, Year"
+description = "Description text"
+borderColor = "accent-primary"
+url = "https://example.com"  # Optional
+index = 100  # Optional: lower = higher priority
+
+[[conferences]]
+title = "Conference Title"
+# ... same fields as publications
+
+[[services]]
+title = "Service Title"
+# ... same fields as publications
+```
+
+### Alternative: Markdown Files with Front Matter
+
+If you prefer individual Markdown files for each work, you can create files in `content/research/` with front matter:
+
+**Example: `content/research/my-publication.md`**
+
+```yaml
+---
+type: publication  # or "conference" or "service"
+title: "My Publication Title"
+subtitle: "Journal Name, 2024"
+description: "Publication description"
+borderColor: "accent-primary"
+url: "https://example.com"
+index: 100
+---
+```
+
+Then update the template to read from `content/research/` instead of `data/research.toml`.
 
 ## License
 

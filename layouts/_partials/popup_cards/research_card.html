@@ -1,3 +1,43 @@
+{{- $research := .Site.Data.research | default dict -}}
+{{- $publications := slice -}}
+{{- $conferences := slice -}}
+{{- $services := slice -}}
+{{- if $research.publications -}}
+    {{- range $research.publications -}}
+        {{- $publications = $publications | append (dict 
+            "Title" .title
+            "Subtitle" .subtitle
+            "Description" .description
+            "BorderColor" .borderColor
+            "URL" .url
+            "Index" (string (default 999999 .index))
+        ) -}}
+    {{- end -}}
+{{- end -}}
+{{- if $research.conferences -}}
+    {{- range $research.conferences -}}
+        {{- $conferences = $conferences | append (dict 
+            "Title" .title
+            "Subtitle" .subtitle
+            "Description" .description
+            "BorderColor" .borderColor
+            "URL" .url
+            "Index" (string (default 999999 .index))
+        ) -}}
+    {{- end -}}
+{{- end -}}
+{{- if $research.services -}}
+    {{- range $research.services -}}
+        {{- $services = $services | append (dict 
+            "Title" .title
+            "Subtitle" .subtitle
+            "Description" .description
+            "BorderColor" .borderColor
+            "URL" .url
+            "Index" (string (default 999999 .index))
+        ) -}}
+    {{- end -}}
+{{- end -}}
 {{ template "popup_tabs" dict 
     "ID" "research-card" 
     "Title" "Research" 
@@ -5,56 +45,17 @@
         (dict 
             "ID" "publications" 
             "Label" "Publications" 
-            "Items" (slice 
-                (dict 
-                    "Title" "Medical AI Applications in Clinical Practice" 
-                    "Subtitle" "Journal of Medical Engineering, 2024" 
-                    "Description" "A comprehensive study on implementing AI solutions in clinical workflows to improve diagnostic accuracy and patient outcomes." 
-                    "BorderColor" "accent-primary"
-                ) 
-                (dict 
-                    "Title" "Interdisciplinary Approaches to Healthcare Innovation" 
-                    "Subtitle" "Nature Medicine, 2023" 
-                    "Description" "Exploring the intersection of medical practice and engineering principles to develop novel healthcare technologies." 
-                    "BorderColor" "accent-secondary"
-                )
-            )
+            "Items" $publications
         ) 
         (dict 
             "ID" "conferences" 
             "Label" "Conferences" 
-            "Items" (slice 
-                (dict 
-                    "Title" "International Conference on Medical Engineering" 
-                    "Subtitle" "Boston, MA - March 2024" 
-                    "Description" "Presented research on AI-driven diagnostic tools and their implementation in clinical settings." 
-                    "BorderColor" "accent-tertiary"
-                ) 
-                (dict 
-                    "Title" "Healthcare Innovation Summit" 
-                    "Subtitle" "San Francisco, CA - September 2023" 
-                    "Description" "Keynote speaker on the future of interdisciplinary medical education and practice." 
-                    "BorderColor" "accent-primary"
-                )
-            )
+            "Items" $conferences
         ) 
         (dict 
             "ID" "services" 
             "Label" "Academic Services" 
-            "Items" (slice 
-                (dict 
-                    "Title" "Peer Reviewer" 
-                    "Subtitle" "Journal of Medical Engineering, 2023-Present" 
-                    "Description" "Reviewing manuscripts on medical device innovation and clinical engineering applications." 
-                    "BorderColor" "accent-secondary"
-                ) 
-                (dict 
-                    "Title" "Student Advisory Board Member" 
-                    "Subtitle" "M.D.-M.Eng. Program, 2022-Present" 
-                    "Description" "Advising on curriculum development and student support initiatives for the dual-degree program." 
-                    "BorderColor" "accent-tertiary"
-                )
-            )
+            "Items" $services
         )
     )
 }}
