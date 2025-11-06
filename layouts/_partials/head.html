@@ -57,10 +57,17 @@
 <link rel="preload" as="style" href="{{$fontUrl}}">
 <link rel="stylesheet" href="{{$fontUrl}}" media="print" onload="this.media='all'" />
 <noscript>
-    <link
-        href="{{$fontUrl}}"
-        rel="stylesheet">
+    <link href="{{$fontUrl}}" rel="stylesheet">
 </noscript>
+
+<!-- Import Map for browser ESM -->
+<script type="importmap">
+{
+    "imports": {
+        "orcid-parser": "https://cdn.jsdelivr.net/npm/orcid-parser@0.1.5/dist/index.mjs"
+    }
+}
+</script>
 
 <!-- Tailwind CSS -->
 {{ with (templates.Defer (dict "key" "global")) }}

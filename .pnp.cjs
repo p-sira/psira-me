@@ -30,10 +30,12 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@tailwindcss/cli", "npm:4.1.16"],\
           ["autoprefixer", "virtual:08fecc999a9c348c28d102d11012201299fd81d925db844a5387b5bde1e0f11e4dc43704d22e92bc23e8aba7d1fa2d397befe43d715002e1709b0e7b44d57d65#npm:10.4.21"],\
+          ["orcid-parser", "npm:0.1.5"],\
           ["postcss", "npm:8.5.6"],\
           ["postcss-cli", "virtual:08fecc999a9c348c28d102d11012201299fd81d925db844a5387b5bde1e0f11e4dc43704d22e92bc23e8aba7d1fa2d397befe43d715002e1709b0e7b44d57d65#npm:11.0.1"],\
           ["psira-me", "workspace:."],\
-          ["tailwindcss", "npm:4.1.16"]\
+          ["tailwindcss", "npm:4.1.16"],\
+          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -1560,6 +1562,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["orcid-parser", [\
+      ["npm:0.1.5", {\
+        "packageLocation": "../../../.yarn/berry/cache/orcid-parser-npm-0.1.5-7b384f7770-10c0.zip/node_modules/orcid-parser/",\
+        "packageDependencies": [\
+          ["orcid-parser", "npm:0.1.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["p-map", [\
       ["npm:7.0.3", {\
         "packageLocation": "../../../.yarn/berry/cache/p-map-npm-7.0.3-93bbec0d8c-10c0.zip/node_modules/p-map/",\
@@ -1777,10 +1788,12 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@tailwindcss/cli", "npm:4.1.16"],\
           ["autoprefixer", "virtual:08fecc999a9c348c28d102d11012201299fd81d925db844a5387b5bde1e0f11e4dc43704d22e92bc23e8aba7d1fa2d397befe43d715002e1709b0e7b44d57d65#npm:10.4.21"],\
+          ["orcid-parser", "npm:0.1.5"],\
           ["postcss", "npm:8.5.6"],\
           ["postcss-cli", "virtual:08fecc999a9c348c28d102d11012201299fd81d925db844a5387b5bde1e0f11e4dc43704d22e92bc23e8aba7d1fa2d397befe43d715002e1709b0e7b44d57d65#npm:11.0.1"],\
           ["psira-me", "workspace:."],\
-          ["tailwindcss", "npm:4.1.16"]\
+          ["tailwindcss", "npm:4.1.16"],\
+          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -2036,6 +2049,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/tslib-npm-2.8.1-66590b21b8-10c0.zip/node_modules/tslib/",\
         "packageDependencies": [\
           ["tslib", "npm:2.8.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["typescript", [\
+      ["patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5", {\
+        "packageLocation": "../../../.yarn/berry/cache/typescript-patch-6fda4d02cf-10c0.zip/node_modules/typescript/",\
+        "packageDependencies": [\
+          ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"]\
         ],\
         "linkType": "HARD"\
       }]\

@@ -56,6 +56,7 @@
       "bg-primary-surface",
       "bg-secondary",
       "border",
+      "border-",
       "border-accent-primary",
       "border-accent-secondary",
       "border-accent-tertiary",
