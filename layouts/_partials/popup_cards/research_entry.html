@@ -1,0 +1,96 @@
+{{/*
+  Research Entry Partial
+  
+  Renders a single research entry (publication, conference, or service)
+  with all necessary data attributes for TypeScript integration.
+  
+  Params:
+  - .title: string (required)
+  - .subtitle: string (optional)
+  - .authors: string (optional)
+  - .year: number (optional)
+  - .url: string (optional)
+  - .type: string (optional, work type from ORCID)
+  - .index: number (optional, for sorting)
+  - .category: string (required, "publications", "conferences", or "services")
+  - .borderColor: string (optional, defaults to "primary")
+*/}}
+{{ $category := .category | default "" }}
+{{ $title := .title | default "" }}
+{{ $subtitle := .subtitle | default "" }}
+{{ $authors := .authors | default "" }}
+{{ $year := .year | default 0 }}
+{{ $url := .url | default "" }}
+{{ $type := .type | default "" }}
+{{ $index := .index | default 9999 }}
+{{ $borderColor := .borderColor | default "primary" }}
+{{ $showCopy := or (eq $category "publications") (eq $category "conferences") }}
+
+{{/* Build citation for clipboard - matches TypeScript buildCitation function */}}
+{{ $citationParts := slice }}
+{{ if $authors }}
+  {{ $authorsTrimmed := $authors | strings.TrimSpace }}
+  {{ $authorsWithPeriod := $authorsTrimmed | strings.TrimSuffix "." | printf "%s." }}
+  {{ $citationParts = $citationParts | append $authorsWithPeriod }}
+{{ end }}
+{{ if $title }}
+  {{ $titleTrimmed := $title | strings.TrimSpace }}
+  {{ $titleWithPeriod := $titleTrimmed | strings.TrimSuffix "." | printf "%s." }}
+  {{ $citationParts = $citationParts | append $titleWithPeriod }}
+{{ end }}
+{{ $venueParts := slice }}
+{{ if $subtitle }}
+  {{ $venueParts = $venueParts | append ($subtitle | strings.TrimSpace) }}
+{{ end }}
+{{ if and $year (ne $year 0) (ne $year 9999) }}
+  {{ $venueParts = $venueParts | append (string $year) }}
+{{ end }}
+{{ if gt (len $venueParts) 0 }}
+  {{ $venue := delimit $venueParts ", " | strings.TrimSpace }}
+  {{ $venueWithPeriod := $venue | strings.TrimSuffix "." | printf "%s." }}
+  {{ $citationParts = $citationParts | append $venueWithPeriod }}
+{{ end }}
+{{ if $url }}
+  {{ $citationParts = $citationParts | append ($url | strings.TrimSpace) }}
+{{ end }}
+{{ $citation := delimit $citationParts " " }}
+
+<div class="border-l-4 border-primary pl-4"
+     data-work
+     data-work-title="{{ $title }}"
+     data-work-subtitle="{{ $subtitle }}"
+     {{ if $authors }}data-work-authors="{{ $authors }}"{{ end }}
+     {{ if and $year (ne $year 0) (ne $year 9999) }}data-work-year="{{ $year }}"{{ end }}
+     {{ if $type }}data-work-type="{{ $type }}"{{ end }}
+     {{ if $url }}data-work-url="{{ $url }}"{{ end }}
+     {{ if $index }}data-work-index="{{ $index }}"{{ end }}>
+  <h4 class="text-lg font-semibold text-primary mb-2">
+    {{ if $url }}
+      <a href="{{ $url }}" target="_blank" rel="noopener noreferrer" class="hover:underline">{{ $title }}</a>
+    {{ else }}
+      {{ $title }}
+    {{ end }}
+  </h4>
+  {{ if $subtitle }}
+    <p class="text-secondary mb-2">{{ $subtitle }}</p>
+  {{ else if and $year (ne $year 0) (ne $year 9999) }}
+    <p class="text-secondary mb-2">{{ $year }}</p>
+  {{ end }}
+  {{ if $authors }}
+    <p class="text-secondary">{{ $authors }}</p>
+  {{ end }}
+  {{ if $showCopy }}
+    <div class="mt-2">
+      {{ partial "clipboard_button.html" (dict 
+        "text" $citation
+        "label" "Copy citation to clipboard"
+        "successLabel" "Copied"
+        "successMs" 1200
+      ) }}
+    </div>
+  {{ end }}
+  {{ if $type }}
+    <p class="text-tertiary">{{ $type }}</p>
+  {{ end }}
+</div>
+

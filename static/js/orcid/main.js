@@ -2,14 +2,6 @@ import { populateResearchCard, observeResearchCard } from "./research-card.js";
 import { ORCID, WORK_TYPES } from "orcid-parser";
 let client = new ORCID("0000-0002-5636-8870");
 let cachedWorks = null;
-function sortWorks(a, b) {
-    var _a, _b;
-    if (a.displayIndex !== b.displayIndex)
-        return a.displayIndex - b.displayIndex;
-    const yearA = parseInt(((_a = a.subtitle.match(/\d{4}/)) === null || _a === void 0 ? void 0 : _a[0]) || "0");
-    const yearB = parseInt(((_b = b.subtitle.match(/\d{4}/)) === null || _b === void 0 ? void 0 : _b[0]) || "0");
-    return yearB - yearA;
-}
 function extractStaticWorks() {
     const staticWorks = {
         publications: [],
@@ -21,24 +13,22 @@ function extractStaticWorks() {
         if (!category || !staticWorks[category])
             return;
         container.querySelectorAll("[data-work]").forEach(item => {
-            const subtitle = item.dataset.workSubtitle || "";
-            const { journal, year } = parseSubtitle(subtitle);
+            const entry = item.dataset;
+            const workType = WORK_TYPES[entry.workType || "UNSUPPORTED"];
+            const category = mapOrcidTypeToCategory(workType);
             staticWorks[category].push({
-                title: item.dataset.workTitle || "",
-                subtitle,
-                url: item.dataset.workUrl || null,
-                displayIndex: parseInt(item.dataset.workIndex || "999999"),
+                title: entry.workTitle || "",
+                subtitle: entry.workSubtitle || "",
+                url: entry.workUrl || null,
+                type: workType,
                 category,
+                authors: entry.workAuthors || undefined,
+                year: parseInt(entry.workYear || "9999"),
+                index: parseInt(entry.workIndex || "9999"),
                 isStatic: true,
-                borderColor: item.dataset.workBorderColor,
-                authors: item.dataset.workDescription || undefined,
-                journal,
-                year
             });
         });
     });
-    for (const cat in staticWorks)
-        staticWorks[cat].sort(sortWorks);
     return staticWorks;
 }
 function mapOrcidTypeToCategory(type) {
@@ -55,75 +45,32 @@ function mapOrcidTypeToCategory(type) {
             return "services";
     }
 }
-function buildSubtitle(summary, year) {
-    var _a;
-    const journal = (_a = summary === null || summary === void 0 ? void 0 : summary["journal-title"]) === null || _a === void 0 ? void 0 : _a.value;
-    if (journal && year)
-        return `${journal}, ${year}`;
-    return journal || year || "";
+function workTypeToString(workType) {
+    const str = workType.replace("-", " ");
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
-function parseSubtitle(subtitle) {
-    const yearMatch = subtitle.match(/(\d{4})(?!.*\d)/);
-    const year = yearMatch ? yearMatch[1] : undefined;
-    let journal = subtitle;
-    if (year) {
-        // Remove trailing ", YEAR" or just YEAR
-        journal = journal.replace(new RegExp(`(?:,\s*)?${year}$`), "").trim();
-    }
-    return {
-        journal: journal || undefined,
-        year
-    };
-}
-function buildWorkItem(summary) {
-    var _a, _b, _c, _d, _e, _f, _g;
-    const type = ((_a = summary === null || summary === void 0 ? void 0 : summary.type) === null || _a === void 0 ? void 0 : _a.value) || "other";
-    const category = mapOrcidTypeToCategory(type);
-    const year = ((_c = (_b = summary === null || summary === void 0 ? void 0 : summary["publication-date"]) === null || _b === void 0 ? void 0 : _b.year) === null || _c === void 0 ? void 0 : _c.value) || null;
-    const title = ((_e = (_d = summary === null || summary === void 0 ? void 0 : summary.title) === null || _d === void 0 ? void 0 : _d.title) === null || _e === void 0 ? void 0 : _e.value) || "Untitled";
-    const subtitle = buildSubtitle(summary, year);
-    const url = extractURL(summary);
-    return {
-        title,
-        subtitle,
-        url,
-        displayIndex: parseInt(((_f = summary === null || summary === void 0 ? void 0 : summary["display-index"]) === null || _f === void 0 ? void 0 : _f.value) || "999999"),
-        type,
-        category,
-        journal: ((_g = summary === null || summary === void 0 ? void 0 : summary["journal-title"]) === null || _g === void 0 ? void 0 : _g.value) || undefined,
-        year: year || undefined
-    };
-}
-function extractURL(summary) {
-    var _a, _b;
-    const ids = (_a = summary === null || summary === void 0 ? void 0 : summary["external-ids"]) === null || _a === void 0 ? void 0 : _a["external-id"];
-    if (!ids)
-        return null;
-    const list = Array.isArray(ids) ? ids : [ids];
-    for (const id of list) {
-        const url = (_b = id === null || id === void 0 ? void 0 : id["external-id-url"]) === null || _b === void 0 ? void 0 : _b.value;
-        if (url && ["doi", "url"].includes(id === null || id === void 0 ? void 0 : id["external-id-type"]))
-            return url;
-    }
-    return null;
-}
-function extractWorks(data) {
-    const byCat = {
+function parseORCIDWorks(works) {
+    const parsedWorks = {
         publications: [],
         conferences: [],
         services: []
     };
-    const groups = (data === null || data === void 0 ? void 0 : data.group) || [];
-    for (const g of groups) {
-        const summaries = (g === null || g === void 0 ? void 0 : g["work-summary"]) || [];
-        for (const s of summaries) {
-            const item = buildWorkItem(s);
-            byCat[item.category || "services"].push(item);
-        }
-    }
-    for (const cat in byCat)
-        byCat[cat].sort(sortWorks);
-    return byCat;
+    works.forEach(work => {
+        var _a;
+        const category = mapOrcidTypeToCategory(work.type);
+        parsedWorks[category].push({
+            title: work.title,
+            subtitle: (work.journalTitle || "") + ", " + (work.publicationYear || "") + " | " + workTypeToString(work.type),
+            url: work.url || null,
+            type: work.type,
+            category,
+            authors: ((_a = work.contributors) === null || _a === void 0 ? void 0 : _a.map((c) => c.name || "").join(", ")) || "",
+            year: work.publicationYear || 9999,
+            index: 0,
+            isStatic: false,
+        });
+    });
+    return parsedWorks;
 }
 async function loadORCIDData(retry = 0) {
     const staticWorks = extractStaticWorks();
@@ -139,7 +86,7 @@ async function loadORCIDData(retry = 0) {
         populateResearchCard(staticWorks);
         return;
     }
-    cachedWorks = extractWorks(data);
+    cachedWorks = parseORCIDWorks(data);
     populateResearchCard(mergeWorks(cachedWorks, staticWorks));
 }
 export function mergeWorks(orcid, staticWorks) {

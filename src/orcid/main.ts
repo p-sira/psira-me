@@ -1,31 +1,22 @@
 import { populateResearchCard, observeResearchCard } from "./research-card.js";
-import { ORCID, WORK_TYPES } from "orcid-parser";
+import { ORCID, Work, WORK_TYPES, WorkType } from "orcid-parser";
 
 type WorkCategory = "publications" | "conferences" | "services";
 
-export interface WorkItem {
+export type WorkItem = {
   title: string;
   subtitle: string;
   url: string | null;
-  displayIndex: number;
-  type?: string;
-  category?: WorkCategory;
-  isStatic?: boolean;
-  borderColor?: string;
+  type: WorkType;
+  category: WorkCategory;
   authors?: string;
-  journal?: string;
-  year?: string;
-}
+  year: Number;
+  index?: number;
+  isStatic: boolean;
+};
 
 let client = new ORCID("0000-0002-5636-8870");
 let cachedWorks: Record<WorkCategory, WorkItem[]> | null = null;
-
-function sortWorks(a: WorkItem, b: WorkItem) {
-  if (a.displayIndex !== b.displayIndex) return a.displayIndex - b.displayIndex;
-  const yearA = parseInt(a.subtitle.match(/\d{4}/)?.[0] || "0");
-  const yearB = parseInt(b.subtitle.match(/\d{4}/)?.[0] || "0");
-  return yearB - yearA;
-}
 
 function extractStaticWorks(): Record<WorkCategory, WorkItem[]> {
   const staticWorks: Record<WorkCategory, WorkItem[]> = {
@@ -37,23 +28,24 @@ function extractStaticWorks(): Record<WorkCategory, WorkItem[]> {
     const category = container.dataset.staticWorks as WorkCategory | undefined;
     if (!category || !staticWorks[category]) return;
     container.querySelectorAll<HTMLElement>("[data-work]").forEach(item => {
-      const subtitle = item.dataset.workSubtitle || "";
-      const { journal, year } = parseSubtitle(subtitle);
+      const entry = item.dataset;
+      const workType =
+        WORK_TYPES[(entry.workType as keyof typeof WORK_TYPES) || "UNSUPPORTED"];
+      const category = mapOrcidTypeToCategory(workType);
+
       staticWorks[category].push({
-        title: item.dataset.workTitle || "",
-        subtitle,
-        url: item.dataset.workUrl || null,
-        displayIndex: parseInt(item.dataset.workIndex || "999999"),
+        title: entry.workTitle || "",
+        subtitle: entry.workSubtitle || "",
+        url: entry.workUrl || null,
+        type: workType,
         category,
+        authors: entry.workAuthors || undefined,
+        year: parseInt(entry.workYear || "9999"),
+        index: parseInt(entry.workIndex || "9999"),
         isStatic: true,
-        borderColor: item.dataset.workBorderColor,
-        authors: item.dataset.workDescription || undefined,
-        journal,
-        year
       });
     });
   });
-  for (const cat in staticWorks) staticWorks[cat as WorkCategory].sort(sortWorks);
   return staticWorks;
 }
 
@@ -72,72 +64,33 @@ function mapOrcidTypeToCategory(type: string | undefined): WorkCategory {
   }
 }
 
-function buildSubtitle(summary: any, year: string | null): string {
-  const journal: string | undefined = summary?.["journal-title"]?.value;
-  if (journal && year) return `${journal}, ${year}`;
-  return journal || year || "";
+function workTypeToString(workType: WorkType): string {
+  const str = workType.replace("-", " ");
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-function parseSubtitle(subtitle: string): { journal?: string; year?: string } {
-  const yearMatch = subtitle.match(/(\d{4})(?!.*\d)/);
-  const year = yearMatch ? yearMatch[1] : undefined;
-  let journal = subtitle;
-  if (year) {
-    // Remove trailing ", YEAR" or just YEAR
-    journal = journal.replace(new RegExp(`(?:,\s*)?${year}$`), "").trim();
-  }
-  return {
-    journal: journal || undefined,
-    year
-  };
-}
-
-function buildWorkItem(summary: any): WorkItem {
-  const type: string = summary?.type?.value || "other";
-  const category = mapOrcidTypeToCategory(type);
-  const year = summary?.["publication-date"]?.year?.value || null;
-  const title: string = summary?.title?.title?.value || "Untitled";
-  const subtitle = buildSubtitle(summary, year);
-  const url = extractURL(summary);
-  return {
-    title,
-    subtitle,
-    url,
-    displayIndex: parseInt(summary?.["display-index"]?.value || "999999"),
-    type,
-    category,
-    journal: summary?.["journal-title"]?.value || undefined,
-    year: year || undefined
-  };
-}
-
-function extractURL(summary: any): string | null {
-  const ids = summary?.["external-ids"]?.["external-id"];
-  if (!ids) return null;
-  const list = Array.isArray(ids) ? ids : [ids];
-  for (const id of list) {
-    const url: string | undefined = id?.["external-id-url"]?.value;
-    if (url && ["doi", "url"].includes(id?.["external-id-type"])) return url;
-  }
-  return null;
-}
-
-function extractWorks(data: any): Record<WorkCategory, WorkItem[]> {
-  const byCat: Record<WorkCategory, WorkItem[]> = {
+function parseORCIDWorks(works: Work[]): Record<WorkCategory, WorkItem[]> {
+  const parsedWorks: Record<WorkCategory, WorkItem[]> = {
     publications: [],
     conferences: [],
     services: []
   };
-  const groups = data?.group || [];
-  for (const g of groups) {
-    const summaries = g?.["work-summary"] || [];
-    for (const s of summaries) {
-      const item = buildWorkItem(s);
-      byCat[item.category || "services"].push(item);
-    }
-  }
-  for (const cat in byCat) byCat[cat as WorkCategory].sort(sortWorks);
-  return byCat;
+  works.forEach(work => {
+    const category = mapOrcidTypeToCategory(work.type);
+
+    parsedWorks[category].push({
+      title: work.title,
+      subtitle: (work.journalTitle || "") + ", " + (work.publicationYear || "") + " | " + workTypeToString(work.type),
+      url: work.url || null,
+      type: work.type,
+      category,
+      authors: work.contributors?.map((c) => c.name || "").join(", ") || "",
+      year: work.publicationYear || 9999,
+      index: 0,
+      isStatic: false,
+    });
+  });
+  return parsedWorks;
 }
 
 async function loadORCIDData(retry = 0) {
@@ -156,7 +109,7 @@ async function loadORCIDData(retry = 0) {
     return;
   }
 
-  cachedWorks = extractWorks(data);
+  cachedWorks = parseORCIDWorks(data);
   populateResearchCard(mergeWorks(cachedWorks, staticWorks));
 }
 

@@ -5,60 +5,38 @@
 [[publications]]
 title = "Medical AI Applications in Clinical Practice"
 subtitle = "Journal of Medical Engineering, 2024"
-authors = "A comprehensive study on implementing AI solutions in clinical workflows to improve diagnostic accuracy and patient outcomes."
+year = 2024
+authors = "P. Sira, M. Aai"
 url = "https://example.com/publication1"
 index = 100
 
 [[publications]]
 title = "Interdisciplinary Approaches to Healthcare Innovation"
 subtitle = "Nature Medicine, 2023"
-authors = "Exploring the intersection of medical practice and engineering principles to develop novel healthcare technologies."
+year = 2023
+authors = "P. Sira, M. Aai, M. Bee"
 url = "https://example.com/publication2"
 index = 200
-
-[[publications]]
-title = "Example Static Publication with DOI"
-subtitle = "Journal of Biomedical Engineering, 2022"
-authors = "This is an example static publication entry that will appear after ORCID data. You can include a URL and set a priority index."
-url = "https://doi.org/10.1000/example"
-index = 300
 
 [[conferences]]
 title = "International Conference on Medical Engineering"
 subtitle = "Boston, MA - March 2024"
-authors = "Presented research on AI-driven diagnostic tools and their implementation in clinical settings."
+year = 2024
+authors = "P. Sira, M. Aai, M. Bee"
 url = "https://example.com/conference1"
 index = 100
 
 [[conferences]]
 title = "Healthcare Innovation Summit"
 subtitle = "San Francisco, CA - September 2023"
-authors = "Keynote speaker on the future of interdisciplinary medical education and practice."
+year = 2023
+authors = "P. Sira"
 url = "https://example.com/conference2"
 index = 200
-
-[[conferences]]
-title = "Example Conference Poster Presentation"
-subtitle = "Annual Biomedical Engineering Conference, New York - May 2023"
-authors = "This is an example static conference entry. Conference posters and presentations from ORCID will appear first, followed by these static entries."
-index = 300
 
 [[services]]
 title = "Peer Reviewer"
 subtitle = "Journal of Medical Engineering, 2023-Present"
-authors = "Reviewing manuscripts on medical device innovation and clinical engineering applications."
+year = 2023
 index = 100
-
-[[services]]
-title = "Student Advisory Board Member"
-subtitle = "M.D.-M.Eng. Program, 2022-Present"
-authors = "Advising on curriculum development and student support initiatives for the dual-degree program."
-index = 200
-
-[[services]]
-title = "Editorial Board Member"
-subtitle = "Biomedical Engineering Journal, 2021-Present"
-authors = "Serving on the editorial board, providing strategic direction and overseeing peer review processes for research submissions."
-url = "https://example.com/journal"
-index = 150
 

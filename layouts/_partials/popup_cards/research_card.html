@@ -5,36 +5,45 @@
 {{- if $research.publications -}}
     {{- range $research.publications -}}
         {{- $publications = $publications | append (dict 
-            "Title" .title
-            "Subtitle" .subtitle
-            "Description" .description
-            "BorderColor" .borderColor
-            "URL" .url
-            "Index" (string (default 999999 .index))
+            "title" .title
+            "subtitle" .subtitle
+            "authors" .authors
+            "year" .year
+            "url" .url
+            "type" .type
+            "index" (default 9999 .index)
+            "category" "publications"
+            "borderColor" (default "primary" .borderColor)
         ) -}}
     {{- end -}}
 {{- end -}}
 {{- if $research.conferences -}}
     {{- range $research.conferences -}}
         {{- $conferences = $conferences | append (dict 
-            "Title" .title
-            "Subtitle" .subtitle
-            "Description" .description
-            "BorderColor" .borderColor
-            "URL" .url
-            "Index" (string (default 999999 .index))
+            "title" .title
+            "subtitle" .subtitle
+            "authors" .authors
+            "year" .year
+            "url" .url
+            "type" .type
+            "index" (default 9999 .index)
+            "category" "conferences"
+            "borderColor" (default "primary" .borderColor)
         ) -}}
     {{- end -}}
 {{- end -}}
 {{- if $research.services -}}
     {{- range $research.services -}}
         {{- $services = $services | append (dict 
-            "Title" .title
-            "Subtitle" .subtitle
-            "Description" .description
-            "BorderColor" .borderColor
-            "URL" .url
-            "Index" (string (default 999999 .index))
+            "title" .title
+            "subtitle" .subtitle
+            "authors" .authors
+            "year" .year
+            "url" .url
+            "type" .type
+            "index" (default 9999 .index)
+            "category" "services"
+            "borderColor" (default "primary" .borderColor)
         ) -}}
     {{- end -}}
 {{- end -}}
@@ -46,16 +55,19 @@
             "ID" "publications" 
             "Label" "Publications" 
             "Items" $publications
+            "Template" "research_entry"
         ) 
         (dict 
             "ID" "conferences" 
             "Label" "Conferences" 
             "Items" $conferences
+            "Template" "research_entry"
         ) 
         (dict 
             "ID" "services" 
             "Label" "Academic Services" 
             "Items" $services
+            "Template" "research_entry"
         )
     )
 }}

@@ -1,0 +1,42 @@
+{{/*
+  Reusable clipboard button
+
+  Params:
+  - text: string to copy (optional if target is provided)
+  - target: CSS selector to read text from (textContent or value)
+  - class: extra classes to merge on the button
+  - label: accessible label (defaults to Copy to clipboard)
+  - successLabel: label while showing success (defaults to Copied)
+  - successMs: duration to show success state (defaults to 1200)
+*/}}
+{{ $classes := .class | default "" }}
+{{ $label := .label | default "Copy to clipboard" }}
+{{ $successLabel := .successLabel | default "Copied" }}
+{{ $successMs := .successMs | default 1200 }}
+
+<button
+  type="button"
+  class="clipboard-btn inline-flex items-center justify-center rounded-md border border-secondary/30 bg-primary px-2.5 py-2 text-sm text-primary hover:bg-secondary/10 active:scale-[0.98] transition-transform {{ $classes }}"
+  aria-label="{{ $label }}"
+  data-clipboard-text="{{ with .text }}{{ . }}{{ end }}"
+  {{ with .target }}data-clipboard-target="{{ . }}"{{ end }}
+  data-clipboard-success-duration="{{ $successMs }}"
+  data-clipboard-label="{{ $label }}"
+  data-clipboard-success-label="{{ $successLabel }}"
+>
+  <span class="sr-only" data-role="status" aria-live="polite"></span>
+  <!-- Clipboard icon -->
+  <span data-icon="clipboard" class="inline-block">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+      <path d="M9 2a1 1 0 0 0-1 1v1H7a3 3 0 0 0-3 3v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3h-1V3a1 1 0 0 0-1-1H9Zm1 2h4v1h-4V4Z"/>
+    </svg>
+  </span>
+  <!-- Check icon -->
+  <span data-icon="check" class="hidden inline-block text-green-600 dark:text-green-400">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
+      <path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2Z"/>
+    </svg>
+  </span>
+</button>
+
+
