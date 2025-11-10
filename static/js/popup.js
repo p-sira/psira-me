@@ -1,4 +1,4 @@
-// Popup card functionality (for home page)
+// Popup card functionality
 const popupButtons = document.querySelectorAll('.popup-button');
 const popupCards = document.querySelectorAll('.popup-card');
 const backdrop = document.getElementById('popup-backdrop');
@@ -49,6 +49,23 @@ function initializePopups() {
         }
     }
 
+    // Close popup cards when clicking close button
+    popupCards.forEach(card => {
+        const closeBtn = card.querySelector('.close-btn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                closeAllPopups();
+            });
+        }
+    });
+
+    // Close popup cards when clicking backdrop
+    if (backdrop) {
+        backdrop.addEventListener('click', () => {
+            closeAllPopups();
+        });
+    }
+
     popupButtons.forEach(button => {
         button.addEventListener('click', () => {
             const cardId = button.getAttribute('data-card');
@@ -73,7 +90,7 @@ function initializePopups() {
             const targetPanel = document.getElementById(tabId + '-tab');
             if (targetPanel) {
                 targetPanel.classList.add('active');
-                
+
                 // Ensure close button in the new tab panel has event listener
                 const closeBtn = targetPanel.querySelector('.close-btn');
                 if (closeBtn) {
