@@ -1,7 +1,8 @@
 import { populateResearchCard, observeResearchCard } from "./research-card.js";
-import { ORCID, Work, WORK_TYPES, WorkType } from "orcid-parser";
+import { Orcid, Work } from "orcid-parser";
+import { WORK_TYPES, WorkType } from "orcid-parser/constants";
 
-type WorkCategory = "publications" | "conferences" | "services";
+export type WorkCategory = "publications" | "conferences" | "services";
 
 export type WorkItem = {
   title: string;
@@ -15,7 +16,7 @@ export type WorkItem = {
   isStatic: boolean;
 };
 
-let client = new ORCID("0000-0002-5636-8870");
+let client = new Orcid("0000-0002-5636-8870");
 let cachedWorks: Record<WorkCategory, WorkItem[]> | null = null;
 
 function extractStaticWorks(): Record<WorkCategory, WorkItem[]> {
@@ -49,15 +50,18 @@ function extractStaticWorks(): Record<WorkCategory, WorkItem[]> {
   return staticWorks;
 }
 
-function mapOrcidTypeToCategory(type: string | undefined): WorkCategory {
+function mapOrcidTypeToCategory(type: string | null): WorkCategory {
   switch (type) {
     case WORK_TYPES.ARTICLE:
+    case WORK_TYPES.CONFERENCE_PAPER:
+    case WORK_TYPES.CONFERENCE_PROCEEDINGS:
     case WORK_TYPES.BOOK:
     case WORK_TYPES.BOOK_CHAPTER:
     case WORK_TYPES.PREPRINT:
       return "publications";
-    case WORK_TYPES.CONFERENCE_PAPER:
-    case WORK_TYPES.CONFERENCE_ABSTRACT:
+    case WORK_TYPES.CONFERENCE_PRESENTATION:
+    case WORK_TYPES.CONFERENCE_POSTER:
+    case WORK_TYPES.CONFERENCE_OUTPUT:
       return "conferences";
     default:
       return "services";
@@ -77,12 +81,13 @@ function parseORCIDWorks(works: Work[]): Record<WorkCategory, WorkItem[]> {
   };
   works.forEach(work => {
     const category = mapOrcidTypeToCategory(work.type);
+    const type = WorkType.fromString(work.type || "");
 
     parsedWorks[category].push({
       title: work.title,
-      subtitle: (work.journalTitle || "") + ", " + (work.publicationYear || "") + " | " + workTypeToString(work.type),
+      subtitle: (work.journalTitle || "") + ", " + (work.publicationYear || "") + " | " + WorkType.format(type),
       url: work.url || null,
-      type: work.type,
+      type,
       category,
       authors: work.contributors?.map((c) => c.name || "").join(", ") || "",
       year: work.publicationYear || 9999,

@@ -30,7 +30,8 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@tailwindcss/cli", "npm:4.1.16"],\
           ["autoprefixer", "virtual:08fecc999a9c348c28d102d11012201299fd81d925db844a5387b5bde1e0f11e4dc43704d22e92bc23e8aba7d1fa2d397befe43d715002e1709b0e7b44d57d65#npm:10.4.21"],\
-          ["orcid-parser", "npm:0.1.5"],\
+          ["clipboard", "npm:2.0.11"],\
+          ["orcid-parser", "npm:0.2.0"],\
           ["postcss", "npm:8.5.6"],\
           ["postcss-cli", "virtual:08fecc999a9c348c28d102d11012201299fd81d925db844a5387b5bde1e0f11e4dc43704d22e92bc23e8aba7d1fa2d397befe43d715002e1709b0e7b44d57d65#npm:11.0.1"],\
           ["psira-me", "workspace:."],\
@@ -729,6 +730,18 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["clipboard", [\
+      ["npm:2.0.11", {\
+        "packageLocation": "../../../.yarn/berry/cache/clipboard-npm-2.0.11-45358b5ae8-10c0.zip/node_modules/clipboard/",\
+        "packageDependencies": [\
+          ["clipboard", "npm:2.0.11"],\
+          ["good-listener", "npm:1.2.2"],\
+          ["select", "npm:1.1.2"],\
+          ["tiny-emitter", "npm:2.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["cliui", [\
       ["npm:8.0.1", {\
         "packageLocation": "../../../.yarn/berry/cache/cliui-npm-8.0.1-3b029092cf-10c0.zip/node_modules/cliui/",\
@@ -791,6 +804,15 @@ const RAW_RUNTIME_STATE =
         "packagePeers": [\
           "@types/supports-color",\
           "supports-color"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["delegate", [\
+      ["npm:3.2.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/delegate-npm-3.2.0-d3f849ea99-10c0.zip/node_modules/delegate/",\
+        "packageDependencies": [\
+          ["delegate", "npm:3.2.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1025,6 +1047,16 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["glob-parent", "npm:5.1.2"],\
           ["is-glob", "npm:4.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["good-listener", [\
+      ["npm:1.2.2", {\
+        "packageLocation": "../../../.yarn/berry/cache/good-listener-npm-1.2.2-e7865da849-10c0.zip/node_modules/good-listener/",\
+        "packageDependencies": [\
+          ["delegate", "npm:3.2.0"],\
+          ["good-listener", "npm:1.2.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1563,10 +1595,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["orcid-parser", [\
-      ["npm:0.1.5", {\
-        "packageLocation": "../../../.yarn/berry/cache/orcid-parser-npm-0.1.5-7b384f7770-10c0.zip/node_modules/orcid-parser/",\
+      ["npm:0.2.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/orcid-parser-npm-0.2.0-6945b4fe0b-10c0.zip/node_modules/orcid-parser/",\
         "packageDependencies": [\
-          ["orcid-parser", "npm:0.1.5"]\
+          ["orcid-parser", "npm:0.2.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -1788,7 +1820,8 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@tailwindcss/cli", "npm:4.1.16"],\
           ["autoprefixer", "virtual:08fecc999a9c348c28d102d11012201299fd81d925db844a5387b5bde1e0f11e4dc43704d22e92bc23e8aba7d1fa2d397befe43d715002e1709b0e7b44d57d65#npm:10.4.21"],\
-          ["orcid-parser", "npm:0.1.5"],\
+          ["clipboard", "npm:2.0.11"],\
+          ["orcid-parser", "npm:0.2.0"],\
           ["postcss", "npm:8.5.6"],\
           ["postcss-cli", "virtual:08fecc999a9c348c28d102d11012201299fd81d925db844a5387b5bde1e0f11e4dc43704d22e92bc23e8aba7d1fa2d397befe43d715002e1709b0e7b44d57d65#npm:11.0.1"],\
           ["psira-me", "workspace:."],\
@@ -1841,6 +1874,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/safer-buffer-npm-2.1.2-8d5c0b705e-10c0.zip/node_modules/safer-buffer/",\
         "packageDependencies": [\
           ["safer-buffer", "npm:2.1.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["select", [\
+      ["npm:1.1.2", {\
+        "packageLocation": "../../../.yarn/berry/cache/select-npm-1.1.2-13cd366fa2-10c0.zip/node_modules/select/",\
+        "packageDependencies": [\
+          ["select", "npm:1.1.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2019,6 +2061,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/thenby-npm-1.3.4-766aefdf7d-10c0.zip/node_modules/thenby/",\
         "packageDependencies": [\
           ["thenby", "npm:1.3.4"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["tiny-emitter", [\
+      ["npm:2.1.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/tiny-emitter-npm-2.1.0-2a4d94f487-10c0.zip/node_modules/tiny-emitter/",\
+        "packageDependencies": [\
+          ["tiny-emitter", "npm:2.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\

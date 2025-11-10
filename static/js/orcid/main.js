@@ -1,6 +1,7 @@
 import { populateResearchCard, observeResearchCard } from "./research-card.js";
-import { ORCID, WORK_TYPES } from "orcid-parser";
-let client = new ORCID("0000-0002-5636-8870");
+import { Orcid } from "orcid-parser";
+import { WORK_TYPES, WorkType } from "orcid-parser/constants";
+let client = new Orcid("0000-0002-5636-8870");
 let cachedWorks = null;
 function extractStaticWorks() {
     const staticWorks = {
@@ -34,12 +35,15 @@ function extractStaticWorks() {
 function mapOrcidTypeToCategory(type) {
     switch (type) {
         case WORK_TYPES.ARTICLE:
+        case WORK_TYPES.CONFERENCE_PAPER:
+        case WORK_TYPES.CONFERENCE_PROCEEDINGS:
         case WORK_TYPES.BOOK:
         case WORK_TYPES.BOOK_CHAPTER:
         case WORK_TYPES.PREPRINT:
             return "publications";
-        case WORK_TYPES.CONFERENCE_PAPER:
-        case WORK_TYPES.CONFERENCE_ABSTRACT:
+        case WORK_TYPES.CONFERENCE_PRESENTATION:
+        case WORK_TYPES.CONFERENCE_POSTER:
+        case WORK_TYPES.CONFERENCE_OUTPUT:
             return "conferences";
         default:
             return "services";
@@ -58,11 +62,12 @@ function parseORCIDWorks(works) {
     works.forEach(work => {
         var _a;
         const category = mapOrcidTypeToCategory(work.type);
+        const type = WorkType.fromString(work.type || "");
         parsedWorks[category].push({
             title: work.title,
-            subtitle: (work.journalTitle || "") + ", " + (work.publicationYear || "") + " | " + workTypeToString(work.type),
+            subtitle: (work.journalTitle || "") + ", " + (work.publicationYear || "") + " | " + WorkType.format(type),
             url: work.url || null,
-            type: work.type,
+            type,
             category,
             authors: ((_a = work.contributors) === null || _a === void 0 ? void 0 : _a.map((c) => c.name || "").join(", ")) || "",
             year: work.publicationYear || 9999,

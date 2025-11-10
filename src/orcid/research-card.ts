@@ -1,6 +1,4 @@
-import type { WorkItem } from "./main.js";
-
-type WorkCategory = "publications" | "conferences" | "services";
+import type { WorkItem, WorkCategory } from "./main.js";
 
 function sortWorks(a: WorkItem, b: WorkItem) {
   const indexA = a.index ?? 9999;
@@ -11,7 +9,7 @@ function sortWorks(a: WorkItem, b: WorkItem) {
   return yearB - yearA;
 }
 
-export function createWorkElement(work: WorkItem, categoryHint?: string) {
+export function createWorkElement(work: WorkItem) {
   const div = document.createElement("div");
   div.className = `border-l-4 border-primary pl-4`;
   const yearStr = typeof work.year === "number" && work.year !== 9999 ? work.year.toString() : "";
@@ -19,44 +17,16 @@ export function createWorkElement(work: WorkItem, categoryHint?: string) {
     ? escapeHtml(work.subtitle)
     : (yearStr ? escapeHtml(yearStr) : "");
   const authors = work.authors ? `<p class="text-secondary">${escapeHtml(work.authors)}</p>` : "";
-  const cat = (categoryHint || work.category || "").toString();
-  const showCopy = cat === "publications" || cat === "conferences";
-  const citation = showCopy ? buildCitation(work) : "";
-  const clipboardButton = showCopy ? `
-    <div class="mt-2">
-      <button
-        type="button"
-        class="clipboard-btn inline-flex items-center justify-center rounded-md border border-secondary/30 bg-primary px-2.5 py-2 text-sm text-primary hover:bg-secondary/10 active:scale-[0.98] transition-transform"
-        aria-label="Copy citation to clipboard"
-        data-clipboard-text="${escapeHtml(citation)}"
-        data-clipboard-success-duration="1200"
-        data-clipboard-label="Copy citation to clipboard"
-        data-clipboard-success-label="Copied"
-      >
-        <span class="sr-only" data-role="status" aria-live="polite"></span>
-        <span data-icon="clipboard" class="inline-block">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
-            <path d="M9 2a1 1 0 0 0-1 1v1H7a3 3 0 0 0-3 3v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3h-1V3a1 1 0 0 0-1-1H9Zm1 2h4v1h-4V4Z"/>
-          </svg>
-        </span>
-        <span data-icon="check" class="hidden inline-block text-green-600 dark:text-green-400">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
-            <path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2Z"/>
-          </svg>
-        </span>
-      </button>
-    </div>
-  ` : "";
   div.innerHTML = `
     <h4 class="text-lg font-semibold text-primary mb-2">
       ${work.url
       ? `<a href="${escapeHtml(work.url)}" target="_blank" rel="noopener noreferrer" class="hover:underline">${escapeHtml(work.title)}</a>`
       : escapeHtml(work.title)}
     </h4>
-    ${meta ? `<p class="text-secondary mb-2">${meta}</p>` : ""}
+    <div class="flex items-center gap-2 mb-2">
+      ${meta ? `<p class="text-secondary">${meta}</p>` : ""}
+    </div>
     ${authors}
-    ${clipboardButton}
-    ${work.type ? `<p class="text-tertiary">${escapeHtml(work.type)}</p>` : ""}
   `;
   return div;
 }
@@ -84,8 +54,8 @@ function populateTab(category: WorkCategory, works: WorkItem[]) {
   }
 
   for (const w of works) {
-    const el = createWorkElement(w, category);
-    staticItems.length ? container.insertBefore(el, staticItems[0]) : container.appendChild(el);
+    const elem = createWorkElement(w);
+    staticItems.length ? container.insertBefore(elem, staticItems[0]) : container.appendChild(elem);
   }
   return true;
 }

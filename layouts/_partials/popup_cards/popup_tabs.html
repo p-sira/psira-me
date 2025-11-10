@@ -26,7 +26,7 @@
         <div class="space-y-6" data-static-works="{{ $tab.ID }}">
           {{ range $item := $tab.Items }}
             {{ if $tab.Template }}
-              {{ partial (printf "popup_cards/%s.html" $tab.Template) $item }}
+              {{ partial (printf "popup_cards/%s" $tab.Template) $item }}
             {{ else }}
               {{/* Fallback to old format for backwards compatibility */}}
               <div class="border-l-4 border-{{ $item.BorderColor }} pl-4" 

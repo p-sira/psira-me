@@ -13,7 +13,6 @@
   - .type: string (optional, work type from ORCID)
   - .index: number (optional, for sorting)
   - .category: string (required, "publications", "conferences", or "services")
-  - .borderColor: string (optional, defaults to "primary")
 */}}
 {{ $category := .category | default "" }}
 {{ $title := .title | default "" }}
@@ -23,8 +22,6 @@
 {{ $url := .url | default "" }}
 {{ $type := .type | default "" }}
 {{ $index := .index | default 9999 }}
-{{ $borderColor := .borderColor | default "primary" }}
-{{ $showCopy := or (eq $category "publications") (eq $category "conferences") }}
 
 {{/* Build citation for clipboard - matches TypeScript buildCitation function */}}
 {{ $citationParts := slice }}
@@ -39,10 +36,15 @@
   {{ $citationParts = $citationParts | append $titleWithPeriod }}
 {{ end }}
 {{ $venueParts := slice }}
+{{ $subtitleHasYear := false }}
 {{ if $subtitle }}
-  {{ $venueParts = $venueParts | append ($subtitle | strings.TrimSpace) }}
+  {{ $subtitleTrimmed := $subtitle | strings.TrimSpace }}
+  {{ if findRE `\b\d{4}\b` $subtitleTrimmed }}
+    {{ $subtitleHasYear = true }}
+  {{ end }}
+  {{ $venueParts = $venueParts | append $subtitleTrimmed }}
 {{ end }}
-{{ if and $year (ne $year 0) (ne $year 9999) }}
+{{ if and $year (ne $year 0) (ne $year 9999) (not $subtitleHasYear) }}
   {{ $venueParts = $venueParts | append (string $year) }}
 {{ end }}
 {{ if gt (len $venueParts) 0 }}
@@ -63,7 +65,7 @@
      {{ if and $year (ne $year 0) (ne $year 9999) }}data-work-year="{{ $year }}"{{ end }}
      {{ if $type }}data-work-type="{{ $type }}"{{ end }}
      {{ if $url }}data-work-url="{{ $url }}"{{ end }}
-     {{ if $index }}data-work-index="{{ $index }}"{{ end }}>
+     data-work-index="{{ $index }}">
   <h4 class="text-lg font-semibold text-primary mb-2">
     {{ if $url }}
       <a href="{{ $url }}" target="_blank" rel="noopener noreferrer" class="hover:underline">{{ $title }}</a>
@@ -71,26 +73,15 @@
       {{ $title }}
     {{ end }}
   </h4>
-  {{ if $subtitle }}
-    <p class="text-secondary mb-2">{{ $subtitle }}</p>
-  {{ else if and $year (ne $year 0) (ne $year 9999) }}
-    <p class="text-secondary mb-2">{{ $year }}</p>
-  {{ end }}
+  <div class="flex items-center gap-2 mb-2">
+    {{ if $subtitle }}
+      <p class="text-secondary">{{ $subtitle }}</p>
+    {{ else if and $year (ne $year 0) (ne $year 9999) }}
+      <p class="text-secondary">{{ $year }}</p>
+    {{ end }}
+  </div>
   {{ if $authors }}
     <p class="text-secondary">{{ $authors }}</p>
-  {{ end }}
-  {{ if $showCopy }}
-    <div class="mt-2">
-      {{ partial "clipboard_button.html" (dict 
-        "text" $citation
-        "label" "Copy citation to clipboard"
-        "successLabel" "Copied"
-        "successMs" 1200
-      ) }}
-    </div>
-  {{ end }}
-  {{ if $type }}
-    <p class="text-tertiary">{{ $type }}</p>
   {{ end }}
 </div>
 
