@@ -56,23 +56,6 @@ function initializePopups() {
         });
     });
 
-    // Close popup cards when clicking close button
-    popupCards.forEach(card => {
-        const closeBtn = card.querySelector('.close-btn');
-        if (closeBtn) {
-            closeBtn.addEventListener('click', () => {
-                closeAllPopups();
-            });
-        }
-    });
-
-    // Close popup cards when clicking backdrop
-    if (backdrop) {
-        backdrop.addEventListener('click', () => {
-            closeAllPopups();
-        });
-    }
-
     // Tab functionality for research popup
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabPanels = document.querySelectorAll('.tab-panel');
@@ -90,6 +73,12 @@ function initializePopups() {
             const targetPanel = document.getElementById(tabId + '-tab');
             if (targetPanel) {
                 targetPanel.classList.add('active');
+                
+                // Ensure close button in the new tab panel has event listener
+                const closeBtn = targetPanel.querySelector('.close-btn');
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', closeAllPopups);
+                }
             }
         });
     });
