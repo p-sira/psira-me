@@ -9,7 +9,6 @@ year = 2024
 type = "journal-article"
 authors = "P. Sira, M. Aai"
 url = "https://example.com/publication1"
-index = 100
 
 [[publications]]
 title = "Interdisciplinary Approaches to Healthcare Innovation"
@@ -18,7 +17,6 @@ year = 2023
 type = "journal-article"
 authors = "P. Sira, M. Aai, M. Bee"
 url = "https://example.com/publication2"
-index = 200
 
 [[conferences]]
 title = "International Conference on Medical Engineering"
@@ -27,7 +25,6 @@ year = 2024
 type = "conference-presentation"
 authors = "P. Sira, M. Aai, M. Bee"
 url = "https://example.com/conference1"
-index = 100
 
 [[conferences]]
 title = "Healthcare Innovation Summit"
@@ -36,11 +33,10 @@ year = 2023
 type = "conference-poster"
 authors = "P. Sira"
 url = "https://example.com/conference2"
-index = 200
 
 [[services]]
 title = "Peer Reviewer"
 subtitle = "Journal of Medical Engineering, 2023-Present"
 year = 2023
-index = 100
+type = "academic-service"
 

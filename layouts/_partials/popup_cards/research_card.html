@@ -1,6 +1,7 @@
 {{- $research := .Site.Data.research | default dict -}}
 {{- $publications := slice -}}
 {{- $conferences := slice -}}
+{{- $softwares := slice -}}
 {{- $services := slice -}}
 {{- if $research.publications -}}
     {{- range $research.publications -}}
@@ -27,6 +28,20 @@
             "type" .type
             "index" (default 9999 .index)
             "category" "conferences"
+        ) -}}
+    {{- end -}}
+{{- end -}}
+{{- if $research.softwares -}}
+    {{- range $research.softwares -}}
+        {{- $softwares = $softwares | append (dict 
+            "title" .title
+            "subtitle" .subtitle
+            "authors" .authors
+            "year" .year
+            "url" .url
+            "type" .type
+            "index" (default 9999 .index)
+            "category" "softwares"
         ) -}}
     {{- end -}}
 {{- end -}}
@@ -58,6 +73,12 @@
             "ID" "conferences" 
             "Label" "Conferences" 
             "Items" $conferences
+            "Template" "research_entry"
+        ) 
+        (dict 
+            "ID" "softwares" 
+            "Label" "Softwares" 
+            "Items" $softwares
             "Template" "research_entry"
         ) 
         (dict 

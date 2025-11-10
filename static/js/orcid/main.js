@@ -1,31 +1,38 @@
-import { populateResearchCard, observeResearchCard } from "./research-card.js";
+import { buildResearchCard } from "./research-card.js";
 import { Orcid } from "orcid-parser";
 import { WORK_TYPES, WorkType } from "orcid-parser/constants";
+export const WORK_CATEGORIES = ["publications", "conferences", "softwares", "services", "others"];
 let client = new Orcid("0000-0002-5636-8870");
-let cachedWorks = null;
-function extractStaticWorks() {
-    const staticWorks = {
+let works = null;
+export function emptyWorks() {
+    return {
         publications: [],
         conferences: [],
-        services: []
+        softwares: [],
+        services: [],
+        others: [],
     };
+}
+function extractStaticWorks() {
+    const staticWorks = emptyWorks();
     document.querySelectorAll("[data-static-works]").forEach(container => {
         const category = container.dataset.staticWorks;
         if (!category || !staticWorks[category])
             return;
         container.querySelectorAll("[data-work]").forEach(item => {
             const entry = item.dataset;
-            const workType = WORK_TYPES[entry.workType || "UNSUPPORTED"];
+            const workType = entry.workType == "academic-service" ? "academic-service" : WORK_TYPES[entry.workType || "UNSUPPORTED"];
             const category = mapOrcidTypeToCategory(workType);
             staticWorks[category].push({
                 title: entry.workTitle || "",
                 subtitle: entry.workSubtitle || "",
-                url: entry.workUrl || null,
+                url: entry.workUrl || undefined,
                 type: workType,
                 category,
                 authors: entry.workAuthors || undefined,
-                year: parseInt(entry.workYear || "9999"),
-                index: parseInt(entry.workIndex || "9999"),
+                publicationYear: parseInt(entry.workYear || "1"),
+                publicationMonth: parseInt(entry.workYear || "1"),
+                publicationDay: parseInt(entry.workYear || "1"),
                 isStatic: true,
             });
         });
@@ -45,8 +52,12 @@ function mapOrcidTypeToCategory(type) {
         case WORK_TYPES.CONFERENCE_POSTER:
         case WORK_TYPES.CONFERENCE_OUTPUT:
             return "conferences";
-        default:
+        case WORK_TYPES.SOFTWARE:
+            return "softwares";
+        case "academic-service":
             return "services";
+        default:
+            return "others";
     }
 }
 function workTypeToString(workType) {
@@ -54,60 +65,54 @@ function workTypeToString(workType) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 function parseORCIDWorks(works) {
-    const parsedWorks = {
-        publications: [],
-        conferences: [],
-        services: []
-    };
+    const parsedWorks = emptyWorks();
     works.forEach(work => {
         var _a;
         const category = mapOrcidTypeToCategory(work.type);
         const type = WorkType.fromString(work.type || "");
         parsedWorks[category].push({
-            title: work.title,
-            subtitle: (work.journalTitle || "") + ", " + (work.publicationYear || "") + " | " + WorkType.format(type),
-            url: work.url || null,
-            type,
+            ...work,
             category,
+            subtitle: (work.journalTitle || "") + ", " + (work.publicationYear || "") + " | " + WorkType.format(type),
             authors: ((_a = work.contributors) === null || _a === void 0 ? void 0 : _a.map((c) => c.name || "").join(", ")) || "",
-            year: work.publicationYear || 9999,
-            index: 0,
             isStatic: false,
         });
     });
     return parsedWorks;
 }
-async function loadORCIDData(retry = 0) {
+function mergeWorks(orcid, staticWorks) {
+    const merged = emptyWorks();
+    for (const key of Object.keys({ ...orcid, ...staticWorks })) {
+        merged[key] = [...(orcid[key] || []), ...(staticWorks[key] || [])];
+    }
+    return merged;
+}
+export async function populateResearchCard(retry = 0) {
     const staticWorks = extractStaticWorks();
-    if (cachedWorks) {
-        populateResearchCard(mergeWorks(cachedWorks, staticWorks));
-        return;
+    // Return cached works if available
+    if (works) {
+        return works;
     }
-    const data = await client.fetchWorks();
+    // Populate with static works immediately
+    buildResearchCard(staticWorks);
+    const data = await client.getWorks();
     if (!data) {
-        if (retry < 2)
-            return setTimeout(() => loadORCIDData(retry + 1), 500);
+        if (retry < 2) {
+            // Wait 500ms and retry
+            await new Promise(resolve => setTimeout(resolve, 500));
+            return populateResearchCard(retry + 1);
+        }
         console.warn("ORCID fetch failed — showing static works only.");
-        populateResearchCard(staticWorks);
-        return;
+        works = staticWorks;
+        return works;
     }
-    cachedWorks = parseORCIDWorks(data);
-    populateResearchCard(mergeWorks(cachedWorks, staticWorks));
+    works = mergeWorks(parseORCIDWorks(data), staticWorks);
+    buildResearchCard(works);
+    return works;
 }
-export function mergeWorks(orcid, staticWorks) {
-    return {
-        publications: [...orcid.publications, ...staticWorks.publications],
-        conferences: [...orcid.conferences, ...staticWorks.conferences],
-        services: [...orcid.services, ...staticWorks.services]
-    };
-}
-function initialize() {
-    const start = () => {
-        setTimeout(loadORCIDData, 200);
-        setTimeout(() => observeResearchCard(cachedWorks, loadORCIDData, extractStaticWorks), 500);
-    };
+async function initialize() {
     document.readyState === "loading"
-        ? document.addEventListener("DOMContentLoaded", start)
-        : start();
+        ? document.addEventListener("DOMContentLoaded", () => populateResearchCard())
+        : populateResearchCard();
 }
 initialize();
