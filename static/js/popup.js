@@ -15,7 +15,7 @@ function initializePopups() {
             card.setAttribute('aria-hidden', 'true');
         });
         if (backdrop) {
-            backdrop.classList.remove('opacity-50', 'visible');
+            backdrop.classList.remove('opacity-65', 'dark:opacity-50', 'visible');
             backdrop.classList.add('opacity-0', 'invisible');
             backdrop.setAttribute('aria-hidden', 'true');
         }
@@ -32,7 +32,7 @@ function initializePopups() {
         // Show backdrop and target card
         if (backdrop) {
             backdrop.classList.remove('opacity-0', 'invisible');
-            backdrop.classList.add('opacity-50', 'visible');
+            backdrop.classList.add('opacity-65', 'dark:opacity-50', 'visible');
             backdrop.setAttribute('aria-hidden', 'false');
         }
         if (targetCard) {

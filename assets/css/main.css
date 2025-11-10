@@ -27,7 +27,7 @@
         --accent-secondary-inverted: var(--ctp-mocha-mauve);
         --accent-tertiary-inverted: var(--ctp-mocha-sapphire);
 
-        --surface: var(--ctp-latte-surface0);
+        --surface: #d9dce2; /* --ctp-latte-surface0 */
         --border: var(--ctp-latte-overlay1);
     }
 

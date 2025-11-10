@@ -59,8 +59,12 @@
     }
 
     .popup-card {
-        @apply fixed -translate-1/2 bg-[var(--surface)] rounded-2xl shadow-2xl w-[1000px] max-w-[90vw] h-[800px] max-h-[90vh] opacity-0 invisible transition-all duration-300 z-50 border border-[var(--border)] overflow-hidden z-50 border border-[var(--border)];
+        @apply fixed -translate-1/2 bg-[var(--bg-primary)] rounded-2xl shadow-2xl w-[1000px] max-w-[90vw] h-[800px] max-h-[90vh] opacity-0 invisible transition-all duration-300 z-50 border border-[var(--border)] overflow-hidden z-50 border border-[var(--border)];
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    }
+
+    .popup-card .dark {
+        @apply bg-[var(--surface)];
     }
 
     .popup-card.visible {
