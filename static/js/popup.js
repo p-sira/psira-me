@@ -4,7 +4,7 @@ const popupCards = document.querySelectorAll('.popup-card');
 const backdrop = document.getElementById('popup-backdrop');
 
 // Ensure DOM is loaded before initializing
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializePopups();
 });
 
@@ -25,10 +25,10 @@ function initializePopups() {
 
     function openPopup(cardId) {
         const targetCard = document.getElementById(cardId + '-card');
-        
+
         // Close all other popup cards first
         closeAllPopups();
-        
+
         // Show backdrop and target card
         if (backdrop) {
             backdrop.classList.remove('opacity-0', 'invisible');
@@ -40,7 +40,7 @@ function initializePopups() {
             targetCard.setAttribute('aria-hidden', 'false');
             // Prevent body scroll when popup is open
             document.body.style.overflow = 'hidden';
-            
+
             // Focus management for accessibility
             const closeBtn = targetCard.querySelector('.close-btn');
             if (closeBtn) {
