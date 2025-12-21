@@ -19,8 +19,10 @@ function initializePopups() {
             backdrop.classList.add('opacity-0', 'invisible');
             backdrop.setAttribute('aria-hidden', 'true');
         }
-        // Restore body scroll when popup is closed
-        document.body.style.overflow = 'auto';
+        // Restore scroll when popup is closed
+        document.documentElement.style.overflow = '';
+        document.body.style.overflow = '';
+        console.log("reenable scroll bar");
     }
 
     function openPopup(cardId) {
@@ -38,7 +40,9 @@ function initializePopups() {
         if (targetCard) {
             targetCard.classList.add('visible');
             targetCard.setAttribute('aria-hidden', 'false');
-            // Prevent body scroll when popup is open
+            // Prevent scroll when popup is open
+            console.log("disable scroll bar");
+            document.documentElement.style.overflow = 'hidden';
             document.body.style.overflow = 'hidden';
 
             // Focus management for accessibility
