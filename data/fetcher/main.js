@@ -86,7 +86,7 @@ function organizeWorksByCategory(works) {
 }
 
 async function main() {
-  const dataDir = path.join(__dirname, '..', '..');
+  const dataDir = path.join(__dirname, '..');
   const staticFile = path.join(dataDir, 'static', 'research.toml');
   const outputFile = path.join(dataDir, 'research.toml');
 

@@ -7,7 +7,7 @@ authors = "Sira Pornsiriprasert, Panattaporn Tangguay, Sunita Susamakulwong, Pit
 url = "https://doi.org/10.33165/rmj.48.04.e272773"
 
 [[conference]]
-title = "Barriers to Successful Student Evaluation of Teaching (SET): Multi-Stakeholder Perspectives and Systems Thinking"
+title = "Challenges to Successful Student Evaluation of Teaching (SET): Multi-Stakeholder Perspectives and Systems Thinking"
 subtitle = "AMEE – The International Association for Health Professions Education, 2024"
 year = 2024
 type = "conference-poster"
@@ -15,12 +15,19 @@ authors = "Yossawat Suwanlikit, Krittin Venunan, Pharanyoo Osotthanakorn, Smuch 
 url = "https://zenodo.org/doi/10.5281/zenodo.17389034"
 
 [[conference]]
-title = "Barriers of Medical and Dental Admission Involving the BioMedical Admissions Test (BMAT) in Thailand"
+title = "Equity Implications of the UK Biomedical Admissions Test (BMAT) in the Thai Context"
 subtitle = "AMEE – An International Association for Medical Education, 2022"
 year = 2022
 type = "conference-poster"
 authors = "Sira Pornsiriprasert, Panattaporn Tangguay, Pitchayapa Vichitvigrom, Sunita Susamakulwong"
 url = "https://zenodo.org/doi/10.5281/zenodo.17385456"
+
+[[conference]]
+title = "Barriers to Medical and Dental Admission Involving BioMedical Admissions Test (BMAT) in Thailand"
+subtitle = "Thai Medical Education Conference (TMEC), 2022"
+year = 2022
+type = "conference-presentation"
+authors = "Sira Pornsiriprasert, Panattaporn Tangguay, Pitchayapa Vichitvigrom, Sunita Susamakulwong"
 
 [[software]]
 title = "ORCID Parser: A TypeScript library for fetching and parsing ORCID publication data"
