@@ -1,16 +1,13 @@
 {{ template "popup_card" dict "ID" "achievements-card" "Title" "Achievements" "ContentTemplate" "achievements_content" }}
 
 {{ define "achievements_content" }}
-<div class="border-l-4 border-accent-primary pl-4">
-    <h3 class="text-xl font-semibold text-primary mb-2">Dean's List</h3>
-    <p class="text-secondary">Maintained academic excellence throughout the M.D.-M.Eng. program</p>
-</div>
-<div class="border-l-4 border-accent-secondary pl-4">
-    <h3 class="text-xl font-semibold text-primary mb-2">Research Excellence Award</h3>
-    <p class="text-secondary">Recognized for outstanding contributions to medical engineering research</p>
-</div>
-<div class="border-l-4 border-accent-tertiary pl-4">
-    <h3 class="text-xl font-semibold text-primary mb-2">Innovation Challenge Winner</h3>
-    <p class="text-secondary">First place in the university's healthcare innovation competition</p>
-</div>
+
+{{ template "info_block" dict "Title" "Dean's List: Academic Excellence" "Content" "Faculty of Medicine Ramathibodi Hospital, 2024"}}
+
+{{ template "info_block" dict "Title" "Scientific and Mathematical Literacy: Gold Medal" "Content" "Institute for the Promotion of Teaching Science and Technology (IPST; สสวท.), 2020"}}
+
+{{ template "info_block" dict "Title" "Thailand Geography Olympiad: Gold Medal" "Content" "The Promotion of Academic Olympiad and Development of Science Education Foundation (POSN; สอวน.), 2020"}}
+
+{{ template "info_block" dict "Title" "Thailand Physics Olympiad: Declaration of Honor" "Content" "The Promotion of Academic Olympiad and Development of Science Education Foundation (POSN; สอวน.), 2020"}}
+
 {{ end }}
