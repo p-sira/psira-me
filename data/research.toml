@@ -1,8 +1,12 @@
-# Static Research Data for Research Card
-# This file contains static publications, conferences, and academic services
-# that will appear after ORCID data in the research card
+[[publication]]
+title = "Barriers to Achieving Passing BioMedical Admissions Test Scores for Medical and Dental School Admission in Thailand"
+subtitle = "Ramathibodi Medical Journal, 2025"
+year = 2025
+type = "journal-article"
+authors = "Sira Pornsiriprasert, Panattaporn Tangguay, Sunita Susamakulwong, Pitchayapa Vichitvigrom, Peerasit Sitthirat, Phanuwich Kaewkamjornchai"
+url = "https://doi.org/10.33165/rmj.48.04.e272773"
 
-[[publications]]
+[[publication]]
 title = "Medical AI Applications in Clinical Practice"
 subtitle = "Journal of Medical Engineering, 2024"
 year = 2024
@@ -10,7 +14,7 @@ type = "journal-article"
 authors = "P. Sira, M. Aai"
 url = "https://example.com/publication1"
 
-[[publications]]
+[[publication]]
 title = "Interdisciplinary Approaches to Healthcare Innovation"
 subtitle = "Nature Medicine, 2023"
 year = 2023
@@ -18,7 +22,23 @@ type = "journal-article"
 authors = "P. Sira, M. Aai, M. Bee"
 url = "https://example.com/publication2"
 
-[[conferences]]
+[[conference]]
+title = "Barriers to Successful Student Evaluation of Teaching (SET): Multi-Stakeholder Perspectives and Systems Thinking"
+subtitle = "AMEE – The International Association for Health Professions Education, 2024"
+year = 2024
+type = "conference-poster"
+authors = "Yossawat Suwanlikit, Krittin Venunan, Pharanyoo Osotthanakorn, Smuch Siramongkholkarn, Sira Pornsiriprasert"
+url = "https://zenodo.org/doi/10.5281/zenodo.17389034"
+
+[[conference]]
+title = "Barriers of Medical and Dental Admission Involving the BioMedical Admissions Test (BMAT) in Thailand"
+subtitle = "AMEE – An International Association for Medical Education, 2022"
+year = 2022
+type = "conference-poster"
+authors = "Sira Pornsiriprasert, Panattaporn Tangguay, Pitchayapa Vichitvigrom, Sunita Susamakulwong"
+url = "https://zenodo.org/doi/10.5281/zenodo.17385456"
+
+[[conference]]
 title = "International Conference on Medical Engineering"
 subtitle = "Boston, MA - March 2024"
 year = 2024
@@ -26,7 +46,7 @@ type = "conference-presentation"
 authors = "P. Sira, M. Aai, M. Bee"
 url = "https://example.com/conference1"
 
-[[conferences]]
+[[conference]]
 title = "Healthcare Innovation Summit"
 subtitle = "San Francisco, CA - September 2023"
 year = 2023
@@ -34,9 +54,24 @@ type = "conference-poster"
 authors = "P. Sira"
 url = "https://example.com/conference2"
 
-[[services]]
+[[software]]
+title = "Deeplabcut2yolo: A DeepLabCut-to-YOLO Dataset Converter for Python"
+subtitle = "Zenodo, 2025"
+year = 2025
+type = "software"
+authors = "Sira Pornsiriprasert"
+url = "https://zenodo.org/doi/10.5281/zenodo.17386188"
+
+[[software]]
+title = "MedSoft"
+subtitle = "Nature Medicine, 2023"
+year = 2023
+type = "software"
+authors = "P. Sira, M. Aai, M. Bee"
+url = "https://example.com/publication2"
+
+[[service]]
 title = "Peer Reviewer"
 subtitle = "Journal of Medical Engineering, 2023-Present"
 year = 2023
 type = "academic-service"
-

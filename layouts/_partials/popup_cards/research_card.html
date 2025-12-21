@@ -1,91 +1,52 @@
-{{- $research := .Site.Data.research | default dict -}}
-{{- $publications := slice -}}
-{{- $conferences := slice -}}
-{{- $softwares := slice -}}
-{{- $services := slice -}}
-{{- if $research.publications -}}
-    {{- range $research.publications -}}
-        {{- $publications = $publications | append (dict 
-            "title" .title
-            "subtitle" .subtitle
-            "authors" .authors
-            "year" .year
-            "url" .url
-            "type" .type
-            "index" (default 9999 .index)
-            "category" "publications"
-        ) -}}
-    {{- end -}}
-{{- end -}}
-{{- if $research.conferences -}}
-    {{- range $research.conferences -}}
-        {{- $conferences = $conferences | append (dict 
-            "title" .title
-            "subtitle" .subtitle
-            "authors" .authors
-            "year" .year
-            "url" .url
-            "type" .type
-            "index" (default 9999 .index)
-            "category" "conferences"
-        ) -}}
-    {{- end -}}
-{{- end -}}
-{{- if $research.softwares -}}
-    {{- range $research.softwares -}}
-        {{- $softwares = $softwares | append (dict 
-            "title" .title
-            "subtitle" .subtitle
-            "authors" .authors
-            "year" .year
-            "url" .url
-            "type" .type
-            "index" (default 9999 .index)
-            "category" "softwares"
-        ) -}}
-    {{- end -}}
-{{- end -}}
-{{- if $research.services -}}
-    {{- range $research.services -}}
-        {{- $services = $services | append (dict 
-            "title" .title
-            "subtitle" .subtitle
-            "authors" .authors
-            "year" .year
-            "url" .url
-            "type" .type
-            "index" (default 9999 .index)
-            "category" "services"
-        ) -}}
-    {{- end -}}
-{{- end -}}
-{{ template "popup_tabs" dict 
-    "ID" "research-card" 
-    "Title" "Research" 
-    "Tabs" (slice 
-        (dict 
-            "ID" "publications" 
-            "Label" "Publications" 
-            "Items" $publications
-            "Template" "research_entry"
-        ) 
-        (dict 
-            "ID" "conferences" 
-            "Label" "Conferences" 
-            "Items" $conferences
-            "Template" "research_entry"
-        ) 
-        (dict 
-            "ID" "softwares" 
-            "Label" "Softwares" 
-            "Items" $softwares
-            "Template" "research_entry"
-        ) 
-        (dict 
-            "ID" "services" 
-            "Label" "Academic Services" 
-            "Items" $services
-            "Template" "research_entry"
-        )
-    )
+{{ $researchData := .Site.Data.research }}
+{{ $tabs := slice }}
+
+{{/* Publications Tab */}}
+{{ $publications := $researchData.publication | default slice }}
+{{ $publicationsTab := dict 
+  "ID" "publications"
+  "Label" "Publications"
+  "Items" $publications
+  "Template" "research_entry"
 }}
+{{ $tabs = $tabs | append $publicationsTab }}
+
+{{/* Conferences Tab */}}
+{{ $conferences := $researchData.conference | default slice }}
+{{ $conferencesTab := dict 
+  "ID" "conferences"
+  "Label" "Conferences"
+  "Items" $conferences
+  "Template" "research_entry"
+}}
+{{ $tabs = $tabs | append $conferencesTab }}
+
+{{/* Softwares Tab */}}
+{{ $softwares := $researchData.software | default slice }}
+{{ $softwaresTab := dict 
+  "ID" "softwares"
+  "Label" "Softwares"
+  "Items" $softwares
+  "Template" "research_entry"
+}}
+{{ $tabs = $tabs | append $softwaresTab }}
+
+{{/* Academic Services Tab */}}
+{{ $services := $researchData.service | default slice }}
+{{ $servicesTab := dict 
+  "ID" "services"
+  "Label" "Academic Services"
+  "Items" $services
+  "Template" "research_entry"
+}}
+{{ $tabs = $tabs | append $servicesTab }}
+
+{{ template "popup_tabs" dict 
+  "ID" "research-card"
+  "Title" "Research"
+  "Tabs" $tabs
+}}
+
+{{ define "popup_content" }}
+{{/* This won't be used since we're using popup_tabs, but keeping for compatibility */}}
+{{ end }}

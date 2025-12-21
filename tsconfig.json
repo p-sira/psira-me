@@ -8,12 +8,12 @@
     "isolatedModules": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "static/js/orcid",
-    "rootDir": "src/orcid",
+    "outDir": "static/js/build",
+    "rootDir": "src/",
     "removeComments": false,
     "esModuleInterop": true
   },
-  "include": ["src/orcid/**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "public"]
 }
 

@@ -1,0 +1,35 @@
+name: Sync ORCID Data
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Run daily at midnight UTC
+  workflow_dispatch:      # Allow manual trigger
+
+jobs:
+  sync-orcid:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          
+      - name: Install dependencies
+        working-directory: data/fetcher/orcid
+        run: npm install
+          
+      - name: Fetch and save ORCID data
+        working-directory: data/fetcher/orcid
+        run: node main.js
+          
+      - name: Commit and push if there are changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/dynamic/orcid.toml
+          git commit -m "Update ORCID works data" || exit 0
+          git push
