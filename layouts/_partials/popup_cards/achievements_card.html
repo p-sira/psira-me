@@ -4,6 +4,6 @@
 {{ template "popup_card" dict "ID" "achievements-card" "Title" "Achievements" "ContentTemplate" "achievements_content" "Achievements" $achievements }}
     {{ define "achievements_content" }}
     {{ range $achievement := .Achievements }}
-        {{ template "info_block" dict "Title" $achievement.title "Content" $achievement.content }}
+        {{ template "info_block" $achievement }}
     {{ end }}
 {{ end }}
