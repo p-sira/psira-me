@@ -1,13 +1,9 @@
-{{ template "popup_card" dict "ID" "achievements-card" "Title" "Achievements" "ContentTemplate" "achievements_content" }}
+{{ $achievementsData := .Site.Data.achievements }}
+{{ $achievements := $achievementsData.achievement | default slice }}
 
-{{ define "achievements_content" }}
-
-{{ template "info_block" dict "Title" "Dean's List: Academic Excellence" "Content" "Faculty of Medicine Ramathibodi Hospital, 2024"}}
-
-{{ template "info_block" dict "Title" "Scientific and Mathematical Literacy: Gold Medal" "Content" "Institute for the Promotion of Teaching Science and Technology (IPST; สสวท.), 2020"}}
-
-{{ template "info_block" dict "Title" "Thailand Geography Olympiad: Gold Medal" "Content" "The Promotion of Academic Olympiad and Development of Science Education Foundation (POSN; สอวน.), 2020"}}
-
-{{ template "info_block" dict "Title" "Thailand Physics Olympiad: Declaration of Honor" "Content" "The Promotion of Academic Olympiad and Development of Science Education Foundation (POSN; สอวน.), 2020"}}
-
+{{ template "popup_card" dict "ID" "achievements-card" "Title" "Achievements" "ContentTemplate" "achievements_content" "Achievements" $achievements }}
+    {{ define "achievements_content" }}
+    {{ range $achievement := .Achievements }}
+        {{ template "info_block" dict "Title" $achievement.title "Content" $achievement.content }}
+    {{ end }}
 {{ end }}
