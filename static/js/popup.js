@@ -6,7 +6,23 @@ const backdrop = document.getElementById('popup-backdrop');
 // Ensure DOM is loaded before initializing
 document.addEventListener('DOMContentLoaded', function () {
     initializePopups();
+    initializeContactScroll();
 });
+
+// Contact button scroll functionality
+function initializeContactScroll() {
+    const contactButton = document.getElementById('contact-button');
+    const footer = document.getElementById('footer');
+    
+    if (contactButton && footer) {
+        contactButton.addEventListener('click', () => {
+            footer.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    }
+}
 
 function initializePopups() {
     function closeAllPopups() {
