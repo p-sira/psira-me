@@ -38,7 +38,6 @@ function initializePopups() {
         // Restore scroll when popup is closed
         document.documentElement.style.overflow = '';
         document.body.style.overflow = '';
-        console.log("reenable scroll bar");
     }
 
     function openPopup(cardId) {
@@ -57,7 +56,6 @@ function initializePopups() {
             targetCard.classList.add('visible');
             targetCard.setAttribute('aria-hidden', 'false');
             // Prevent scroll when popup is open
-            console.log("disable scroll bar");
             document.documentElement.style.overflow = 'hidden';
             document.body.style.overflow = 'hidden';
 
