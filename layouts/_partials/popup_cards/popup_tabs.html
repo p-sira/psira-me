@@ -25,29 +25,7 @@
         </div>
         <div class="space-y-6" data-static-works="{{ $tab.ID }}">
           {{ range $item := $tab.Items }}
-            {{ if $tab.Template }}
-              {{ partial (printf "popup_cards/%s" $tab.Template) $item }}
-            {{ else }}
-              {{/* Fallback to old format for backwards compatibility */}}
-              <div class="border-l-4 border-{{ $item.BorderColor }} pl-4" 
-                   data-work
-                   data-work-title="{{ $item.Title }}"
-                   data-work-subtitle="{{ $item.Subtitle }}"
-                   data-work-description="{{ $item.Description }}"
-                   data-work-border-color="{{ $item.BorderColor }}"
-                   {{ if $item.URL }}data-work-url="{{ $item.URL }}"{{ end }}
-                   {{ if $item.Index }}data-work-index="{{ $item.Index }}"{{ end }}>
-                <h4 class="text-lg font-semibold text-primary mb-2">
-                  {{ if $item.URL }}
-                    <a href="{{ $item.URL }}" target="_blank" rel="noopener noreferrer" class="hover:underline">{{ $item.Title }}</a>
-                  {{ else }}
-                    {{ $item.Title }}
-                  {{ end }}
-                </h4>
-                <p class="text-secondary mb-2">{{ $item.Subtitle }}</p>
-                <p class="text-tertiary">{{ $item.Description }}</p>
-              </div>
-            {{ end }}
+          {{ partial (printf "popup_cards/%s" $tab.Template) $item }}
           {{ end }}
         </div>
       </div>
