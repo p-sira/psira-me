@@ -24,8 +24,15 @@
           {{ template "close_btn" dict "Title" $.Title }}
         </div>
         <div class="space-y-6" data-static-works="{{ $tab.ID }}">
+          {{ $prevYear := 0 }}
           {{ range $item := $tab.Items }}
-          {{ partial (printf "popup_cards/%s" $tab.Template) $item }}
+            {{ if ne $prevYear $item.year }}
+              <div class="year-divider {{ if ne $prevYear 0 }}mt-8{{ end }} mb-4">
+                <h4 class="text-xl font-semibold text-primary">{{ $item.year }}</h4>
+              </div>
+            {{ end }}
+            {{ partial (printf "popup_cards/%s" $tab.Template) $item }}
+            {{ $prevYear = $item.year }}
           {{ end }}
         </div>
       </div>
