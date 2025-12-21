@@ -1,9 +1,25 @@
 /* Mobile-specific styles and optimizations */
 
-/* Prevent horizontal scrolling on mobile */
-html, body {
+/* Unify page scrolling - only html should scroll */
+html {
+    height: 100%;
+    overflow-y: auto;
     overflow-x: hidden;
     max-width: 100vw;
+}
+
+/* Prevent horizontal scrolling on mobile */
+body {
+    min-height: 100%; /* Allow body to grow beyond viewport */
+    height: auto; /* Don't constrain height to viewport */
+    overflow: visible; /* Allow content to overflow, html will handle scrolling */
+    max-width: 100vw;
+}
+
+/* Ensure main doesn't create its own scrollbar */
+main {
+    overflow: visible;
+    height: auto;
 }
 
 /* Improve touch interactions */
