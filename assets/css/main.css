@@ -7,7 +7,6 @@
 @import "./catppuccin.css";
 
 @layer base {
-
     /* Custom color variables */
     :root {
         /* Catppuccin Latte (Light Theme) */
