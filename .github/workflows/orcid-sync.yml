@@ -19,17 +19,17 @@ jobs:
           node-version: '20'
           
       - name: Install dependencies
-        working-directory: data/fetcher/orcid
+        working-directory: data/fetcher/
         run: npm install
           
       - name: Fetch and save ORCID data
-        working-directory: data/fetcher/orcid
+        working-directory: data/fetcher/
         run: node main.js
           
       - name: Commit and push if there are changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add data/dynamic/orcid.toml
-          git commit -m "Update ORCID works data" || exit 0
+          git add data/research.toml
+          git commit -m "Update research data" || exit 0
           git push

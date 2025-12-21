@@ -6,22 +6,6 @@ type = "journal-article"
 authors = "Sira Pornsiriprasert, Panattaporn Tangguay, Sunita Susamakulwong, Pitchayapa Vichitvigrom, Peerasit Sitthirat, Phanuwich Kaewkamjornchai"
 url = "https://doi.org/10.33165/rmj.48.04.e272773"
 
-[[publication]]
-title = "Medical AI Applications in Clinical Practice"
-subtitle = "Journal of Medical Engineering, 2024"
-year = 2024
-type = "journal-article"
-authors = "P. Sira, M. Aai"
-url = "https://example.com/publication1"
-
-[[publication]]
-title = "Interdisciplinary Approaches to Healthcare Innovation"
-subtitle = "Nature Medicine, 2023"
-year = 2023
-type = "journal-article"
-authors = "P. Sira, M. Aai, M. Bee"
-url = "https://example.com/publication2"
-
 [[conference]]
 title = "Barriers to Successful Student Evaluation of Teaching (SET): Multi-Stakeholder Perspectives and Systems Thinking"
 subtitle = "AMEE – The International Association for Health Professions Education, 2024"
@@ -38,21 +22,21 @@ type = "conference-poster"
 authors = "Sira Pornsiriprasert, Panattaporn Tangguay, Pitchayapa Vichitvigrom, Sunita Susamakulwong"
 url = "https://zenodo.org/doi/10.5281/zenodo.17385456"
 
-[[conference]]
-title = "International Conference on Medical Engineering"
-subtitle = "Boston, MA - March 2024"
-year = 2024
-type = "conference-presentation"
-authors = "P. Sira, M. Aai, M. Bee"
-url = "https://example.com/conference1"
+[[software]]
+title = "ORCID Parser: A TypeScript library for fetching and parsing ORCID publication data"
+subtitle = "Zenodo, 2025"
+year = 2025
+type = "software"
+authors = "Sira Pornsiriprasert"
+url = "https://zenodo.org/doi/10.5281/zenodo.18006107"
 
-[[conference]]
-title = "Healthcare Innovation Summit"
-subtitle = "San Francisco, CA - September 2023"
-year = 2023
-type = "conference-poster"
-authors = "P. Sira"
-url = "https://example.com/conference2"
+[[software]]
+title = "Ellip: Elliptic Integrals for Rust"
+subtitle = "Zenodo, 2025"
+year = 2025
+type = "software"
+authors = "Sira Pornsiriprasert"
+url = "https://zenodo.org/doi/10.5281/zenodo.17990805"
 
 [[software]]
 title = "Deeplabcut2yolo: A DeepLabCut-to-YOLO Dataset Converter for Python"
@@ -62,16 +46,8 @@ type = "software"
 authors = "Sira Pornsiriprasert"
 url = "https://zenodo.org/doi/10.5281/zenodo.17386188"
 
-[[software]]
-title = "MedSoft"
-subtitle = "Nature Medicine, 2023"
-year = 2023
-type = "software"
-authors = "P. Sira, M. Aai, M. Bee"
-url = "https://example.com/publication2"
-
 [[service]]
-title = "Peer Reviewer"
-subtitle = "Journal of Medical Engineering, 2023-Present"
-year = 2023
+title = "The 18th International Convention on Rehabilitation Engineering and Assistive Technology (i-CREATe 2025)"
+subtitle = "Conference submission reviewer"
+year = 2025
 type = "academic-service"
