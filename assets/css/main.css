@@ -163,12 +163,6 @@
         @apply mx-4 sm:mx-6 lg:mx-8;
     }
 
-    /* Touch-friendly sizing */
-    .touch-target {
-        min-height: 44px;
-        min-width: 44px;
-    }
-
     /* Responsive text sizing */
     .responsive-text-xs {
         @apply text-xs sm:text-sm;

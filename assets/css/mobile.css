@@ -27,12 +27,6 @@ main {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Better touch targets for mobile */
-button, a, input, select, textarea {
-    min-height: 44px;
-    min-width: 44px;
-}
-
 /* Optimize images for mobile */
 img {
     max-width: 100%;
