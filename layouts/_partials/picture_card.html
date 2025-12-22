@@ -29,10 +29,10 @@ Card Data
 <div class="picture-card-image">
   {{ if $url }}
   <a href="{{ $url }}" class="picture-card-image-link" target="_blank">
-    <img src="{{ $image }}" alt="{{ $title }} image" class="picture-card-logo">
+    <img src="{{ $image }}" alt="{{ $title }} image" loading="lazy" decoding="async" class="picture-card-logo">
   </a>
   {{ else }}
-  <img src="{{ $image }}" alt="{{ $title }} image" class="picture-card-logo">
+  <img src="{{ $image }}" alt="{{ $title }} image" loading="lazy" decoding="async" class="picture-card-logo">
   {{ end }}
 </div>
 {{ end }}
@@ -134,11 +134,11 @@ Card Data
 
       {{ if $url }}
       <a href="{{ $url }}" target="_blank" rel="noopener noreferrer" class="picture-card-badge-link">
-        <img src="{{ $light }}" data-badge-light="{{ $light }}" data-badge-dark="{{ $dark }}" alt="{{ $alt }}"
+        <img src="{{ $light }}" loading="lazy" data-badge-light="{{ $light }}" data-badge-dark="{{ $dark }}" alt="{{ $alt }}"
           class="picture-card-badge theme-badge">
       </a>
       {{ else }}
-      <img src="{{ $light }}" data-badge-light="{{ $light }}" data-badge-dark="{{ $dark }}" alt="{{ $alt }}"
+      <img src="{{ $light }}" loading="lazy" data-badge-light="{{ $light }}" data-badge-dark="{{ $dark }}" alt="{{ $alt }}"
         class="picture-card-badge theme-badge">
       {{ end }}
 
@@ -159,7 +159,7 @@ Card Data
       {{ $dark = printf "%s?style=%s&color=%s" $base $badgeStyle $badgeDarkColor }}
       {{ end }}
 
-      <img src="{{ $light }}" data-badge-light="{{ $light }}" data-badge-dark="{{ $dark }}" alt="Badge"
+      <img src="{{ $light }}" loading="lazy" data-badge-light="{{ $light }}" data-badge-dark="{{ $dark }}" alt="Badge"
         class="picture-card-badge theme-badge">
 
       {{ end }}
