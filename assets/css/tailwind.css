@@ -1018,6 +1018,12 @@
       transition-duration: 500ms;
     }
   }
+  .lg\:duration-1200 {
+    @media (width >= 64rem) {
+      --tw-duration: 1200ms;
+      transition-duration: 1200ms;
+    }
+  }
   .dark\:opacity-0 {
     &:where(.dark, .dark *) {
       opacity: 0%;

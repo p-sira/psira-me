@@ -7,6 +7,13 @@ authors = "Sira Pornsiriprasert, Panattaporn Tangguay, Sunita Susamakulwong, Pit
 url = "https://doi.org/10.33165/rmj.48.04.e272773"
 
 [[conference]]
+title = "Pose Estimation–Based Eyeball Tracking for an Ophthalmic Surgical Training Simulator"
+subtitle = "International Advanced Medical Robotics Symposium (iAMRS), 2024"
+year = 2024
+type = "conference-presentation"
+authors = "Sira Pornsiriprasert, Shen Treratanakulchai"
+
+[[conference]]
 title = "Challenges to Successful Student Evaluation of Teaching (SET): Multi-Stakeholder Perspectives and Systems Thinking"
 subtitle = "AMEE – The International Association for Health Professions Education, 2024"
 year = 2024
