@@ -22,6 +22,8 @@
         --accent-secondary: var(--ctp-latte-lavender);
         --accent-tertiary: var(--ctp-latte-sapphire);
 
+        --text-accent-primary: var(--ctp-latte-maroon);
+
         --accent-primary-inverted: var(--ctp-mocha-red);
         --accent-secondary-inverted: var(--ctp-mocha-mauve);
         --accent-tertiary-inverted: var(--ctp-mocha-sapphire);
@@ -44,6 +46,8 @@
         --accent-primary: var(--ctp-mocha-red);
         --accent-secondary: var(--ctp-mocha-mauve);
         --accent-tertiary: var(--ctp-mocha-sapphire);
+
+        --text-accent-primary: var(--ctp-mocha-red);
 
         --accent-primary-inverted: var(--ctp-latte-maroon);
         --accent-secondary-inverted: var(--ctp-latte-mauve);

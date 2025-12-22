@@ -63,6 +63,12 @@
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05);
     }
 
+    /* Slightly wider layout for the Code & Projects card */
+    #code-card.popup-card {
+        width: 1150px;
+        max-width: 95vw;
+    }
+
     .popup-card .dark {
         @apply bg-[var(--surface)];
     }
@@ -136,4 +142,159 @@
 
 .profile-image {
     @apply absolute h-full w-full object-cover rounded-full border-3 border-[var(--primary-border)] shadow-2xl transition-opacity duration-500 ease-in-out pointer-events-none z-20;
+}
+
+/* Picture Card Component */
+.picture-card {
+    @apply bg-[var(--bg-secondary)] border-[var(--bg-tertiary)] rounded-xl border-2 shadow-lg;
+    @apply dark:border-0;
+    overflow: hidden;
+    padding: 0;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.picture-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.picture-card-image {
+    @apply w-full;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    display: block;
+}
+
+.picture-card-image-link {
+    @apply block w-full h-full;
+}
+
+.picture-card-logo {
+    @apply w-full h-full object-cover;
+    display: block;
+}
+
+.picture-card-content {
+    padding: 1rem;
+}
+
+.picture-card-tags {
+    @apply flex flex-wrap gap-2 mb-3;
+}
+
+.picture-card-tag {
+    @apply px-2 py-1 text-xs font-medium;
+    @apply bg-[var(--bg-tertiary)] text-[var(--text-secondary)];
+    transition: background-color 0.2s ease-in-out;
+}
+
+.picture-card-tag:hover {
+    @apply bg-[var(--bg-secondary)];
+}
+
+.picture-card-title {
+    @apply text-lg font-bold text-[var(--text-primary)] mb-2;
+}
+
+.picture-card-description {
+    @apply text-[var(--text-secondary)] mb-3 leading-relaxed text-sm;
+}
+
+.picture-card-footer {
+    @apply flex flex-col gap-3 mt-auto pt-3 border-t border-[var(--border-primary)];
+}
+
+.picture-card-icons {
+    @apply flex items-center gap-3 flex-wrap;
+}
+
+.picture-card-icon-link {
+    @apply flex items-center justify-center;
+    @apply text-[var(--text-secondary)] hover:text-[var(--text-primary)];
+    @apply transition-colors duration-200 ease-in-out;
+    @apply text-lg;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.picture-card-icon-link:hover {
+    @apply text-[var(--text-primary)];
+    transform: scale(1.1);
+}
+
+.picture-card-badges {
+    @apply flex items-center gap-2 flex-wrap;
+}
+
+.picture-card-badge-link {
+    @apply inline-block transition-transform duration-200 ease-in-out;
+}
+
+.picture-card-badge-link:hover {
+    transform: scale(1.05);
+}
+
+.picture-card-badge {
+    @apply h-5 w-auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Ensure inline SVG icons inherit color and size properly */
+.picture-card-icon-link svg {
+    width: 80%;
+    height: 80%;
+    fill: currentColor;
+    display: block;
+}
+
+/* Responsive adjustments for picture cards */
+@media (max-width: 640px) {
+    .picture-card {
+        padding: 0;
+    }
+
+    .picture-card-content {
+        padding: 0.75rem;
+    }
+
+    .picture-card-title {
+        @apply text-base;
+    }
+
+    .picture-card-description {
+        @apply text-xs;
+    }
+
+    .picture-card-image {
+        aspect-ratio: 16 / 10;
+    }
+
+    .picture-card-footer {
+        @apply gap-2;
+    }
+
+    .picture-card-icons {
+        @apply gap-2;
+    }
+
+    .picture-card-icon-link {
+        @apply text-base;
+        width: 20px;
+        height: 20px;
+    }
+
+    .picture-card-badge {
+        @apply h-4;
+    }
+}
+
+/* Stacked Card Component */
+.stacked-card {
+    @apply flex flex-col gap-4;
+}
+
+.stacked-card-item .picture-card {
+    @apply shadow-md;
 }

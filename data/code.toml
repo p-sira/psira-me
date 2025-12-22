@@ -1,0 +1,149 @@
+[[project]]
+title = "Ellip: Elliptic Integrals for Rust"
+description = "Numerical implementations of elliptic integrals with an emphasis on accuracy and performance."
+url = "https://github.com/p-sira/ellip"
+image = "images/projects/ellip-logo.svg"
+tags = ["Mathematics", "Special Functions", "Elliptic Integrals"]
+icons = [
+  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/ellip", label = "GitHub" },
+  { icon = "fa-brands fa-rust", url = "https://crates.io/crates/ellip", label = "Crates.io" },
+  { icon = "fa-solid fa-book", url = "https://docs.rs/ellip", label = "Documentation" },
+  { name = "doi", url = "https://doi.org/10.5281/zenodo.17990805", label = "DOI" }
+]
+badges = [
+  { base = "https://img.shields.io/crates/d/ellip?label=Downloads", url = "https://crates.io/crates/ellip", alt = "Downloads" },
+  { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
+  { base = "https://img.shields.io/github/stars/p-sira/ellip?label=★", url = "https://github.com/p-sira/ellip", alt = "GitHub Stars" },
+]
+
+[[project]]
+title = "Magba: Analytical Magnetism for Rust"
+description = "A high-performance Rust library for analytical magnetic field calculations."
+url = "https://github.com/p-sira/magba"
+image = "images/projects/magba-logo.svg"
+tags = ["Physics", "Magnetism", "Scientific Computing"]
+icons = [
+  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/magba", label = "GitHub" },
+  { icon = "fa-brands fa-rust", url = "https://crates.io/crates/magba", label = "Crates.io" },
+  { icon = "fa-solid fa-book", url = "https://docs.rs/magba", label = "Documentation" },
+]
+badges = [
+  { base = "https://img.shields.io/crates/d/magba?label=Downloads", url = "https://crates.io/crates/magba", alt = "Downloads" },
+  { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
+  { base = "https://img.shields.io/github/stars/p-sira/magba?label=★", url = "https://github.com/p-sira/magba", alt = "GitHub Stars" },
+]
+
+[[project]]
+title = "DeepLabCut2Yolo (D2Y)"
+description = "D2Y is a DeepLabCut-to-YOLO dataset converter for Python, featuring one-liner conversion, while preserving customizability."
+url = "https://github.com/p-sira/deeplabcut2yolo"
+image = "images/projects/d2y.jpg"
+tags = ["AI", "Pose Estimation", "Dataset"]
+icons = [
+  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/deeplabcut2yolo", label = "GitHub" },
+  { icon = "fa-brands fa-python", url = "https://pypi.org/project/deeplabcut2yolo/", label = "PYPI Package" },
+  { icon = "fa-solid fa-book", url = "https://p-sira.github.io/deeplabcut2yolo/", label = "Documentation" },
+  { name = "doi", url = "https://doi.org/10.5281/zenodo.17839736", label = "DOI" }
+]
+badges = [
+  { base = "https://img.shields.io/pepy/dt/deeplabcut2yolo?label=Downloads", url = "https://pypi.org/project/deeplabcut2yolo/", alt = "Downloads" },
+  { base = "https://img.shields.io/badge/License-GPLv3_+_BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
+  { base = "https://img.shields.io/github/stars/p-sira/deeplabcut2yolo?label=★", url = "https://github.com/p-sira/deeplabcut2yolo", alt = "GitHub Stars" },
+]
+
+[[project]]
+[[project.stacked]]
+title = "LINE for Linux"
+description = "A Linux WINE setup for the LINE desktop client, providing patches, configuration, and usage guidance."
+url = "https://appdb.winehq.org/objectManager.php?sClass=version&iId=42184"
+tags = ["Linux", "Emulator", "WINE"]
+icons = [
+  { icon = "fa-solid fa-wine-glass", url = "https://appdb.winehq.org/objectManager.php?sClass=version&iId=42184", label = "WINE AppDB" },
+  { icon = "fa-brands fa-line", url = "https://www.line.me/en/", label = "LINE" }
+]
+
+[[project.stacked]]
+title = "orcid-parser"
+description = "A lightweight Node.js package for fetching and parsing ORCID publication data."
+url = "https://github.com/p-sira/orcid-parser"
+tags = ["Identifiers", "Metadata", "ORCID"]
+icons = [
+  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/orcid-parser", label = "GitHub" },
+  { icon = "fa-brands fa-npm", url = "https://www.npmjs.com/package/orcid-parser", label = "npm Package" },
+  { name = "typescript", url = "https://www.npmjs.com/package/orcid-parser", label = "Made with TypeScript" },
+  { icon = "fa-solid fa-book", url = "https://p-sira.github.io/orcid-parser", label = "Documentation" },
+  { name = "doi", url = "https://zenodo.org/records/18006107", label = "DOI" },
+]
+badges = [
+  { base = "https://img.shields.io/npm/dy/orcid-parser?label=Downloads", url = "https://www.npmjs.com/package/orcid-parser", alt = "Downloads" },
+  { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
+  { base = "https://img.shields.io/github/stars/p-sira/orcid-parser?label=★", url = "https://github.com/p-sira/orcid-parser", alt = "GitHub Stars" },
+]
+
+[[project]]
+title = "Num-Lazy: Rust Macros for Generic Numerics"
+description = "A Rust utility library with macros to simplify numeric constants and expressions in generic-typed functions."
+url = "https://github.com/p-sira/num-lazy"
+image = "images/projects/num-lazy.jpg"
+tags = ["Rust", "Macro", "Numerics"]
+icons = [
+  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/num-lazy", label = "GitHub" },
+  { icon = "fa-brands fa-rust", url = "https://crates.io/crates/num-lazy", label = "Crates.io" },
+  { icon = "fa-solid fa-book", url = "https://docs.rs/num-lazy", label = "Documentation" },
+]
+badges = [
+  { base = "https://img.shields.io/crates/d/num-lazy?label=Downloads", url = "https://crates.io/crates/num-lazy", alt = "Downloads" },
+  { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
+  { base = "https://img.shields.io/github/stars/p-sira/num-lazy?label=★", url = "https://github.com/p-sira/num-lazy", alt = "GitHub Stars" },
+]
+
+[[project]]
+title = "EllipPy: Rust-Powered Elliptic Integral Library for Python"
+description = "Python bindings for Ellip, with NumPy integration and parallelization support."
+url = "https://github.com/p-sira/ellippy"
+image = "images/projects/ellippy-logo.svg"
+tags = ["Mathematics", "Special Functions", "Elliptic Integrals"]
+icons = [
+  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/ellippy", label = "GitHub" },
+  { icon = "fa-brands fa-python", url = "https://pypi.org/project/ellippy/", label = "PYPI Package" },
+  { icon = "fa-solid fa-book", url = "https://p-sira.github.io/ellippy/", label = "Documentation" },
+]
+badges = [
+  { base = "https://img.shields.io/pepy/dt/ellippy?label=Downloads", url = "https://pypi.org/project/ellippy/", alt = "Downloads" },
+  { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
+  { base = "https://img.shields.io/github/stars/p-sira/ellippy?label=★", url = "https://github.com/p-sira/ellippy", alt = "GitHub Stars" },
+]
+
+[[project]]
+title = "PyMagba: Rust-Powered Magnetic Field Computation for Python"
+description = "Python bindings for Magba, providing fast analytical magnetic field calculations with NumPy integration and parallelization support."
+url = "https://github.com/p-sira/pymagba"
+image = "images/projects/pymagba-logo.svg"
+tags = ["Physics", "Magnetism", "Scientific Computing"]
+icons = [
+  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/pymagba", label = "GitHub" },
+  { icon = "fa-brands fa-python", url = "https://pypi.org/project/pymagba/", label = "PyPI Package" },
+  { icon = "fa-solid fa-book", url = "https://p-sira.github.io/pymagba/", label = "Documentation" },
+]
+badges = [
+  { base = "https://img.shields.io/pepy/dt/pymagba?label=Downloads", url = "https://pypi.org/project/pymagba/", alt = "Downloads" },
+  { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
+  { base = "https://img.shields.io/github/stars/p-sira/pymagba?label=★", url = "https://github.com/p-sira/pymagba", alt = "GitHub Stars" },
+]
+
+[[project]]
+title = "Hycrypt: Stateless Overwrite Hybrid Cryptosystem for Python"
+description = "A Python library for secure data encryption and password-free updates."
+url = "https://github.com/p-sira/hycrypt"
+image = "images/projects/hycrypt.jpg"
+tags = ["Security", "Cryptography", "Hybrid Encryption"]
+icons = [
+  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/hycrypt", label = "GitHub" },
+  { icon = "fa-brands fa-python", url = "https://pypi.org/project/hycrypt/", label = "PyPI Package" },
+  { icon = "fa-solid fa-book", url = "https://p-sira.github.io/hycrypt/", label = "Documentation" },
+]
+badges = [
+  { base = "https://img.shields.io/pepy/dt/hycrypt?label=Downloads", url = "https://pypi.org/project/hycrypt/", alt = "Downloads" },
+  { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
+  { base = "https://img.shields.io/github/stars/p-sira/hycrypt?label=★", url = "https://github.com/p-sira/hycrypt", alt = "GitHub Stars" },
+]

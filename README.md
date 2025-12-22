@@ -108,6 +108,65 @@ You can customize the color scheme by modifying the CSS variables in `static/css
 ✅ **Modern UI**: Clean, professional design with smooth animations
 ✅ **Color Consistency**: Unified semantic color scheme across all components
 ✅ **Custom Color Scheme**: Site-specific color mapping in `color.css`
+✅ **Picture Card Component**: Reusable card template for projects with images, tags, and links
+
+## Picture Card Component
+
+A reusable template for displaying project cards with images, titles, descriptions, tags, and link icons.
+
+### Usage as Partial
+
+In Hugo templates:
+
+```go
+{{ partial "picture_card" (dict 
+  "image" "images/project-logo.svg"
+  "title" "Project Title"
+  "description" "Project description text"
+  "tags" (slice "Tag1" "Tag2" "Tag3")
+  "links" (dict 
+    "github" "https://github.com/user/repo"
+    "docs" "https://docs.example.com"
+    "website" "https://example.com"
+    "rust" "https://crates.io/crates/example"
+  )
+) }}
+```
+
+### Usage as Shortcode
+
+In Markdown files:
+
+```markdown
+{{< picture_card 
+  image="images/project-logo.svg"
+  title="Project Title"
+  description="Project description text"
+  tags="Tag1,Tag2,Tag3"
+  github="https://github.com/user/repo"
+  docs="https://docs.example.com"
+  website="https://example.com"
+  rust="https://crates.io/crates/example"
+>}}
+```
+
+### Supported Links
+
+- `github`: GitHub repository link (displays GitHub icon)
+- `docs`: Documentation link (displays "Docs" button)
+- `website`: Website link (displays external link icon)
+- `rust`: Rust crate link (displays Rust logo icon)
+
+### Features
+
+- **Responsive Design**: Adapts to mobile and desktop screens
+- **Theme Support**: Works with both light and dark themes
+- **Hover Effects**: Smooth transitions and elevation on hover
+- **Flexible Tags**: Support for multiple tags with automatic wrapping
+- **Icon Links**: Built-in icons for common platforms (GitHub, Rust, Docs, Website)
+- **Customizable**: Easy to extend with additional link types
+
+See `layouts/_partials/picture_card_example.html` for more usage examples.
 
 ## Research Data
 
