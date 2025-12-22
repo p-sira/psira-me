@@ -13,7 +13,7 @@
   "license": "UNLICENSED",
   "description": "Personal Website for Sira Pornsiriprasert",
   "repository": "https://github.com/p-sira/psira-me/",
-  "packageManager": "yarn@4.12.0",
+  "packageManager": "yarn@4.10.3",
   "dependencies": {
     "@tailwindcss/cli": "^4.1.16",
     "orcid-parser": "^0.2.0"
