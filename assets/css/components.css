@@ -135,6 +135,15 @@
     }
 }
 
+/* Icon and Links */
+.icon {
+    @apply transition-transform duration-200;
+}
+
+.icon:hover {
+    @apply scale-110;
+}
+
 /* Profile Image and Decoratives */
 .profile-circle {
     @apply absolute bg-[var(--bg-primary)] dark:bg-[var(--bg-highlight)] shadow-md dark:shadow-lg rounded-full transition-colors duration-1000;
@@ -218,11 +227,6 @@
     cursor: pointer;
 }
 
-.picture-card-icon-link:hover {
-    @apply text-[var(--text-primary)];
-    transform: scale(1.1);
-}
-
 .picture-card-badges {
     @apply flex items-center gap-2 flex-wrap;
 }
@@ -300,10 +304,6 @@
 }
 
 /* Footer Component */
-.footer-icon {
-    @apply hover:scale-110;
-}
-
 .footer-link {
     @apply text-[var(--text-primary)] hover:text-[var(--text-accent-primary)] hover:underline transition duration-500;
 }

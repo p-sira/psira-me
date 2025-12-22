@@ -1500,6 +1500,19 @@
     }
   }
 }
+.icon {
+  transition-property: transform, translate, scale, rotate;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  --tw-duration: 200ms;
+  transition-duration: 200ms;
+}
+.icon:hover {
+  --tw-scale-x: 110%;
+  --tw-scale-y: 110%;
+  --tw-scale-z: 110%;
+  scale: var(--tw-scale-x) var(--tw-scale-y);
+}
 .profile-circle {
   position: absolute;
   border-radius: calc(infinity * 1px);
@@ -1655,10 +1668,6 @@
   height: 24px;
   cursor: pointer;
 }
-.picture-card-icon-link:hover {
-  color: var(--text-primary);
-  transform: scale(1.1);
-}
 .picture-card-badges {
   display: flex;
   flex-wrap: wrap;
@@ -1732,16 +1741,6 @@
 .stacked-card-item .picture-card {
   --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-}
-.footer-icon {
-  &:hover {
-    @media (hover: hover) {
-      --tw-scale-x: 110%;
-      --tw-scale-y: 110%;
-      --tw-scale-z: 110%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-  }
 }
 .footer-link {
   color: var(--text-primary);
