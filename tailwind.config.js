@@ -11,6 +11,12 @@ module.exports = {
   darkMode: ['class'],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Noto Sans', 'sans-serif'],
+        'serif': ['Lora', 'serif'],
+        'display': ['Alata', 'sans-serif'],
+        'thai': ['Noto Sans Thai', 'sans-serif'],
+      },
       colors: {
         'primary-bg': 'var(--bg-primary)',
         'secondary-bg': 'var(--bg-secondary)',

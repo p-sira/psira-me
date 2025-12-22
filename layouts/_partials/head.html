@@ -50,18 +50,12 @@
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- Fonts -->
-{{ $fontUrl :=
-"https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"}}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="{{$fontUrl}}">
-<link rel="stylesheet" href="{{$fontUrl}}" media="print" onload="this.media='all'" />
-<noscript>
-    <link href="{{$fontUrl}}" rel="stylesheet">
-</noscript>
+<link rel="preload" href="/fonts/noto-sans-v42-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Import Map for browser ESM -->
 <script type="importmap">
