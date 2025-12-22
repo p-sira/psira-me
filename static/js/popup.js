@@ -56,6 +56,20 @@ function handlePopupHash() {
         return;
     }
 
+    // Special case: "#contact" should trigger scroll to footer instead of a popup
+    if (hash === 'contact') {
+        const footer = document.getElementById('footer');
+        if (footer) {
+            // Close any open popups before scrolling
+            closeAllPopups();
+            footer.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        return;
+    }
+
     const validCards = ['about', 'research', 'achievements', 'code', 'experience'];
 
     if (validCards.includes(hash)) {
