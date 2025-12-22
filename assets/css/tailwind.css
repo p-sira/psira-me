@@ -28,8 +28,6 @@
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
-    --text-5xl: 3rem;
-    --text-5xl--line-height: 1;
     --text-8xl: 6rem;
     --text-8xl--line-height: 1;
     --font-weight-medium: 500;
@@ -1276,161 +1274,10 @@
     background-color: var(--surface);
   }
   .border-primary {
-    border-color: var(--border-primary);
+    border-color: var(--border);
   }
-  .dark .bg-primary {
-    background-color: var(--bg-primary);
-  }
-  .dark .bg-secondary {
-    background-color: var(--bg-secondary);
-  }
-  .dark .bg-tertiary {
-    background-color: var(--bg-tertiary);
-  }
-  .dark .text-primary {
-    color: var(--text-primary);
-  }
-  .dark .text-secondary {
-    color: var(--text-secondary);
-  }
-  .dark .text-tertiary {
-    color: var(--text-tertiary);
-  }
-  .dark .text-accent {
-    color: var(--accent-primary);
-  }
-  .dark .text-accent-secondary {
-    color: var(--accent-secondary);
-  }
-  .dark .text-accent-tertiary {
-    color: var(--accent-tertiary);
-  }
-  .dark .bg-surface {
-    background-color: var(--surface);
-  }
-  .dark .border-primary {
-    border-color: var(--border-primary);
-  }
-}
-@layer utilities {
-  .mobile-padding {
-    padding-inline: calc(var(--spacing) * 4);
-    @media (width >= 40rem) {
-      padding-inline: calc(var(--spacing) * 6);
-    }
-    @media (width >= 64rem) {
-      padding-inline: calc(var(--spacing) * 8);
-    }
-  }
-  .mobile-margin {
-    margin-inline: calc(var(--spacing) * 4);
-    @media (width >= 40rem) {
-      margin-inline: calc(var(--spacing) * 6);
-    }
-    @media (width >= 64rem) {
-      margin-inline: calc(var(--spacing) * 8);
-    }
-  }
-  .responsive-text-xs {
-    font-size: var(--text-xs);
-    line-height: var(--tw-leading, var(--text-xs--line-height));
-    @media (width >= 40rem) {
-      font-size: var(--text-sm);
-      line-height: var(--tw-leading, var(--text-sm--line-height));
-    }
-  }
-  .responsive-text-sm {
-    font-size: var(--text-sm);
-    line-height: var(--tw-leading, var(--text-sm--line-height));
-    @media (width >= 40rem) {
-      font-size: var(--text-base);
-      line-height: var(--tw-leading, var(--text-base--line-height));
-    }
-  }
-  .responsive-text-base {
-    font-size: var(--text-base);
-    line-height: var(--tw-leading, var(--text-base--line-height));
-    @media (width >= 40rem) {
-      font-size: var(--text-lg);
-      line-height: var(--tw-leading, var(--text-lg--line-height));
-    }
-  }
-  .responsive-text-lg {
-    font-size: var(--text-lg);
-    line-height: var(--tw-leading, var(--text-lg--line-height));
-    @media (width >= 40rem) {
-      font-size: var(--text-xl);
-      line-height: var(--tw-leading, var(--text-xl--line-height));
-    }
-  }
-  .responsive-text-xl {
-    font-size: var(--text-xl);
-    line-height: var(--tw-leading, var(--text-xl--line-height));
-    @media (width >= 40rem) {
-      font-size: var(--text-2xl);
-      line-height: var(--tw-leading, var(--text-2xl--line-height));
-    }
-  }
-  .responsive-text-2xl {
-    font-size: var(--text-2xl);
-    line-height: var(--tw-leading, var(--text-2xl--line-height));
-    @media (width >= 40rem) {
-      font-size: var(--text-3xl);
-      line-height: var(--tw-leading, var(--text-3xl--line-height));
-    }
-    @media (width >= 64rem) {
-      font-size: var(--text-4xl);
-      line-height: var(--tw-leading, var(--text-4xl--line-height));
-    }
-  }
-  .responsive-text-3xl {
-    font-size: var(--text-3xl);
-    line-height: var(--tw-leading, var(--text-3xl--line-height));
-    @media (width >= 40rem) {
-      font-size: var(--text-4xl);
-      line-height: var(--tw-leading, var(--text-4xl--line-height));
-    }
-    @media (width >= 64rem) {
-      font-size: var(--text-5xl);
-      line-height: var(--tw-leading, var(--text-5xl--line-height));
-    }
-  }
-  .responsive-container {
-    margin-inline: auto;
-    width: 100%;
-    max-width: var(--container-7xl);
-    padding-inline: calc(var(--spacing) * 4);
-    @media (width >= 40rem) {
-      padding-inline: calc(var(--spacing) * 6);
-    }
-    @media (width >= 64rem) {
-      padding-inline: calc(var(--spacing) * 8);
-    }
-  }
-  .mobile-stack {
-    display: flex;
-    flex-direction: column;
-    @media (width >= 64rem) {
-      flex-direction: row;
-    }
-  }
-  .mobile-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    @media (width >= 64rem) {
-      align-items: flex-start;
-    }
-  }
-  .safe-area-padding {
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-  }
-  .safe-area-padding-top {
-    padding-top: env(safe-area-inset-top);
-  }
-  .safe-area-padding-bottom {
-    padding-bottom: env(safe-area-inset-bottom);
+  .border-border {
+    border-color: var(--border);
   }
 }
 .arc-button {
@@ -1444,7 +1291,7 @@
   cursor: pointer;
   overflow: hidden;
   border-radius: var(--radius-md);
-  border-color: var(--border-primary);
+  border-color: var(--border);
   background-color: var(--surface);
   padding-inline: calc(var(--spacing) * 3);
   padding-block: calc(var(--spacing) * 2);
@@ -1654,7 +1501,7 @@
   border-radius: calc(infinity * 1px);
   border-style: var(--tw-border-style);
   border-width: 3px;
-  border-color: var(--primary-border);
+  border-color: var(--border);
   object-fit: cover;
   --tw-shadow: 0 25px 50px -12px var(--tw-shadow-color, rgb(0 0 0 / 0.25));
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -1749,7 +1596,7 @@
   gap: calc(var(--spacing) * 3);
   border-top-style: var(--tw-border-style);
   border-top-width: 1px;
-  border-color: var(--border-primary);
+  border-color: var(--border);
   padding-top: calc(var(--spacing) * 3);
 }
 .picture-card-icons {
@@ -1965,13 +1812,6 @@ img {
   }
   .arc-button:hover {
     transform: scale(1.02);
-  }
-  .mobile-stack-sm {
-    flex-direction: column;
-  }
-  .mobile-spacing {
-    padding: 1rem;
-    margin: 0.5rem 0;
   }
 }
 @media (max-width: 896px) and (orientation: landscape) {

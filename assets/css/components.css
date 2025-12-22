@@ -2,7 +2,7 @@
 
 /* Arc Buttons */
 .arc-button {
-    @apply flex px-3 py-2 sm:px-4 sm:py-2 mb-4 sm:mb-6 lg:mb-8 rounded-md bg-[var(--surface)] border-[var(--border-primary)] scale-100 cursor-pointer relative overflow-hidden;
+    @apply flex px-3 py-2 sm:px-4 sm:py-2 mb-4 sm:mb-6 lg:mb-8 rounded-md bg-[var(--surface)] border-[var(--border)] scale-100 cursor-pointer relative overflow-hidden;
     transition: transform 100ms, background-color 1s;
     min-height: 44px;
     /* Minimum touch target size for mobile */
@@ -141,7 +141,7 @@
 }
 
 .profile-image {
-    @apply absolute h-full w-full object-cover rounded-full border-3 border-[var(--primary-border)] shadow-2xl transition-opacity duration-500 ease-in-out pointer-events-none z-20;
+    @apply absolute h-full w-full object-cover rounded-full border-3 border-[var(--border)] shadow-2xl transition-opacity duration-500 ease-in-out pointer-events-none z-20;
 }
 
 /* Picture Card Component */
@@ -201,7 +201,7 @@
 }
 
 .picture-card-footer {
-    @apply flex flex-col gap-3 mt-auto pt-3 border-t border-[var(--border-primary)];
+    @apply flex flex-col gap-3 mt-auto pt-3 border-t border-[var(--border)];
 }
 
 .picture-card-icons {

@@ -49,16 +49,6 @@ img {
         transform: scale(1.02);
     }
     
-    /* Stack elements more efficiently on very small screens */
-    .mobile-stack-sm {
-        flex-direction: column;
-    }
-    
-    /* Adjust spacing for small screens */
-    .mobile-spacing {
-        padding: 1rem;
-        margin: 0.5rem 0;
-    }
 }
 
 /* Landscape mobile optimizations */

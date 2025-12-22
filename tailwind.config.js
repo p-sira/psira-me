@@ -2,11 +2,9 @@
 module.exports = {
   content: [
     "./layouts/**/*.html",
-    "./content/**/*.md",
-    "./content/**/*.html",
+    "./content/**/*.{html,md}",
     "./static/**/*.html",
-    "./assets/**/*.css",
-    "./assets/**/*.js"
+    "./public/**/*.html",
   ],
   darkMode: ['class'],
   theme: {
@@ -29,6 +27,7 @@ module.exports = {
         'tertiary-accent': 'var(--accent-tertiary)',
         'primary-surface': 'var(--surface)',
         'primary-border': 'var(--border)',
+        'border-border': 'var(--border)',
         'primary-shadow': 'var(--shadow)',
       },
     }
