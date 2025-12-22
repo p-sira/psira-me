@@ -1,4 +1,4 @@
-name: Build and Deploy Site
+name: Publish Site
 
 on:
   # Runs on pushes targeting the default branch
@@ -35,12 +35,22 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Dart Sass
         run: sudo snap install dart-sass
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Setup Yarn
+        uses: yarnpkg/setup-yarn@v4
+        with:
+          yarn-version: '4.10.3'
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
+      - name: Install dependencies
+        run: yarn install --immutable
       - name: Build
-        run: hugo --minify
+        run: yarn build
       - name: Push to `build` branch
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -48,3 +58,4 @@ jobs:
           publish_dir: ./public
           publish_branch: build
           force_orphan: true
+
