@@ -22,7 +22,7 @@
     "build:css": "yarn tailwindcss -i ./assets/css/main.css -o ./assets/css/tailwind.css --watch=false",
     "build:ts": "tsc -p tsconfig.json",
     "watch:ts": "tsc -p tsconfig.json --watch",
-    "build": "yarn build:css && yarn build:ts && hugo --cleanDestinationDir",
+    "build": "yarn build:css && yarn build:ts && hugo --cleanDestinationDir --minify",
     "dev": "yarn build:css && yarn build:ts && hugo server",
     "watch:css": "yarn tailwindcss -i ./assets/css/main.css -o ./assets/css/tailwind.css --watch"
   }
