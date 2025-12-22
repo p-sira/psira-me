@@ -1,106 +1,15 @@
-const { Orcid } = require('orcid-parser');
 const TOML = require('@iarna/toml');
 const fs = require('fs').promises;
 const path = require('path');
+const { fetchOrcidWorks } = require('./orcid');
 
-function mapOrcidTypeToCategory(type) {
-  if (!type) return "others";
-  switch (type.toLowerCase()) {
-    case "journal-article":
-    case "article":
-    case "conference-paper":
-    case "conference-proceedings":
-    case "book":
-    case "book-chapter":
-    case "preprint":
-      return "publication";
-    case "conference-presentation":
-    case "conference-poster":
-    case "conference-output":
-      return "conference";
-    case "software":
-      return "software";
-    case "academic-service":
-      return "service";
-    default:
-      return "others";
-  }
-}
-
-function formatWork(work) {
-  const type = work.type || "";
-  const category = mapOrcidTypeToCategory(type);
-  
-  let subtitle = "";
-  if (work.journalTitle) {
-    subtitle = work.publicationYear ? `${work.journalTitle}, ${work.publicationYear}` : work.journalTitle;
-  } else if (work.publicationYear) {
-    subtitle = `${work.publicationYear}`;
-  }
-
-  const item = {
-    title: work.title || "",
-    ...(subtitle && { subtitle: subtitle.trim() }),
-    ...(work.publicationYear && { year: work.publicationYear }),
-    ...(type && { type }),
-    ...(work.contributors?.length && { authors: work.contributors.map(c => c.name || "").join(", ") }),
-    ...(work.url && { url: work.url })
-  };
-
-  return { item, category };
-}
-
-function organizeWorksByCategory(works) {
-  const organized = {
-    publication: [],
-    conference: [],
-    software: [],
-    service: [],
-    others: []
-  };
-
-  // Sort works by date, most recent first
-  works.sort((a, b) => {
-    const yearA = a.publicationYear || 0;
-    const yearB = b.publicationYear || 0;
-    if (yearA !== yearB) return yearB - yearA;
-    
-    const monthA = a.publicationMonth || 0;
-    const monthB = b.publicationMonth || 0;
-    if (monthA !== monthB) return monthB - monthA;
-    
-    const dayA = a.publicationDay || 0;
-    const dayB = b.publicationDay || 0;
-    return dayB - dayA;
-  });
-
-  // Format and organize into categories
-  for (const work of works) {
-    const { item, category } = formatWork(work);
-    if (category !== "others") {
-      organized[category].push(item);
-    }
-  }
-
-  return organized;
-}
-
-async function main() {
+async function updateResearchData() {
   const dataDir = path.join(__dirname, '..');
   const staticFile = path.join(dataDir, 'static', 'research.toml');
   const outputFile = path.join(dataDir, 'research.toml');
 
   // Fetch ORCID works
-  const client = new Orcid("0000-0002-5636-8870");
-  const orcidWorks = await client.getWorks();
-
-  if (!orcidWorks) {
-    console.error("Failed to fetch ORCID works");
-    process.exit(1);
-  }
-
-  // Organize works by category
-  const organizedWorks = organizeWorksByCategory(orcidWorks);
+  const organizedWorks = await fetchOrcidWorks("0000-0002-5636-8870");
 
   // Read static data
   let staticData = {
@@ -140,6 +49,14 @@ async function main() {
   
   await fs.writeFile(outputFile, tomlOutput);
   console.log(`Successfully merged and saved research data to ${outputFile}`);
+}
+
+async function main() {
+  console.log('Updating research data...');
+  await updateResearchData();
+  
+  console.log('All data updated successfully!');
+  process.exit(0);
 }
 
 main().catch(err => {
