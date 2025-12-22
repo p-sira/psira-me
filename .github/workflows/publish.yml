@@ -40,9 +40,10 @@ jobs:
         with:
           node-version: '20'
       - name: Setup Yarn
-        uses: yarnpkg/setup-yarn@v4
+        uses: actions/setup-node@v4
         with:
-          yarn-version: '4.10.3'
+          node-version: '20'
+          cache: 'yarn'
       - name: Checkout
         uses: actions/checkout@v4
         with:
