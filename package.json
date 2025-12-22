@@ -1,0 +1,29 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.16",
+    "typescript": "^5.9.3"
+  },
+  "name": "psira-me",
+  "version": "2.0.0",
+  "main": "index.js",
+  "author": "Sira Pornsiriprasert <code@psira.me>",
+  "license": "UNLICENSED",
+  "description": "Personal Website for Sira Pornsiriprasert",
+  "repository": "https://github.com/p-sira/psira-me/",
+  "packageManager": "yarn@4.10.3",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.16",
+    "orcid-parser": "^0.2.0"
+  },
+  "scripts": {
+    "build:css": "yarn tailwindcss -i ./assets/css/main.css -o ./assets/css/tailwind.css --watch=false",
+    "build:ts": "tsc -p tsconfig.json",
+    "watch:ts": "tsc -p tsconfig.json --watch",
+    "build": "yarn build:css && yarn build:ts && hugo --cleanDestinationDir",
+    "dev": "yarn build:css && yarn build:ts && hugo server",
+    "watch:css": "yarn tailwindcss -i ./assets/css/main.css -o ./assets/css/tailwind.css --watch"
+  }
+}

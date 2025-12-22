@@ -1,0 +1,67 @@
+[[publication]]
+title = "Barriers to Achieving Passing BioMedical Admissions Test Scores for Medical and Dental School Admission in Thailand"
+subtitle = "Ramathibodi Medical Journal, 2025"
+year = 2025
+type = "journal-article"
+authors = "Sira Pornsiriprasert, Panattaporn Tangguay, Sunita Susamakulwong, Pitchayapa Vichitvigrom, Peerasit Sitthirat, Phanuwich Kaewkamjornchai"
+url = "https://doi.org/10.33165/rmj.48.04.e272773"
+
+[[conference]]
+title = "Pose Estimation–Based Eyeball Tracking for an Ophthalmic Surgical Training Simulator"
+subtitle = "International Advanced Medical Robotics Symposium (iAMRS), 2024"
+year = 2024
+type = "conference-presentation"
+authors = "Sira Pornsiriprasert, Shen Treratanakulchai"
+
+[[conference]]
+title = "Challenges to Successful Student Evaluation of Teaching (SET): Multi-Stakeholder Perspectives and Systems Thinking"
+subtitle = "AMEE – The International Association for Health Professions Education, 2024"
+year = 2024
+type = "conference-poster"
+authors = "Yossawat Suwanlikit, Krittin Venunan, Pharanyoo Osotthanakorn, Smuch Siramongkholkarn, Sira Pornsiriprasert"
+url = "https://zenodo.org/doi/10.5281/zenodo.17389034"
+
+[[conference]]
+title = "Equity Implications of the UK Biomedical Admissions Test (BMAT) in the Thai Context"
+subtitle = "AMEE – An International Association for Medical Education, 2022"
+year = 2022
+type = "conference-poster"
+authors = "Sira Pornsiriprasert, Panattaporn Tangguay, Pitchayapa Vichitvigrom, Sunita Susamakulwong"
+url = "https://zenodo.org/doi/10.5281/zenodo.17385456"
+
+[[conference]]
+title = "Barriers to Medical and Dental Admission Involving BioMedical Admissions Test (BMAT) in Thailand"
+subtitle = "Thai Medical Education Conference (TMEC), 2022"
+year = 2022
+type = "conference-presentation"
+authors = "Sira Pornsiriprasert, Panattaporn Tangguay, Pitchayapa Vichitvigrom, Sunita Susamakulwong"
+
+[[software]]
+title = "ORCID Parser: A TypeScript library for fetching and parsing ORCID publication data"
+subtitle = "Zenodo, 2025"
+year = 2025
+type = "software"
+authors = "Sira Pornsiriprasert"
+url = "https://zenodo.org/doi/10.5281/zenodo.18006107"
+
+[[software]]
+title = "Ellip: Elliptic Integrals for Rust"
+subtitle = "Zenodo, 2025"
+year = 2025
+type = "software"
+authors = "Sira Pornsiriprasert"
+url = "https://zenodo.org/doi/10.5281/zenodo.17990805"
+
+[[software]]
+title = "Deeplabcut2yolo: A DeepLabCut-to-YOLO Dataset Converter for Python"
+subtitle = "Zenodo, 2025"
+year = 2025
+type = "software"
+authors = "Sira Pornsiriprasert"
+url = "https://zenodo.org/doi/10.5281/zenodo.17386188"
+
+[[service]]
+title = "The 18th International Convention on Rehabilitation Engineering and Assistive Technology (i-CREATe 2025)"
+subtitle = "Conference submission reviewer"
+year = 2025
+type = "academic-service"

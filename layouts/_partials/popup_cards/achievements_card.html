@@ -1,0 +1,9 @@
+{{ $achievementsData := .Site.Data.achievements }}
+{{ $achievements := $achievementsData.achievement | default slice }}
+
+{{ template "popup_card" dict "ID" "achievements-card" "Title" "Achievements" "ContentTemplate" "achievements_content" "Achievements" $achievements }}
+    {{ define "achievements_content" }}
+    {{ range $achievement := .Achievements }}
+        {{ template "info_block" $achievement }}
+    {{ end }}
+{{ end }}

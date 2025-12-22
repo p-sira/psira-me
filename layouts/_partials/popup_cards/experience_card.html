@@ -1,0 +1,19 @@
+{{ $experienceData := .Site.Data.experiences }}
+{{ $experiences := $experienceData.experience | default slice }}
+{{ $experiencesSorted := sort $experiences "year" "desc" }}
+
+{{ template "popup_card" dict "ID" "experience-card" "Title" "Experience" "ContentTemplate" "experience_content" "Experience" $experiencesSorted }}
+
+{{ define "experience_content" }}
+    {{ $prevYear := "" }}
+    {{ range $experience := .Experience }}
+        {{ $currentYear := $experience.year | default "" }}
+        {{ if ne $prevYear $currentYear }}
+            <div class="year-divider {{ if ne $prevYear "" }}mt-8{{ end }} mb-4">
+                <h4 class="text-xl font-semibold text-primary">{{ $currentYear }}</h4>
+            </div>
+        {{ end }}
+        {{ template "info_block" $experience }}
+        {{ $prevYear = $currentYear }}
+    {{ end }}
+{{ end }}

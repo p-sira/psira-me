@@ -1,0 +1,27 @@
+{{/* 
+  Picture Card Shortcode
+  
+  Usage in markdown:
+  {{< picture_card 
+    image="path/to/image.png"
+    title="Project Title"
+    description="Project description text"
+    tags="Tag1,Tag2,Tag3"
+  >}}
+  
+  Note: Icons and badges should be passed via data files or partial templates
+  as shortcodes have limitations with complex nested structures.
+*/}}
+
+{{ $tags := slice }}
+{{ if .Get "tags" }}
+  {{ $tags = split (.Get "tags") "," }}
+  {{ $tags = apply $tags "trim" "." " " }}
+{{ end }}
+
+{{ partial "picture_card" (dict 
+  "image" (.Get "image")
+  "title" (.Get "title")
+  "description" (.Get "description")
+  "tags" $tags
+) }}

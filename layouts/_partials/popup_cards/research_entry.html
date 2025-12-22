@@ -1,0 +1,13 @@
+<div class="border-l-3 pl-4 mb-4">
+  <h3 class="text-lg font-semibold text-primary mb-2">
+    {{ if .url }}
+    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="hover:underline">{{ .title }}</a>
+    {{ else }}
+    {{ .title }}
+    {{ end }}
+  </h3>
+  <p class="text-tertiary mb-1">{{ .subtitle }}</p>
+  {{ if .authors }}
+  <p class="text-tertiary mb-1">{{ .authors }}</p>
+  {{ end }}
+</div>

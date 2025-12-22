@@ -1,0 +1,174 @@
+{{/*
+Picture Card Template
+*/}}
+
+{{/* ================================
+Badge Configuration
+================================ */}}
+
+{{ $badgeStyle := "flat-square" }}
+{{ $badgeLightColor := "5c5f77" }}
+{{ $badgeDarkColor := "313244" }}
+
+{{/* ================================
+Card Data
+================================ */}}
+
+{{ $image := .image }}
+{{ $url := .url }}
+{{ $title := .title }}
+{{ $description := .description }}
+{{ $tags := .tags | default slice }}
+{{ $icons := .icons | default slice }}
+{{ $badges := .badges | default slice }}
+
+<div class="picture-card">
+
+{{/* Logo/Image Section */}}
+{{ if $image }}
+<div class="picture-card-image">
+  {{ if $url }}
+  <a href="{{ $url }}" class="picture-card-image-link" target="_blank">
+    <img src="{{ $image }}" alt="{{ $title }} image" loading="lazy" decoding="async" class="picture-card-logo">
+  </a>
+  {{ else }}
+  <img src="{{ $image }}" alt="{{ $title }} image" loading="lazy" decoding="async" class="picture-card-logo">
+  {{ end }}
+</div>
+{{ end }}
+
+<div class="picture-card-content">
+  {{/* Tags Section */}}
+  {{ if $tags }}
+  <div class="picture-card-tags">
+    {{ range $tags }}
+    <span class="picture-card-tag">{{ . }}</span>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{/* Title Section */}}
+  {{ if $title }}
+    {{ if $image }} 
+      <h3 class="picture-card-title">{{ $title }}</h3>
+    {{ else }}
+      <a href="{{ $url }}" target="_blank"><h3 class="picture-card-title">{{ $title }}</h3></a>
+    {{ end }}
+  {{ end }}
+
+  {{/* Description Section */}}
+  {{ if $description }}
+  <p class="picture-card-description">{{ $description }}</p>
+  {{ end }}
+
+  {{/* Icons and Badges Section */}}
+  {{ if or $icons $badges }}
+  <div class="picture-card-footer">
+
+    {{/* Font Awesome Icons */}}
+    {{ if $icons }}
+    <div class="picture-card-icons">
+      {{ range $icons }}
+      {{ $iconMap := . }}
+      {{ $iconName := $iconMap.name | default "" }}
+      {{ $iconData := cond (ne $iconName "") (index site.Data.icons $iconName) nil }}
+      {{ $label := or $iconMap.label $iconData.label }}
+
+      {{ if $iconMap.url }}
+      <a href="{{ $iconMap.url }}" target="_blank" rel="noopener noreferrer" class="picture-card-icon-link"
+        title="{{ $label }}" aria-label="{{ $label | default " Link" }}">
+        {{ if $iconMap.svg }}
+        {{ $iconMap.svg | safeHTML }}
+        {{ else if $iconData }}
+        {{ $iconData.svg | safeHTML }}
+        {{ else }}
+        <i class="{{ $iconMap.icon }}"></i>
+        {{ end }}
+      </a>
+      {{ else }}
+      <span class="picture-card-icon-link" title="{{ $label | default "" }}">
+        {{ if $iconMap.svg }}
+        {{ $iconMap.svg | safeHTML }}
+        {{ else if $iconData }}
+        {{ $iconData.svg | safeHTML }}
+        {{ else }}
+        <i class="{{ $iconMap.icon }}"></i>
+        {{ end }}
+      </span>
+      {{ end }}
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* Badges */}}
+    {{ if $badges }}
+    <div class="picture-card-badges">
+      {{ range $badges }}
+
+      {{/* ----------------
+      Map-Based Badge
+      ---------------- */}}
+      {{ if reflect.IsMap . }}
+
+      {{ $base := .base | default .image }}
+      {{ $light := .light }}
+      {{ $dark := .dark }}
+      {{ $alt := .alt | default "Badge" }}
+      {{ $url := .url }}
+
+      {{ if not $light }}
+      {{ if in $base "?" }}
+      {{ $light = printf "%s&style=%s&color=%s&labelColor=%s" $base $badgeStyle $badgeLightColor $badgeLightColor }}
+      {{ else }}
+      {{ $light = printf "%s?style=%s&color=%s&labelColor=%s" $base $badgeStyle $badgeLightColor $badgeLightColor }}
+      {{ end }}
+      {{ end }}
+
+      {{ if not $dark }}
+      {{ if in $base "?" }}
+      {{ $dark = printf "%s&style=%s&color=%s&labelColor=%s" $base $badgeStyle $badgeDarkColor $badgeDarkColor }}
+      {{ else }}
+      {{ $dark = printf "%s?style=%s&color=%s&labelColor=%s" $base $badgeStyle $badgeDarkColor $badgeDarkColor }}
+      {{ end }}
+      {{ end }}
+
+      {{ if $url }}
+      <a href="{{ $url }}" target="_blank" rel="noopener noreferrer" class="picture-card-badge-link">
+        <img src="{{ $light }}" loading="lazy" data-badge-light="{{ $light }}" data-badge-dark="{{ $dark }}" alt="{{ $alt }}"
+          class="picture-card-badge theme-badge">
+      </a>
+      {{ else }}
+      <img src="{{ $light }}" loading="lazy" data-badge-light="{{ $light }}" data-badge-dark="{{ $dark }}" alt="{{ $alt }}"
+        class="picture-card-badge theme-badge">
+      {{ end }}
+
+      {{/* ----------------
+      String-Based Badge
+      ---------------- */}}
+      {{ else }}
+
+      {{ $base := . }}
+      {{ $light := "" }}
+      {{ $dark := "" }}
+
+      {{ if in $base "?" }}
+      {{ $light = printf "%s&style=%s&color=%s" $base $badgeStyle $badgeLightColor }}
+      {{ $dark = printf "%s&style=%s&color=%s" $base $badgeStyle $badgeDarkColor }}
+      {{ else }}
+      {{ $light = printf "%s?style=%s&color=%s" $base $badgeStyle $badgeLightColor }}
+      {{ $dark = printf "%s?style=%s&color=%s" $base $badgeStyle $badgeDarkColor }}
+      {{ end }}
+
+      <img src="{{ $light }}" loading="lazy" data-badge-light="{{ $light }}" data-badge-dark="{{ $dark }}" alt="Badge"
+        class="picture-card-badge theme-badge">
+
+      {{ end }}
+      {{ end }}
+    </div>
+    {{ end }}
+
+  </div>
+  {{ end }}
+</div>
+
+</div>

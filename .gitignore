@@ -1,1 +1,6 @@
-public
+.vscode/
+public/
+node_modules/
+
+yarn.lock
+.yarn/

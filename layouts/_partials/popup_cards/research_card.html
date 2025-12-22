@@ -1,0 +1,67 @@
+{{ $researchData := .Site.Data.research }}
+{{ $tabs := slice }}
+
+{{/* Helper function to sort by year descending */}}
+{{ $sortByYear := "year" }}
+
+{{/* Publications Tab */}}
+{{ $publications := $researchData.publication | default slice }}
+{{ $publicationsSorted := sort $publications "year" "desc" }}
+{{ $publicationHeader := printf "Publications (%s)" (string (len $publicationsSorted)) }}
+{{ $publicationsTab := dict 
+  "ID" "publications"
+  "Label" "Publications"
+  "Header" $publicationHeader
+  "Items" $publicationsSorted
+  "Template" "research_entry"
+}}
+{{ $tabs = $tabs | append $publicationsTab }}
+
+{{/* Conferences Tab */}}
+{{ $conferences := $researchData.conference | default slice }}
+{{ $conferencesSorted := sort $conferences "year" "desc" }}
+{{ $conferenceHeader := printf "Conferences (%s)" (string (len $conferencesSorted)) }}
+{{ $conferencesTab := dict 
+  "ID" "conferences"
+  "Label" "Conferences"
+  "Header" $conferenceHeader
+  "Items" $conferencesSorted
+  "Template" "research_entry"
+}}
+{{ $tabs = $tabs | append $conferencesTab }}
+
+{{/* Softwares Tab */}}
+{{ $softwares := $researchData.software | default slice }}
+{{ $softwaresSorted := sort $softwares "year" "desc" }}
+{{ $softwareHeader := printf "Softwares (%s)" (string (len $softwaresSorted)) }}
+{{ $softwaresTab := dict 
+  "ID" "softwares"
+  "Label" "Softwares"
+  "Header" $softwareHeader
+  "Items" $softwaresSorted
+  "Template" "research_entry"
+}}
+{{ $tabs = $tabs | append $softwaresTab }}
+
+{{/* Academic Services Tab */}}
+{{ $services := $researchData.service | default slice }}
+{{ $servicesSorted := sort $services "year" "desc" }}
+{{ $serviceHeader := printf "Academic Services (%s)" (string (len $servicesSorted)) }}
+{{ $servicesTab := dict 
+  "ID" "services"
+  "Label" "Academic Services"
+  "Header" $serviceHeader
+  "Items" $servicesSorted
+  "Template" "research_entry"
+}}
+{{ $tabs = $tabs | append $servicesTab }}
+
+{{ template "popup_tabs" dict 
+  "ID" "research-card"
+  "Title" "Research"
+  "Tabs" $tabs
+}}
+
+{{ define "research_content" }}
+{{/* This won't be used since we're using popup_tabs, but keeping for compatibility */}}
+{{ end }}

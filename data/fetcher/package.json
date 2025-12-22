@@ -1,0 +1,10 @@
+{
+  "name": "psira-fetcher",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "orcid-parser": "^0.2.0"
+  }
+}

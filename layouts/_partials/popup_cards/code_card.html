@@ -1,0 +1,46 @@
+{{ $codeData := .Site.Data.code }}
+{{ $projects := $codeData.project | default slice }}
+
+{{ template "popup_card" dict "ID" "code-card" "Title" "Code & Projects" "ContentTemplate" "code_content" "Projects" $projects }}
+
+{{ define "code_content" }}
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  {{ range $index, $project := .Projects }}
+    {{ $hasStacked := and (isset $project "stacked") (gt (len $project.stacked) 0) }}
+
+    {{ if $hasStacked }}
+      {{/* Stacked project: render using stacked_card partial */}}
+      {{ partial "stacked_card" (dict "items" $project.stacked) }}
+    {{ else }}
+      {{ $tags := slice }}
+      {{ if $project.tags }}
+        {{ if reflect.IsSlice $project.tags }}
+          {{ $tags = $project.tags }}
+        {{ else }}
+          {{ $tags = slice $project.tags }}
+        {{ end }}
+      {{ end }}
+
+      {{ $icons := slice }}
+      {{ if $project.icons }}
+        {{ $icons = $project.icons }}
+      {{ end }}
+
+      {{ $badges := slice }}
+      {{ if $project.badges }}
+        {{ $badges = $project.badges }}
+      {{ end }}
+
+      {{ partial "picture_card" (dict 
+        "image" $project.image
+        "title" $project.title
+        "description" $project.description
+        "url" $project.url
+        "tags" $tags
+        "icons" $icons
+        "badges" $badges
+      ) }}
+    {{ end }}
+  {{ end }}
+</div>
+{{ end }}

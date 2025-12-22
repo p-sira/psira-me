@@ -1,0 +1,28 @@
+{{ define "content" }}
+<section class="container list">
+    <header>
+        <h1 class="title">
+            <a class="title-link" href="{{ .Permalink | safeURL }}">
+                {{ .Title }}
+            </a>
+        </h1>
+    </header>
+    {{ .Content }}
+    <ul>
+        {{ range .Paginator.Pages }}
+        <li>
+            <span class="date">{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+            <a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ if .Params.tags }}
+            <div class="tags">
+                {{ range .Params.tags }}
+                <span class="tag">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+        </li>
+        {{ end }}
+    </ul>
+    {{ partial "pagination.html" . }}
+</section>
+{{ end }}

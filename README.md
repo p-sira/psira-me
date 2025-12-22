@@ -1,15 +1,16 @@
-# psira.me
+# Psira.me - Personal Website
 
-Personal website custom built with Hugo. Visit the live site at [psira.me](https://psira.me/).
+A modern, responsive personal website built with Hugo and Tailwind CSS, featuring a dark/light theme toggle and interactive elements. Visit the live site at [psira.me](https://psira.me/).
 
-## Design Choices
-- **Framework**: [Hugo](https://gohugo.io/) - Static site generator for rapid development
-- **Theme**: Modified [hugo-profile](https://github.com/gurusabarish/hugo-profile) - Simple, yet tasteful design
-- **Color palette**: Modified [Catppuccin](https://catppuccin.com/) - The beautiful Catppuccin color scheme with original twists
-- **Desktop and Mobile**: Ensure responsiveness on both desktop and mobile
-- **Dark/Light**: Respect the user's preference.
+## Technology Stack
+
+- **Hugo**: Static site generator
+- **Tailwind CSS**: Utility-first CSS framework with custom Catppuccin color integration
+- **JavaScript**: Vanilla JS for interactions and theme toggle
+- **TypeScript**: Fetch realtime data
 
 ## License
-Copyright © 2025 Sira Pornsiriprasert. All rights reserved.
 
-The content is not licensed for distribution, modification, or commercial use without explicit written permission from the author. See [LICENSE](LICENSE) for details.
+Copyright Sira Pornsiriprasert 2025. All rights reserved.
+
+This software is not licensed for distribution, modification, or commercial use without explicit written permission from the author.

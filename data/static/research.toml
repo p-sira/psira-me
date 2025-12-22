@@ -1,0 +1,9 @@
+# Static Research Data for Research Card
+# This file contains static publications, conferences, and academic services
+# that will appear after ORCID data in the research card
+
+[[service]]
+title = "The 18th International Convention on Rehabilitation Engineering and Assistive Technology (i-CREATe 2025)"
+subtitle = "Conference submission reviewer"
+year = 2025
+type = "academic-service"

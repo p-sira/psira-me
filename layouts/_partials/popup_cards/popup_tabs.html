@@ -1,0 +1,43 @@
+{{ define "popup_tabs" }}
+<div id="{{ .ID }}" class="popup-card popup-tabs" role="dialog" aria-labelledby="{{ .ID }}-title" aria-hidden="true">
+  <div class="flex h-full">
+    <!-- Tab Navigation -->
+    <div class="w-48 bg-secondary flex flex-col">
+      <h2 id="{{ .ID }}-title" class="text-2xl font-bold text-primary mb-2 p-6 border-b border-border">{{ .Title }}</h2>
+      <nav class="flex-1 p-4">
+        {{ range $index, $tab := .Tabs }}
+        <button
+          class="tab-button w-full text-left p-3 rounded-lg mb-2 hover:bg-tertiary transition-colors duration-200 {{ if eq $index 0 }}active{{ end }}"
+          data-tab="{{ $tab.ID }}">
+          <span class="text-sm font-medium text-primary">{{ $tab.Label }}</span>
+        </button>
+        {{ end }}
+      </nav>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="flex-1 overflow-y-auto">
+      {{ range $index, $tab := .Tabs }}
+      <div id="{{ $tab.ID }}-tab" class="tab-panel p-6 sm:p-8 lg:p-12 {{ if eq $index 0 }}active{{ end }}">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-2xl font-bold text-primary">{{ $tab.Header }}</h3>
+          {{ template "close_btn" dict "Title" $.Title }}
+        </div>
+        <div class="space-y-6" data-static-works="{{ $tab.ID }}">
+          {{ $prevYear := 0 }}
+          {{ range $item := $tab.Items }}
+            {{ if ne $prevYear $item.year }}
+              <div class="year-divider {{ if ne $prevYear 0 }}mt-8{{ end }} mb-4">
+                <h4 class="text-xl font-semibold text-primary">{{ $item.year }}</h4>
+              </div>
+            {{ end }}
+            {{ partial (printf "popup_cards/%s" $tab.Template) $item }}
+            {{ $prevYear = $item.year }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

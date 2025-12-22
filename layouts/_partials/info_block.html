@@ -1,0 +1,16 @@
+{{ define "info_block" }}
+<div class="border-l-3 pl-4 mb-4">
+    <h3 class="text-lg font-semibold text-primary mb-2">
+        {{ if .url }}
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="hover:underline">{{ .title }}</a>
+        {{ else }}
+        {{ .title | default .Title}}
+        {{ end }}
+    </h3>
+    {{ if .raw }}
+        <div class="text-tertiary">{{ .raw | safeHTML }}</div>
+    {{ else if .content }}
+        <p class="text-tertiary">{{ .content }}</p>
+    {{ end }}
+</div>
+{{ end }}

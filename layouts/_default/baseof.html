@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" class="h-full">
+
+<head>
+    {{- partial "head.html" . -}}
+</head>
+
+<body class="bg-primary text-primary transition-colors duration-1000">
+    
+    {{ partial "header.html" . }}
+
+    <main>
+        {{ block "content" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    <!-- Other JavaScripts -->
+    <script src="{{ "js/popup.js" | relURL }}"></script>
+    <script src="{{ "js/badges.js" | relURL }}" defer></script>
+</body>
+
+</html>

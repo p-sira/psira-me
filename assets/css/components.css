@@ -1,0 +1,313 @@
+@tailwind components;
+
+/* Arc Buttons */
+.arc-button {
+    @apply flex px-3 py-2 sm:px-4 sm:py-2 mb-4 sm:mb-6 lg:mb-8 rounded-md bg-[var(--surface)] border-[var(--border)] scale-100 cursor-pointer relative overflow-hidden;
+    transition: transform 100ms, background-color 1s;
+    min-height: 44px;
+    /* Minimum touch target size for mobile */
+    min-width: 120px;
+    /* Ensure buttons are wide enough for touch */
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    /* text-sm */
+    font-weight: 500;
+}
+
+@media (min-width: 640px) {
+    .arc-button {
+        font-size: 1rem;
+        /* text-base */
+    }
+}
+
+.arc-button::before {
+    @apply absolute inset-0 opacity-0 -z-10 transition-opacity duration-[800ms];
+    background: linear-gradient(135deg, var(--accent-tertiary-inverted) 0%, var(--accent-secondary-inverted) 100%);
+    content: '';
+}
+
+.arc-button:hover {
+    transform: scale(1.05);
+    /* Reduced scale for better mobile experience */
+}
+
+@media (min-width: 640px) {
+    .arc-button:hover {
+        transform: scale(1.1);
+    }
+}
+
+.arc-button:hover::before {
+    opacity: 1;
+}
+
+.dark .arc-button:hover::before {
+    opacity: 0.8;
+}
+
+/* Active state for mobile touch */
+.arc-button:active {
+    transform: scale(0.95);
+}
+
+/* Popup Cards */
+@layer components {
+    .btn-copy {
+        @apply text-xs px-2 py-1 rounded bg-[var(--bg-tertiary)] hover:bg-[var(--bg-secondary)] text-[var(--text-primary)];
+    }
+
+    .popup-card {
+        @apply fixed -translate-1/2 bg-[var(--bg-primary)] rounded-2xl shadow-2xl w-[1000px] max-w-[90vw] h-[800px] max-h-[90vh] opacity-0 invisible transition-all duration-300 z-50 border border-[var(--border)] overflow-hidden z-50 border border-[var(--border)];
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    }
+
+    /* Slightly wider layout for the Code & Projects card */
+    #code-card.popup-card {
+        width: 1150px;
+        max-width: 95vw;
+    }
+
+    .popup-card .dark {
+        @apply bg-[var(--surface)];
+    }
+
+    .popup-card.visible {
+        @apply opacity-100 visible pointer-events-auto;
+    }
+
+    .popup-card .close-btn {
+        @apply cursor-pointer select-none transition-transform duration-200 ease-in-out;
+    }
+
+    .popup-card .close-btn:hover {
+        @apply scale-110;
+    }
+
+    /* Tab Styles */
+    .tab-button {
+        @apply relative transition-all duration-200 ease-in-out;
+    }
+
+    .tab-button.active {
+        @apply bg-[var(--bg-tertiary)] border-l-4 border-[var(--accent-primary)];
+    }
+
+    .tab-button:hover:not(.active) {
+        @apply bg-[var(--bg-tertiary)] opacity-80;
+    }
+
+    .tab-panel {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .tab-panel.active {
+        display: block;
+        opacity: 1;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .popup-card {
+            width: 95vw;
+            height: 90vh;
+            max-height: calc(100vh - 2rem);
+        }
+
+        #research-card .w-48 {
+            width: 8rem;
+        }
+
+        #research-card .w-48 nav {
+            @apply p-2;
+        }
+
+        #research-card .w-48 .tab-button {
+            @apply p-2 mb-1;
+        }
+
+        #research-card .w-48 .tab-button span {
+            @apply text-xs;
+        }
+    }
+}
+
+/* Icon and Links */
+.icon {
+    @apply transition-transform duration-200;
+}
+
+.icon:hover {
+    @apply scale-110;
+}
+
+/* Profile Image and Decoratives */
+.profile-circle {
+    @apply absolute bg-[var(--bg-primary)] dark:bg-[var(--bg-highlight)] shadow-md dark:shadow-lg rounded-full transition-colors duration-1000;
+}
+
+.profile-image {
+    @apply absolute h-full w-full object-cover rounded-full border-3 border-[var(--border)] shadow-2xl transition-opacity duration-500 ease-in-out pointer-events-none z-20;
+}
+
+/* Picture Card Component */
+.picture-card {
+    @apply bg-[var(--bg-secondary)] border-[var(--bg-tertiary)] rounded-xl border-2 shadow-lg;
+    @apply dark:border-0;
+    overflow: hidden;
+    padding: 0;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.picture-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.picture-card-image {
+    @apply w-full;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    display: block;
+}
+
+.picture-card-image-link {
+    @apply block w-full h-full;
+}
+
+.picture-card-logo {
+    @apply w-full h-full object-cover;
+    display: block;
+}
+
+.picture-card-content {
+    padding: 1rem;
+}
+
+.picture-card-tags {
+    @apply flex flex-wrap gap-2 mb-3;
+}
+
+.picture-card-tag {
+    @apply px-2 py-1 text-xs font-medium;
+    @apply bg-[var(--bg-tertiary)] text-[var(--text-secondary)];
+    transition: background-color 0.2s ease-in-out;
+}
+
+.picture-card-tag:hover {
+    @apply bg-[var(--bg-secondary)];
+}
+
+.picture-card-title {
+    @apply text-lg font-bold text-[var(--text-primary)] mb-2;
+}
+
+.picture-card-description {
+    @apply text-[var(--text-secondary)] mb-3 leading-relaxed text-sm;
+}
+
+.picture-card-footer {
+    @apply flex flex-col gap-3 mt-auto pt-3 border-t border-[var(--border)];
+}
+
+.picture-card-icons {
+    @apply flex items-center gap-3 flex-wrap;
+}
+
+.picture-card-icon-link {
+    @apply flex items-center justify-center;
+    @apply text-[var(--text-secondary)] hover:text-[var(--text-primary)];
+    @apply transition-colors duration-200 ease-in-out;
+    @apply text-lg;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.picture-card-badges {
+    @apply flex items-center gap-2 flex-wrap;
+}
+
+.picture-card-badge-link {
+    @apply inline-block transition-transform duration-200 ease-in-out;
+}
+
+.picture-card-badge-link:hover {
+    transform: scale(1.05);
+}
+
+.picture-card-badge {
+    @apply h-5 w-auto;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Ensure inline SVG icons inherit color and size properly */
+.picture-card-icon-link svg {
+    width: 80%;
+    height: 80%;
+    fill: currentColor;
+    display: block;
+}
+
+/* Responsive adjustments for picture cards */
+@media (max-width: 640px) {
+    .picture-card {
+        padding: 0;
+    }
+
+    .picture-card-content {
+        padding: 0.75rem;
+    }
+
+    .picture-card-title {
+        @apply text-base;
+    }
+
+    .picture-card-description {
+        @apply text-xs;
+    }
+
+    .picture-card-image {
+        aspect-ratio: 16 / 10;
+    }
+
+    .picture-card-footer {
+        @apply gap-2;
+    }
+
+    .picture-card-icons {
+        @apply gap-2;
+    }
+
+    .picture-card-icon-link {
+        @apply text-base;
+        width: 20px;
+        height: 20px;
+    }
+
+    .picture-card-badge {
+        @apply h-4;
+    }
+}
+
+/* Stacked Card Component */
+.stacked-card {
+    @apply flex flex-col gap-4;
+}
+
+.stacked-card-item .picture-card {
+    @apply shadow-md;
+}
+
+/* Footer Component */
+.footer-link {
+    @apply text-[var(--text-primary)] hover:text-[var(--text-accent-primary)] hover:underline transition duration-500;
+}
+
+.footer-links {
+    @apply text-sm font-semibold text-[var(--text-primary)] uppercase tracking-wider mb-4;
+}

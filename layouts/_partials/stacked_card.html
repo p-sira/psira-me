@@ -1,0 +1,50 @@
+{{/*
+Stacked Card Template
+
+Renders multiple projects as individual picture cards stacked vertically,
+but without images. Each item is expected to be a map with the same
+fields as a normal project (title, description, url, tags, icons, badges),
+minus the image.
+*/}}
+
+{{ $items := .items | default slice }}
+
+{{ if $items }}
+<div class="stacked-card">
+  {{ range $index, $item := $items }}
+    {{ $tags := slice }}
+    {{ if $item.tags }}
+      {{ if reflect.IsSlice $item.tags }}
+        {{ $tags = $item.tags }}
+      {{ else }}
+        {{ $tags = slice $item.tags }}
+      {{ end }}
+    {{ end }}
+
+    {{ $icons := slice }}
+    {{ if $item.icons }}
+      {{ $icons = $item.icons }}
+    {{ end }}
+
+    {{ $badges := slice }}
+    {{ if $item.badges }}
+      {{ $badges = $item.badges }}
+    {{ end }}
+
+    {{/* Reuse the picture_card partial but force image to be empty */}}
+    <div class="stacked-card-item">
+      {{ partial "picture_card" (dict
+        "image" ""
+        "title" $item.title
+        "description" $item.description
+        "url" $item.url
+        "tags" $tags
+        "icons" $icons
+        "badges" $badges
+      ) }}
+    </div>
+  {{ end }}
+</div>
+{{ end }}
+
+
