@@ -46,7 +46,7 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
       - name: Install dependencies
-        run: yarn install --immutable
+        run: yarn install
       - name: Build
         run: yarn build
       - name: Push to `build` branch
