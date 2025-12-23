@@ -8,6 +8,7 @@ A modern, responsive personal website built with Hugo and Tailwind CSS, featurin
 - **Tailwind CSS**: Utility-first CSS framework with custom Catppuccin color integration
 - **JavaScript**: Vanilla JS for interactions and theme toggle
 - **TypeScript**: Fetch realtime data
+- **Inline SVG**: Leverage Hugo templating for performance and ease of maintenance
 
 ## License
 
