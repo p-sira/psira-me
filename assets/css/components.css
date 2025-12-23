@@ -177,7 +177,7 @@ a.icon {
 }
 
 .icon svg {
-    @apply h-5 w-5 overflow-visible;
+    @apply h-5 w-5 overflow-visible block;
 }
 
 a {
@@ -283,8 +283,8 @@ a {
 
 /* Ensure inline SVG icons inherit color and size properly */
 .picture-card-icon-link svg {
-    width: 80%;
-    height: 80%;
+    width: 20px;
+    height: 20px;
 }
 
 /* Responsive adjustments for picture cards */
@@ -315,12 +315,6 @@ a {
 
     .picture-card-icons {
         @apply gap-2;
-    }
-
-    .picture-card-icon-link {
-        @apply text-base;
-        width: 20px;
-        height: 20px;
     }
 
     .picture-card-badge {
