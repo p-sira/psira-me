@@ -44,11 +44,6 @@
     }
 </script>
 
-<!-- CSS -->
-{{ $themeToggle := resources.Get "css/theme-toggle.css" }}
-{{ $css := slice $themeToggle | resources.Concat "css/custom.css" }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}">
-
 <!-- Fonts -->
 <link rel="preload" href="/fonts/noto-sans-v42-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 
