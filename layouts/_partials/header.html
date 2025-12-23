@@ -28,12 +28,12 @@
 </script>
 
 <header>
-    <nav class="relative w-full py-3 sm:py-4 bg-primary shadow-sm dark:shadow-md transition-colors duration-1000 z-20">
+    <nav class="relative w-full py-3 sm:py-4 bg-primary shadow-sm dark:shadow-md transit-theme z-20">
         <div class="flex items-center justify-between px-4 sm:px-6 lg:px-8">
             <!-- Brand -->
             <a href="{{ .Site.BaseURL | relURL }}"
-                class="flex items-center space-x-1 text-lg sm:text-xl font-semibold text-primary transition-colors duration-1000">
-                <div id="logo-container" class="flex items-center space-x-1 transition-colors duration-1000">
+                class="flex items-center space-x-1 text-lg sm:text-xl font-semibold text-primary transit-theme">
+                <div id="logo-container" class="flex items-center space-x-1 transit-theme">
                     <div id="logo-image-container" class="fill w-6 h-6 sm:w-8 sm:h-8">
                         {{ readFile "assets/logo/logo-inline.svg" | safeHTML }}
                     </div>
