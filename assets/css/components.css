@@ -91,7 +91,43 @@
     }
 
     .tab-button.active {
-        @apply bg-[var(--bg-tertiary)] border-l-4 border-[var(--accent-primary)];
+        @apply bg-[var(--bg-tertiary)];
+    }
+
+    /* Force mobile tab layout to top in case markup classes are overridden */
+    @media (max-width: 640px) {
+        .popup-tabs > .flex {
+            flex-direction: column;
+        }
+
+        .popup-tabs .popup-tabs-nav {
+            width: 100%;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .popup-tabs .popup-tabs-nav nav {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.25rem;
+        }
+
+        .popup-tabs-title {
+            margin-bottom: 0;
+        }
+    }
+
+    /* Responsive active tab borders: bottom border on mobile, left border on larger screens */
+    @media (max-width: 640px) {
+        .popup-tabs .tab-button.active {
+            @apply border-b-2 border-[var(--accent-primary)];
+        }
+    }
+
+    @media (min-width: 640px) {
+        .popup-tabs .tab-button.active {
+            @apply border-l-4 border-[var(--accent-primary)];
+        }
     }
 
     .tab-button:hover:not(.active) {
@@ -110,7 +146,7 @@
     }
 
     /* Responsive adjustments */
-    @media (max-width: 768px) {
+    @media (max-width: 640px) {
         .popup-card {
             width: 95vw;
             height: 90vh;
@@ -136,12 +172,16 @@
 }
 
 /* Icon and Links */
-.icon {
-    @apply transition-transform duration-200;
+a.icon {
+    @apply transition-transform duration-200 hover:scale-110;
 }
 
-.icon:hover {
-    @apply scale-110;
+.icon svg {
+    @apply h-5 w-5 overflow-visible;
+}
+
+a {
+    @apply select-text hover:underline hover:text-[var(--accent-primary)] transition-colors duration-500;
 }
 
 /* Profile Image and Decoratives */
@@ -151,6 +191,10 @@
 
 .profile-image {
     @apply absolute h-full w-full object-cover rounded-full border-3 border-[var(--border)] shadow-2xl transition-opacity duration-500 ease-in-out pointer-events-none z-20;
+}
+
+.popup-button {
+    z-index: 0;
 }
 
 /* Picture Card Component */
@@ -218,13 +262,7 @@
 }
 
 .picture-card-icon-link {
-    @apply flex items-center justify-center;
-    @apply text-[var(--text-secondary)] hover:text-[var(--text-primary)];
-    @apply transition-colors duration-200 ease-in-out;
-    @apply text-lg;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
+    @apply flex items-center justify-center text-[var(--text-secondary)] text-lg;
 }
 
 .picture-card-badges {
@@ -241,16 +279,12 @@
 
 .picture-card-badge {
     @apply h-5 w-auto;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
 }
 
 /* Ensure inline SVG icons inherit color and size properly */
 .picture-card-icon-link svg {
     width: 80%;
     height: 80%;
-    fill: currentColor;
-    display: block;
 }
 
 /* Responsive adjustments for picture cards */
@@ -304,10 +338,6 @@
 }
 
 /* Footer Component */
-.footer-link {
-    @apply text-[var(--text-primary)] hover:text-[var(--text-accent-primary)] hover:underline transition duration-500;
-}
-
 .footer-links {
     @apply text-sm font-semibold text-[var(--text-primary)] uppercase tracking-wider mb-4;
 }

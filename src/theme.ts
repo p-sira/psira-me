@@ -21,7 +21,7 @@
 })();
 
 // Listen to OS theme changes
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e: MediaQueryListEvent) => {
     const saved = localStorage.getItem('pref-theme');
     if (saved === 'auto' || !saved) {
         if (e.matches) {

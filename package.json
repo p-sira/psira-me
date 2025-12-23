@@ -1,11 +1,4 @@
 {
-  "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
-    "postcss-cli": "^11.0.1",
-    "tailwindcss": "^4.1.16",
-    "typescript": "^5.9.3"
-  },
   "name": "psira-me",
   "version": "2.0.0",
   "main": "index.js",
@@ -18,12 +11,21 @@
     "@tailwindcss/cli": "^4.1.16",
     "orcid-parser": "^0.2.0"
   },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.16",
+    "typescript": "^5.9.3"
+  },
   "scripts": {
-    "build:css": "yarn tailwindcss -i ./assets/css/main.css -o ./assets/css/tailwind.css --watch=false",
-    "build:ts": "tsc -p tsconfig.json",
-    "watch:ts": "tsc -p tsconfig.json --watch",
-    "build": "yarn build:css && yarn build:ts && hugo --cleanDestinationDir --minify",
-    "dev": "yarn build:css && yarn build:ts && hugo server",
+    "build:css": "yarn tailwindcss -i ./assets/css/main.css -o ./assets/css/tailwind.css --watch=false --minify",
+    "check": "tsc -p tsconfig.json",
+    "build:js": "esbuild src/* --bundle --minify --target=es2020 --outdir=static/js/build",
+    "watch:js": "esbuild src/* --bundle --target=es2020 --outdir=static/js/build --watch",
+    "build": "yarn build:css && yarn check && yarn build:js && hugo --cleanDestinationDir --minify",
+    "dev": "yarn build:css && yarn build:js && hugo server",
     "watch:css": "yarn tailwindcss -i ./assets/css/main.css -o ./assets/css/tailwind.css --watch"
   }
 }

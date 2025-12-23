@@ -17,22 +17,30 @@
 <div class="flex items-center mb-2 flex-wrap gap-8">
     <div class="flex gap-8 items-center flex-wrap">
         <div class="flex items-center gap-2 text-tertiary">
-            <a href="mailto:contact@psira.me" class="text-tertiary inline-flex items-center icon">
-                <i class="fas fa-envelope text-secondary"></i>
-            </a>
-            contact@psira.me
+            <span class="icon inline-flex text-secondary" aria-hidden="true">
+                {{ with site.Data.icons.email }}{{ .svg | safeHTML }}{{ end }}
+            </span>
+            <a href="mailto:contact@psira.me" class="text-tertiary inline-flex items-center" aria-label="Email">contact@psira.me</a>
         </div>
 
         <div class="flex items-center gap-2 text-tertiary">
-            <i class="fas fa-location-dot text-secondary"></i>
+            <span class="icon inline-flex text-secondary" aria-hidden="true">
+                {{ with site.Data.icons.location }}{{ .svg | safeHTML }}{{ end }}
+            </span>
             <span class="inline-flex items-center">Bangkok, Thailand</span>
         </div>
     </div>
 
     <div class="flex gap-4 text-secondary text-lg">
-        <a href="https://orcid.org/0000-0002-5636-8870"><i class="fa-brands fa-orcid icon"></i></a>
-        <a href="https://github.com/p-sira"><i class="fa-brands fa-github icon"></i></a>
-        <a href="https://instagram.com/_psira_"><i class="fa-brands fa-instagram icon"></i></a>
+        <a href="https://orcid.org/0000-0002-5636-8870" class="icon inline-flex" aria-label="ORCID">
+            {{ with site.Data.icons.orcid_icon }}{{ .svg | safeHTML }}{{ end }}
+        </a>
+        <a href="https://github.com/p-sira" class="icon inline-flex" aria-label="GitHub">
+            {{ with site.Data.icons.github }}{{ .svg | safeHTML }}{{ end }}
+        </a>
+        <a href="https://instagram.com/_psira_" class="icon inline-flex" aria-label="Instagram">
+            {{ with site.Data.icons.instagram }}{{ .svg | safeHTML }}{{ end }}
+        </a>
     </div>
 </div>
 
