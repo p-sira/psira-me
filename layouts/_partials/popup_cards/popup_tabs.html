@@ -3,10 +3,12 @@
   <div class="flex flex-col md:flex-row h-full">
     <!-- Tab Navigation -->
     <div class="popup-tabs-nav bg-secondary flex md:flex-col w-full md:w-56">
-      <h2 id="{{ .ID }}-title" class="popup-tabs-title text-2xl font-bold text-primary mb-0 md:mb-2 p-4 md:p-6 border-b border-border whitespace-nowrap overflow-hidden text-ellipsis">
+      <h2 id="{{ .ID }}-title"
+        class="popup-tabs-title text-2xl font-bold text-primary mb-0 md:mb-2 p-4 md:p-6 border-b border-border whitespace-nowrap overflow-hidden text-ellipsis">
         {{ .Title }}
       </h2>
-      <nav class="flex-1 flex md:block gap-2 p-3 md:p-4 overflow-x-auto md:overflow-visible border-b border-border md:border-0">
+      <nav
+        class="flex-1 flex md:block gap-2 p-3 md:p-4 overflow-x-auto md:overflow-visible border-b border-border md:border-0">
         {{ range $index, $tab := .Tabs }}
         <button
           class="tab-button flex-shrink-0 w-auto md:w-full text-left px-3 py-2 md:p-3 rounded-lg mb-0 md:mb-2 hover:bg-tertiary transition-colors duration-200 whitespace-nowrap {{ if eq $index 0 }}active{{ end }}"
@@ -15,6 +17,9 @@
         </button>
         {{ end }}
       </nav>
+      <div class="m-8 hidden md:block">
+        {{ partial "nav/navbar_vertical.html" . }}
+      </div>
     </div>
 
     <!-- Tab Content -->
@@ -28,17 +33,20 @@
         <div class="space-y-6" data-static-works="{{ $tab.ID }}">
           {{ $prevYear := 0 }}
           {{ range $item := $tab.Items }}
-            {{ if ne $prevYear $item.year }}
-              <div class="year-divider {{ if ne $prevYear 0 }}mt-8{{ end }} mb-4">
-                <h4 class="text-xl font-semibold text-primary">{{ $item.year }}</h4>
-              </div>
-            {{ end }}
-            {{ partial (printf "popup_cards/%s" $tab.Template) $item }}
-            {{ $prevYear = $item.year }}
+          {{ if ne $prevYear $item.year }}
+          <div class="year-divider {{ if ne $prevYear 0 }}mt-8{{ end }} mb-4">
+            <h4 class="text-xl font-semibold text-primary">{{ $item.year }}</h4>
+          </div>
+          {{ end }}
+          {{ partial (printf "popup_cards/%s" $tab.Template) $item }}
+          {{ $prevYear = $item.year }}
           {{ end }}
         </div>
       </div>
       {{ end }}
+    </div>
+    <div class="mx-2 mb-6 items-center border-t border-border block md:hidden">
+      <div class="mt-2">{{ partial "nav/navbar_horizontal.html" . }}</div>
     </div>
   </div>
 </div>

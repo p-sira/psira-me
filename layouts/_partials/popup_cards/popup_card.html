@@ -5,7 +5,7 @@
       <h2 id="{{ .ID }}-title" class="text-3xl sm:text-4xl font-bold text-primary">{{ .Title }}</h2>
       {{ template "close_btn" dict "Title" "{{ .Title }}" }}
     </div>
-    <div class="space-y-6 flex-1 overflow-y-auto">
+    <div class='space-y-6 flex-1 overflow-y-auto {{ if eq .ContentTemplate "code_content" }} mb-3 {{ end }}'>
       {{ if eq .ContentTemplate "about_content" }}
         {{ template "about_content" . }}
       {{ else if eq .ContentTemplate "experience_content" }}
@@ -17,6 +17,9 @@
       {{ else if eq .ContentTemplate "research_content" }}
         {{ template "research_content" . }}
       {{ end }}
+    </div>
+    <div class="text-secondary mt-auto -mx-4 md:mx-0">
+      {{ partial "nav/navbar_horizontal.html" . }}
     </div>
   </div>
 </div>
