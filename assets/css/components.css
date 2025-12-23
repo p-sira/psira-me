@@ -180,6 +180,10 @@
     @apply scale-110;
 }
 
+.icon svg {
+    @apply h-5 w-5;
+}
+
 /* Profile Image and Decoratives */
 .profile-circle {
     @apply absolute bg-[var(--bg-primary)] dark:bg-[var(--bg-highlight)] shadow-md dark:shadow-lg rounded-full transition-colors duration-1000;

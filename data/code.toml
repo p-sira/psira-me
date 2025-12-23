@@ -5,9 +5,9 @@ url = "https://github.com/p-sira/ellip"
 image = "images/projects/ellip-logo.svg"
 tags = ["Mathematics", "Special Functions", "Elliptic Integrals"]
 icons = [
-  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/ellip", label = "GitHub" },
-  { icon = "fa-brands fa-rust", url = "https://crates.io/crates/ellip", label = "Crates.io" },
-  { icon = "fa-solid fa-book", url = "https://docs.rs/ellip", label = "Documentation" },
+  { name = "github", url = "https://github.com/p-sira/ellip", label = "GitHub" },
+  { name = "rust", url = "https://crates.io/crates/ellip", label = "Crates.io" },
+  { name = "book", url = "https://docs.rs/ellip", label = "Documentation" },
   { name = "doi", url = "https://doi.org/10.5281/zenodo.17990805", label = "DOI" }
 ]
 badges = [
@@ -23,9 +23,9 @@ url = "https://github.com/p-sira/magba"
 image = "images/projects/magba-logo.svg"
 tags = ["Physics", "Magnetism", "Scientific Computing"]
 icons = [
-  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/magba", label = "GitHub" },
-  { icon = "fa-brands fa-rust", url = "https://crates.io/crates/magba", label = "Crates.io" },
-  { icon = "fa-solid fa-book", url = "https://docs.rs/magba", label = "Documentation" },
+  { name = "github", url = "https://github.com/p-sira/magba", label = "GitHub" },
+  { name = "rust", url = "https://crates.io/crates/magba", label = "Crates.io" },
+  { name = "book", url = "https://docs.rs/magba", label = "Documentation" },
 ]
 badges = [
   { base = "https://img.shields.io/crates/d/magba?label=Downloads", url = "https://crates.io/crates/magba", alt = "Downloads" },
@@ -40,9 +40,9 @@ url = "https://github.com/p-sira/deeplabcut2yolo"
 image = "images/projects/d2y.jpg"
 tags = ["AI", "Pose Estimation", "Dataset"]
 icons = [
-  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/deeplabcut2yolo", label = "GitHub" },
-  { icon = "fa-brands fa-python", url = "https://pypi.org/project/deeplabcut2yolo/", label = "PYPI Package" },
-  { icon = "fa-solid fa-book", url = "https://p-sira.github.io/deeplabcut2yolo/", label = "Documentation" },
+  { name = "github", url = "https://github.com/p-sira/deeplabcut2yolo", label = "GitHub" },
+  { name = "python", url = "https://pypi.org/project/deeplabcut2yolo/", label = "PYPI Package" },
+  { name = "book", url = "https://p-sira.github.io/deeplabcut2yolo/", label = "Documentation" },
   { name = "doi", url = "https://doi.org/10.5281/zenodo.17839736", label = "DOI" }
 ]
 badges = [
@@ -58,8 +58,8 @@ description = "A Linux WINE setup for the LINE desktop client, providing patches
 url = "https://appdb.winehq.org/objectManager.php?sClass=version&iId=42184"
 tags = ["Linux", "Emulator", "WINE"]
 icons = [
-  { icon = "fa-solid fa-wine-glass", url = "https://appdb.winehq.org/objectManager.php?sClass=version&iId=42184", label = "WINE AppDB" },
-  { icon = "fa-brands fa-line", url = "https://www.line.me/en/", label = "LINE" }
+  { name = "wine", url = "https://appdb.winehq.org/objectManager.php?sClass=version&iId=42184", label = "WINE AppDB" },
+  { name = "line_icon", url = "https://www.line.me/en/", label = "LINE" }
 ]
 
 [[project.stacked]]
@@ -68,10 +68,10 @@ description = "A lightweight Node.js package for fetching and parsing ORCID publ
 url = "https://github.com/p-sira/orcid-parser"
 tags = ["Identifiers", "Metadata", "ORCID"]
 icons = [
-  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/orcid-parser", label = "GitHub" },
-  { icon = "fa-brands fa-npm", url = "https://www.npmjs.com/package/orcid-parser", label = "npm Package" },
+  { name = "github", url = "https://github.com/p-sira/orcid-parser", label = "GitHub" },
+  { name = "npm", url = "https://www.npmjs.com/package/orcid-parser", label = "npm Package" },
   { name = "typescript", url = "https://www.npmjs.com/package/orcid-parser", label = "Made with TypeScript" },
-  { icon = "fa-solid fa-book", url = "https://p-sira.github.io/orcid-parser", label = "Documentation" },
+  { name = "book", url = "https://p-sira.github.io/orcid-parser", label = "Documentation" },
   { name = "doi", url = "https://zenodo.org/records/18006107", label = "DOI" },
 ]
 badges = [
@@ -87,9 +87,9 @@ url = "https://github.com/p-sira/num-lazy"
 image = "images/projects/num-lazy.jpg"
 tags = ["Rust", "Macro", "Numerics"]
 icons = [
-  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/num-lazy", label = "GitHub" },
-  { icon = "fa-brands fa-rust", url = "https://crates.io/crates/num-lazy", label = "Crates.io" },
-  { icon = "fa-solid fa-book", url = "https://docs.rs/num-lazy", label = "Documentation" },
+  { name = "github", url = "https://github.com/p-sira/num-lazy", label = "GitHub" },
+  { name = "rust", url = "https://crates.io/crates/num-lazy", label = "Crates.io" },
+  { name = "book", url = "https://docs.rs/num-lazy", label = "Documentation" },
 ]
 badges = [
   { base = "https://img.shields.io/crates/d/num-lazy?label=Downloads", url = "https://crates.io/crates/num-lazy", alt = "Downloads" },
@@ -104,9 +104,9 @@ url = "https://github.com/p-sira/ellippy"
 image = "images/projects/ellippy-logo.svg"
 tags = ["Mathematics", "Special Functions", "Elliptic Integrals"]
 icons = [
-  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/ellippy", label = "GitHub" },
-  { icon = "fa-brands fa-python", url = "https://pypi.org/project/ellippy/", label = "PYPI Package" },
-  { icon = "fa-solid fa-book", url = "https://p-sira.github.io/ellippy/", label = "Documentation" },
+  { name = "github", url = "https://github.com/p-sira/ellippy", label = "GitHub" },
+  { name = "python", url = "https://pypi.org/project/ellippy/", label = "PYPI Package" },
+  { name = "book", url = "https://p-sira.github.io/ellippy/", label = "Documentation" },
 ]
 badges = [
   { base = "https://img.shields.io/pepy/dt/ellippy?label=Downloads", url = "https://pypi.org/project/ellippy/", alt = "Downloads" },
@@ -121,9 +121,9 @@ url = "https://github.com/p-sira/pymagba"
 image = "images/projects/pymagba-logo.svg"
 tags = ["Physics", "Magnetism", "Scientific Computing"]
 icons = [
-  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/pymagba", label = "GitHub" },
-  { icon = "fa-brands fa-python", url = "https://pypi.org/project/pymagba/", label = "PyPI Package" },
-  { icon = "fa-solid fa-book", url = "https://p-sira.github.io/pymagba/", label = "Documentation" },
+  { name = "github", url = "https://github.com/p-sira/pymagba", label = "GitHub" },
+  { name = "python", url = "https://pypi.org/project/pymagba/", label = "PyPI Package" },
+  { name = "book", url = "https://p-sira.github.io/pymagba/", label = "Documentation" },
 ]
 badges = [
   { base = "https://img.shields.io/pepy/dt/pymagba?label=Downloads", url = "https://pypi.org/project/pymagba/", alt = "Downloads" },
@@ -138,9 +138,9 @@ url = "https://github.com/p-sira/hycrypt"
 image = "images/projects/hycrypt.jpg"
 tags = ["Security", "Cryptography", "Hybrid Encryption"]
 icons = [
-  { icon = "fa-brands fa-github", url = "https://github.com/p-sira/hycrypt", label = "GitHub" },
-  { icon = "fa-brands fa-python", url = "https://pypi.org/project/hycrypt/", label = "PyPI Package" },
-  { icon = "fa-solid fa-book", url = "https://p-sira.github.io/hycrypt/", label = "Documentation" },
+  { name = "github", url = "https://github.com/p-sira/hycrypt", label = "GitHub" },
+  { name = "python", url = "https://pypi.org/project/hycrypt/", label = "PyPI Package" },
+  { name = "book", url = "https://p-sira.github.io/hycrypt/", label = "Documentation" },
 ]
 badges = [
   { base = "https://img.shields.io/pepy/dt/hycrypt?label=Downloads", url = "https://pypi.org/project/hycrypt/", alt = "Downloads" },

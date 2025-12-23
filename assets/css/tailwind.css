@@ -1557,6 +1557,10 @@
   --tw-scale-z: 110%;
   scale: var(--tw-scale-x) var(--tw-scale-y);
 }
+.icon svg {
+  height: calc(var(--spacing) * 5);
+  width: calc(var(--spacing) * 5);
+}
 .profile-circle {
   position: absolute;
   border-radius: calc(infinity * 1px);
