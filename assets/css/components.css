@@ -338,10 +338,6 @@ a {
 }
 
 /* Footer Component */
-.footer-link {
-    @apply text-[var(--text-primary)] hover:text-[var(--text-accent-primary)] hover:underline transition duration-500;
-}
-
 .footer-links {
     @apply text-sm font-semibold text-[var(--text-primary)] uppercase tracking-wider mb-4;
 }
