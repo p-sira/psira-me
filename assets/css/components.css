@@ -246,7 +246,7 @@ a {
 }
 
 .picture-card-title {
-    @apply text-lg font-bold text-[var(--text-primary)] mb-2;
+    @apply text-lg font-bold mb-2;
 }
 
 .picture-card-description {
@@ -295,10 +295,6 @@ a {
 
     .picture-card-content {
         padding: 0.75rem;
-    }
-
-    .picture-card-title {
-        @apply text-base;
     }
 
     .picture-card-description {

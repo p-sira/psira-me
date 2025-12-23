@@ -1690,7 +1690,6 @@ a {
   line-height: var(--tw-leading, var(--text-lg--line-height));
   --tw-font-weight: var(--font-weight-bold);
   font-weight: var(--font-weight-bold);
-  color: var(--text-primary);
 }
 .picture-card-description {
   margin-bottom: calc(var(--spacing) * 3);
@@ -1757,10 +1756,6 @@ a {
   }
   .picture-card-content {
     padding: 0.75rem;
-  }
-  .picture-card-title {
-    font-size: var(--text-base);
-    line-height: var(--tw-leading, var(--text-base--line-height));
   }
   .picture-card-description {
     font-size: var(--text-xs);
