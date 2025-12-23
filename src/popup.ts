@@ -1,7 +1,7 @@
 // Popup card functionality
-const popupButtons = document.querySelectorAll('.popup-button');
-const popupCards = document.querySelectorAll('.popup-card');
-const backdrop = document.getElementById('popup-backdrop');
+const popupButtons = document.querySelectorAll('.popup-button') as NodeListOf<HTMLElement>;
+const popupCards = document.querySelectorAll('.popup-card') as NodeListOf<HTMLElement>;
+const backdrop = document.getElementById('popup-backdrop') as HTMLElement | null;
 
 // Close all popup cards and hide backdrop
 function closeAllPopups() {
@@ -20,8 +20,8 @@ function closeAllPopups() {
 }
 
 // Open a specific popup card by its base ID (e.g., "about")
-function openPopup(cardId) {
-    const targetCard = document.getElementById(cardId + '-card');
+function openPopup(cardId: string) {
+    const targetCard = document.getElementById(cardId + '-card') as HTMLElement | null;
 
     // Close all other popup cards first
     closeAllPopups();
@@ -40,7 +40,7 @@ function openPopup(cardId) {
         document.body.style.overflow = 'hidden';
 
         // Focus management for accessibility
-        const closeBtn = targetCard.querySelector('.close-btn');
+        const closeBtn = targetCard.querySelector('.close-btn') as HTMLElement | null;
         if (closeBtn) {
             closeBtn.focus();
         }
@@ -58,14 +58,14 @@ function handlePopupHash() {
 
     // Special case: "#contact" should trigger scroll to footer instead of a popup
     if (hash === 'contact') {
-        const footer = document.getElementById('footer');
+        const footer = document.getElementById('footer') as HTMLElement | null;
         if (footer) {
             // Close any open popups before scrolling
             closeAllPopups();
             footer.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
-            });
+            } as ScrollIntoViewOptions);
         }
         return;
     }
@@ -80,7 +80,7 @@ function handlePopupHash() {
 function initializePopups() {
     // Close popup cards when clicking close button
     popupCards.forEach(card => {
-        const closeBtn = card.querySelector('.close-btn');
+        const closeBtn = card.querySelector('.close-btn') as HTMLElement | null;
         if (closeBtn) {
             closeBtn.addEventListener('click', () => {
                 closeAllPopups();
@@ -98,17 +98,21 @@ function initializePopups() {
     popupButtons.forEach(button => {
         button.addEventListener('click', () => {
             const cardId = button.getAttribute('data-card');
-            openPopup(cardId);
+            if (cardId) {
+                openPopup(cardId);
+            }
         });
     });
 
     // Tab functionality for research popup
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabPanels = document.querySelectorAll('.tab-panel');
+    const tabButtons = document.querySelectorAll('.tab-button') as NodeListOf<HTMLElement>;
+    const tabPanels = document.querySelectorAll('.tab-panel') as NodeListOf<HTMLElement>;
 
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
             const tabId = button.getAttribute('data-tab');
+
+            if (!tabId) return;
 
             // Remove active class from all buttons and panels
             tabButtons.forEach(btn => btn.classList.remove('active'));
@@ -116,12 +120,12 @@ function initializePopups() {
 
             // Add active class to clicked button and corresponding panel
             button.classList.add('active');
-            const targetPanel = document.getElementById(tabId + '-tab');
+            const targetPanel = document.getElementById(tabId + '-tab') as HTMLElement | null;
             if (targetPanel) {
                 targetPanel.classList.add('active');
 
                 // Ensure close button in the new tab panel has event listener
-                const closeBtn = targetPanel.querySelector('.close-btn');
+                const closeBtn = targetPanel.querySelector('.close-btn') as HTMLElement | null;
                 if (closeBtn) {
                     closeBtn.addEventListener('click', closeAllPopups);
                 }
@@ -130,7 +134,7 @@ function initializePopups() {
     });
 
     // Keyboard support for closing popups
-    document.addEventListener('keydown', (event) => {
+    document.addEventListener('keydown', (event: KeyboardEvent) => {
         if (event.key === 'Escape') {
             closeAllPopups();
         }
@@ -138,7 +142,7 @@ function initializePopups() {
 
     // Prevent popup from closing when clicking inside the popup content
     popupCards.forEach(card => {
-        card.addEventListener('click', (event) => {
+        card.addEventListener('click', (event: Event) => {
             event.stopPropagation();
         });
     });
@@ -158,15 +162,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Contact button scroll functionality
 function initializeContactScroll() {
-    const contactButton = document.getElementById('contact-button');
-    const footer = document.getElementById('footer');
+    const contactButton = document.getElementById('contact-button') as HTMLElement | null;
+    const footer = document.getElementById('footer') as HTMLElement | null;
     
     if (contactButton && footer) {
         contactButton.addEventListener('click', () => {
             footer.scrollIntoView({ 
                 behavior: 'smooth',
                 block: 'start'
-            });
+            } as ScrollIntoViewOptions);
         });
     }
 }
