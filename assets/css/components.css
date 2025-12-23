@@ -285,16 +285,12 @@
 
 .picture-card-badge {
     @apply h-5 w-auto;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
 }
 
 /* Ensure inline SVG icons inherit color and size properly */
 .picture-card-icon-link svg {
     width: 80%;
     height: 80%;
-    fill: currentColor;
-    display: block;
 }
 
 /* Responsive adjustments for picture cards */

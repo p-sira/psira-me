@@ -1738,14 +1738,10 @@
 .picture-card-badge {
   height: calc(var(--spacing) * 5);
   width: auto;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
 }
 .picture-card-icon-link svg {
   width: 80%;
   height: 80%;
-  fill: currentColor;
-  display: block;
 }
 @media (max-width: 640px) {
   .picture-card {
