@@ -153,6 +153,10 @@
     @apply absolute h-full w-full object-cover rounded-full border-3 border-[var(--border)] shadow-2xl transition-opacity duration-500 ease-in-out pointer-events-none z-20;
 }
 
+.popup-button {
+    z-index: 0;
+}
+
 /* Picture Card Component */
 .picture-card {
     @apply bg-[var(--bg-secondary)] border-[var(--bg-tertiary)] rounded-xl border-2 shadow-lg;
