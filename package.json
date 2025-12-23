@@ -19,7 +19,7 @@
     "orcid-parser": "^0.2.0"
   },
   "scripts": {
-    "build:css": "yarn tailwindcss -i ./assets/css/main.css -o ./assets/css/tailwind.css --watch=false",
+    "build:css": "yarn tailwindcss -i ./assets/css/main.css -o ./assets/css/tailwind.css --watch=false --minify",
     "build:ts": "tsc -p tsconfig.json",
     "watch:ts": "tsc -p tsconfig.json --watch",
     "build": "yarn build:css && yarn build:ts && hugo --cleanDestinationDir --minify",
