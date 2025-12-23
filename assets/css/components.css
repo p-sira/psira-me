@@ -91,7 +91,43 @@
     }
 
     .tab-button.active {
-        @apply bg-[var(--bg-tertiary)] border-l-4 border-[var(--accent-primary)];
+        @apply bg-[var(--bg-tertiary)];
+    }
+
+    /* Force mobile tab layout to top in case markup classes are overridden */
+    @media (max-width: 640px) {
+        .popup-tabs > .flex {
+            flex-direction: column;
+        }
+
+        .popup-tabs .popup-tabs-nav {
+            width: 100%;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .popup-tabs .popup-tabs-nav nav {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.25rem;
+        }
+
+        .popup-tabs-title {
+            margin-bottom: 0;
+        }
+    }
+
+    /* Responsive active tab borders: bottom border on mobile, left border on larger screens */
+    @media (max-width: 640px) {
+        .popup-tabs .tab-button.active {
+            @apply border-b-2 border-[var(--accent-primary)];
+        }
+    }
+
+    @media (min-width: 640px) {
+        .popup-tabs .tab-button.active {
+            @apply border-l-4 border-[var(--accent-primary)];
+        }
     }
 
     .tab-button:hover:not(.active) {
@@ -110,7 +146,7 @@
     }
 
     /* Responsive adjustments */
-    @media (max-width: 768px) {
+    @media (max-width: 640px) {
         .popup-card {
             width: 95vw;
             height: 90vh;
