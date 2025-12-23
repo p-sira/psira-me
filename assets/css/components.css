@@ -177,7 +177,7 @@ a.icon {
 }
 
 .icon svg {
-    @apply h-5 w-5;
+    @apply h-5 w-5 overflow-visible;
 }
 
 a {
@@ -262,7 +262,7 @@ a {
 }
 
 .picture-card-icon-link {
-    @apply flex items-center justify-center text-[var(--text-secondary)] text-lg width-24 height-24;
+    @apply flex items-center justify-center text-[var(--text-secondary)] text-lg;
 }
 
 .picture-card-badges {
