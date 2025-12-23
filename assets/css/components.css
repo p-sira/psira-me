@@ -172,16 +172,16 @@
 }
 
 /* Icon and Links */
-.icon {
-    @apply transition-transform duration-200;
-}
-
-.icon:hover {
-    @apply scale-110;
+a.icon {
+    @apply transition-transform duration-200 hover:scale-110;
 }
 
 .icon svg {
     @apply h-5 w-5;
+}
+
+a {
+    @apply select-text hover:underline hover:text-[var(--accent-primary)] transition-colors duration-500;
 }
 
 /* Profile Image and Decoratives */
@@ -262,13 +262,7 @@
 }
 
 .picture-card-icon-link {
-    @apply flex items-center justify-center;
-    @apply text-[var(--text-secondary)] hover:text-[var(--text-primary)];
-    @apply transition-colors duration-200 ease-in-out;
-    @apply text-lg;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
+    @apply flex items-center justify-center text-[var(--text-secondary)] text-lg width-24 height-24;
 }
 
 .picture-card-badges {

@@ -75,7 +75,7 @@ Card Data
       {{ $label := or $iconMap.label $iconData.label }}
 
       {{ if $iconMap.url }}
-      <a href="{{ $iconMap.url }}" target="_blank" rel="noopener noreferrer" class="picture-card-icon-link"
+      <a href="{{ $iconMap.url }}" target="_blank" rel="noopener noreferrer" class="picture-card-icon-link icon"
         title="{{ $label }}" aria-label="{{ $label | default " Link" }}">
         {{ if $iconMap.svg }}
         {{ $iconMap.svg | safeHTML }}
@@ -86,7 +86,7 @@ Card Data
         {{ end }}
       </a>
       {{ else }}
-      <span class="picture-card-icon-link" title="{{ $label | default "" }}">
+      <span class="picture-card-icon-link icon" title="{{ $label | default "" }}">
         {{ if $iconMap.svg }}
         {{ $iconMap.svg | safeHTML }}
         {{ else if $iconData }}

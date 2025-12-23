@@ -17,10 +17,10 @@
 <div class="flex items-center mb-2 flex-wrap gap-8">
     <div class="flex gap-8 items-center flex-wrap">
         <div class="flex items-center gap-2 text-tertiary">
-            <a href="mailto:contact@psira.me" class="text-tertiary inline-flex items-center icon" aria-label="Email">
+            <span class="icon inline-flex text-secondary" aria-hidden="true">
                 {{ with site.Data.icons.email }}{{ .svg | safeHTML }}{{ end }}
-            </a>
-            contact@psira.me
+            </span>
+            <a href="mailto:contact@psira.me" class="text-tertiary inline-flex items-center" aria-label="Email">contact@psira.me</a>
         </div>
 
         <div class="flex items-center gap-2 text-tertiary">
