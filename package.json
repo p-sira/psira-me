@@ -25,7 +25,7 @@
     "build:js": "esbuild src/* --bundle --minify --target=es2020 --outdir=static/js/build",
     "watch:js": "esbuild src/* --bundle --target=es2020 --outdir=static/js/build --watch",
     "build": "yarn build:css && yarn check && yarn build:js && hugo --cleanDestinationDir --minify",
-    "dev": "yarn build:css && yarn build:js && hugo server",
+    "dev": "yarn build:css && yarn build:js && hugo server -D -F",
     "watch:css": "yarn tailwindcss -i ./assets/css/main.css -o ./assets/css/tailwind.css --watch"
   }
 }
