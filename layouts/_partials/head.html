@@ -48,6 +48,7 @@
 <script>
     function cb(response) {
         document.getElementById('abacus').innerText = response.value;
+        document.getElementById('page-view-count').classList.remove("hidden");
     }
 </script>
 <script async src="https://abacus.jasoncameron.dev/hit/psira.me/visits?callback=cb"></script>
