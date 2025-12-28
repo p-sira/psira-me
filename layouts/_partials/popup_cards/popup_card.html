@@ -2,7 +2,7 @@
 <div id="{{ .ID }}" class="popup-card" role="dialog" aria-labelledby="{{ .ID }}-title" aria-hidden="true">
   <div class="flex flex-col h-full p-6 sm:p-8 lg:p-12">
     <div class="flex justify-between items-center mb-6 flex-shrink-0">
-      <h2 id="{{ .ID }}-title" class="text-3xl sm:text-4xl font-bold text-primary">{{ .Title }}</h2>
+      <h2 id="{{ .ID }}-title" class="text-2xl sm:text-4xl font-bold text-primary">{{ .Title }}</h2>
       {{ template "close_btn" dict "Title" "{{ .Title }}" }}
     </div>
     <div class='space-y-6 flex-1 overflow-y-auto {{ if eq .ContentTemplate "code_content" }} mb-3 {{ end }}'>
