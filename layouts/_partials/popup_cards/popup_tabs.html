@@ -2,30 +2,27 @@
 <div id="{{ .ID }}" class="popup-card popup-tabs" role="dialog" aria-labelledby="{{ .ID }}-title" aria-hidden="true">
   <div class="flex flex-col md:flex-row h-full">
     <!-- Tab Navigation -->
-    <div class="popup-tabs-nav bg-secondary flex md:flex-col w-full md:w-56">
+    <div class="popup-tabs-nav bg-secondary flex-col w-full md:w-56">
       <h2 id="{{ .ID }}-title"
-        class="popup-tabs-title text-2xl font-bold text-primary mb-0 md:mb-2 p-4 md:p-6 border-b border-border whitespace-nowrap overflow-hidden text-ellipsis">
+        class="popup-tabs-title text-2xl font-bold text-primary mb-0 md:mb-2 p-4 pb-0 md:pb-4 md:p-6 border-0 md:border-b border-border whitespace-nowrap overflow-hidden text-ellipsis">
         {{ .Title }}
       </h2>
       <nav
         class="flex-1 flex md:block gap-2 p-3 md:p-4 overflow-x-auto md:overflow-visible border-b border-border md:border-0">
         {{ range $index, $tab := .Tabs }}
         <button
-          class="tab-button flex-shrink-0 w-auto md:w-full text-left px-3 py-2 md:p-3 rounded-lg mb-0 md:mb-2 hover:bg-tertiary transition-colors duration-200 whitespace-nowrap {{ if eq $index 0 }}active{{ end }}"
+          class="tab-button flex-shrink-0 w-auto md:w-full text-left px-2.5 py-2 md:p-3 rounded-lg mb-0 md:mb-2 hover:bg-tertiary transition-colors duration-200 whitespace-nowrap {{ if eq $index 0 }}active{{ end }}"
           data-tab="{{ $tab.ID }}">
-          <span class="text-sm font-medium text-primary">{{ $tab.Label }}</span>
+          <span class="text-sm">{{ $tab.Label }}</span>
         </button>
         {{ end }}
       </nav>
-      <div class="m-8 hidden md:block">
-        {{ partial "nav/navbar_vertical.html" . }}
-      </div>
     </div>
 
     <!-- Tab Content -->
-    <div class="flex-1 overflow-y-auto">
+    <div class="flex flex-col h-full overflow-y-auto">
       {{ range $index, $tab := .Tabs }}
-      <div id="{{ $tab.ID }}-tab" class="tab-panel p-6 sm:p-8 lg:p-12 {{ if eq $index 0 }}active{{ end }}">
+      <div id="{{ $tab.ID }}-tab" class="flex-grow tab-panel p-6 sm:p-8 lg:p-12 {{ if eq $index 0 }}active{{ end }}">
         <div class="flex justify-between items-center mb-6">
           <h3 class="text-2xl font-bold text-primary">{{ $tab.Header }}</h3>
           {{ template "close_btn" dict "Title" $.Title }}
@@ -44,9 +41,9 @@
         </div>
       </div>
       {{ end }}
-    </div>
-    <div class="mx-2 mb-6 items-center border-t border-border block md:hidden">
-      <div class="mt-2 text-secondary">{{ partial "nav/navbar_horizontal.html" . }}</div>
+      <div class="mx-2 mb-6 items-center border-t border-border mt-auto">
+        <div class="mx-4 mt-2 text-secondary">{{ partial "nav/navbar_horizontal.html" . }}</div>
+      </div>
     </div>
   </div>
 </div>
