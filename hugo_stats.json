@@ -16,6 +16,7 @@
       "head",
       "header",
       "html",
+      "i",
       "img",
       "li",
       "line",
@@ -116,6 +117,7 @@
       "hover:underline",
       "icon",
       "icon-wrapper",
+      "inline",
       "inline-flex",
       "inset-0",
       "inset-1/2",
@@ -241,6 +243,7 @@
       "rounded-md",
       "scale-0",
       "shadow-sm",
+      "sm",
       "sm:grid-cols-2",
       "sm:h-40",
       "sm:h-6",
@@ -320,6 +323,7 @@
       "z-50"
     ],
     "ids": [
+      "abacus",
       "about-card",
       "about-card-title",
       "achievements-card",
