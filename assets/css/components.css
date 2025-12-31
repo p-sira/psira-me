@@ -65,7 +65,7 @@
 
     /* Slightly wider layout for the Code & Projects card */
     #code-card.popup-card {
-        width: 1150px;
+        width: 1230px;
         max-width: 95vw;
     }
 
