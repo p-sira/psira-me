@@ -17,6 +17,57 @@ badges = [
 ]
 
 [[project]]
+title = "DeepLabCut2Yolo (D2Y)"
+description = "D2Y is a DeepLabCut-to-YOLO dataset converter for Python, featuring one-liner conversion, while preserving customizability."
+url = "https://github.com/p-sira/deeplabcut2yolo"
+image = "images/projects/d2y.jpg"
+tags = ["AI", "Pose Estimation", "Dataset"]
+icons = [
+  { name = "github", url = "https://github.com/p-sira/deeplabcut2yolo", label = "GitHub" },
+  { name = "python", url = "https://pypi.org/project/deeplabcut2yolo/", label = "PYPI Package" },
+  { name = "book", url = "https://p-sira.github.io/deeplabcut2yolo/", label = "Documentation" },
+  { name = "doi", url = "https://doi.org/10.5281/zenodo.17839736", label = "DOI" }
+]
+badges = [
+  { base = "https://img.shields.io/pepy/dt/deeplabcut2yolo?label=Downloads", url = "https://pypi.org/project/deeplabcut2yolo/", alt = "Downloads" },
+  { base = "https://img.shields.io/badge/License-GPLv3_+_BSD--3-blue.svg", url = "https://github.com/p-sira/deeplabcut2yolo?tab=License-1-ov-file", alt = "GPLv3 + BSD-3-Clause Dual License" },
+  { base = "https://img.shields.io/github/stars/p-sira/deeplabcut2yolo?label=★", url = "https://github.com/p-sira/deeplabcut2yolo", alt = "GitHub Stars" },
+]
+
+[[project]]
+[[project.stacked]]
+title = "special: Special Functions for Rust"
+description = "A Rust package providing special mathematical functions."
+tags = ["Mathematics", "Special Functions"]
+icons = [
+  { name = "github", url = "https://github.com/stainless-steel/special", label = "GitHub" },
+  { name = "rust", url = "https://crates.io/crates/special", label = "Crates.io" },
+  { name = "book", url = "https://docs.rs/special", label = "Documentation" },
+]
+badges = [
+  { base = "https://img.shields.io/crates/d/special?label=Downloads", url = "https://crates.io/crates/ellip", alt = "Downloads" },
+  { base = "https://img.shields.io/badge/License-MIT_+_Apache--2.0-blue.svg", url = "https://github.com/stainless-steel/special?tab=License-1-ov-file", alt = "MIT and Apache 2.0 Dual License" },
+  { base = "https://img.shields.io/github/stars/stainless-steel/special?label=★", url = "https://github.com/stainless-steel/special", alt = "GitHub Stars" },
+]
+
+[[project.stacked]]
+title = "Num-Lazy: Rust Macros for Generic Numerics"
+description = "A Rust macro library to simplify generic-typed numeric constants and expressions."
+url = "https://github.com/p-sira/num-lazy"
+image = "images/projects/num-lazy.jpg"
+tags = ["Rust", "Macro", "Numerics"]
+icons = [
+  { name = "github", url = "https://github.com/p-sira/num-lazy", label = "GitHub" },
+  { name = "rust", url = "https://crates.io/crates/num-lazy", label = "Crates.io" },
+  { name = "book", url = "https://docs.rs/num-lazy", label = "Documentation" },
+]
+badges = [
+  { base = "https://img.shields.io/crates/d/num-lazy?label=Downloads", url = "https://crates.io/crates/num-lazy", alt = "Downloads" },
+  { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
+  { base = "https://img.shields.io/github/stars/p-sira/num-lazy?label=★", url = "https://github.com/p-sira/num-lazy", alt = "GitHub Stars" },
+]
+
+[[project]]
 title = "Magba: Analytical Magnetism for Rust"
 description = "A high-performance Rust library for analytical magnetic field calculations."
 url = "https://github.com/p-sira/magba"
@@ -31,24 +82,6 @@ badges = [
   { base = "https://img.shields.io/crates/d/magba?label=Downloads", url = "https://crates.io/crates/magba", alt = "Downloads" },
   { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
   { base = "https://img.shields.io/github/stars/p-sira/magba?label=★", url = "https://github.com/p-sira/magba", alt = "GitHub Stars" },
-]
-
-[[project]]
-title = "DeepLabCut2Yolo (D2Y)"
-description = "D2Y is a DeepLabCut-to-YOLO dataset converter for Python, featuring one-liner conversion, while preserving customizability."
-url = "https://github.com/p-sira/deeplabcut2yolo"
-image = "images/projects/d2y.jpg"
-tags = ["AI", "Pose Estimation", "Dataset"]
-icons = [
-  { name = "github", url = "https://github.com/p-sira/deeplabcut2yolo", label = "GitHub" },
-  { name = "python", url = "https://pypi.org/project/deeplabcut2yolo/", label = "PYPI Package" },
-  { name = "book", url = "https://p-sira.github.io/deeplabcut2yolo/", label = "Documentation" },
-  { name = "doi", url = "https://doi.org/10.5281/zenodo.17839736", label = "DOI" }
-]
-badges = [
-  { base = "https://img.shields.io/pepy/dt/deeplabcut2yolo?label=Downloads", url = "https://pypi.org/project/deeplabcut2yolo/", alt = "Downloads" },
-  { base = "https://img.shields.io/badge/License-GPLv3_+_BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
-  { base = "https://img.shields.io/github/stars/p-sira/deeplabcut2yolo?label=★", url = "https://github.com/p-sira/deeplabcut2yolo", alt = "GitHub Stars" },
 ]
 
 [[project]]
@@ -78,23 +111,6 @@ badges = [
   { base = "https://img.shields.io/npm/dy/orcid-parser?label=Downloads", url = "https://www.npmjs.com/package/orcid-parser", alt = "Downloads" },
   { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
   { base = "https://img.shields.io/github/stars/p-sira/orcid-parser?label=★", url = "https://github.com/p-sira/orcid-parser", alt = "GitHub Stars" },
-]
-
-[[project]]
-title = "Num-Lazy: Rust Macros for Generic Numerics"
-description = "A Rust utility library with macros to simplify numeric constants and expressions in generic-typed functions."
-url = "https://github.com/p-sira/num-lazy"
-image = "images/projects/num-lazy.jpg"
-tags = ["Rust", "Macro", "Numerics"]
-icons = [
-  { name = "github", url = "https://github.com/p-sira/num-lazy", label = "GitHub" },
-  { name = "rust", url = "https://crates.io/crates/num-lazy", label = "Crates.io" },
-  { name = "book", url = "https://docs.rs/num-lazy", label = "Documentation" },
-]
-badges = [
-  { base = "https://img.shields.io/crates/d/num-lazy?label=Downloads", url = "https://crates.io/crates/num-lazy", alt = "Downloads" },
-  { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
-  { base = "https://img.shields.io/github/stars/p-sira/num-lazy?label=★", url = "https://github.com/p-sira/num-lazy", alt = "GitHub Stars" },
 ]
 
 [[project]]

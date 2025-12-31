@@ -1,6 +1,6 @@
 # Psira.me - Personal Website
 
-A modern, responsive personal website built with Hugo and Tailwind CSS, featuring a dark/light theme toggle and interactive elements. Visit the live site at [psira.me](https://psira.me/).
+A personal website built with Hugo and Tailwind CSS, featuring live data fetching. Visit the site at [psira.me](https://psira.me/).
 
 ## Technology Stack
 
