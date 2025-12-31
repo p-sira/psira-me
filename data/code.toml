@@ -38,6 +38,7 @@ badges = [
 [[project.stacked]]
 title = "special: Special Functions for Rust"
 description = "A Rust package providing special mathematical functions."
+url = "https://github.com/stainless-steel/special"
 tags = ["Mathematics", "Special Functions"]
 icons = [
   { name = "github", url = "https://github.com/stainless-steel/special", label = "GitHub" },
