@@ -52,7 +52,7 @@ badges = [
 
 [[project.stacked]]
 title = "Num-Lazy: Rust Macros for Generic Numerics"
-description = "A Rust macro library to simplify numeric constants and expressions in generic-typed functions."
+description = "A Rust macro library to simplify generic-typed numeric constants and expressions."
 url = "https://github.com/p-sira/num-lazy"
 image = "images/projects/num-lazy.jpg"
 tags = ["Rust", "Macro", "Numerics"]
