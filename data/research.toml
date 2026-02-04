@@ -1,4 +1,12 @@
 [[publication]]
+title = "Ellip: An Elliptic Integral Library for Rust"
+subtitle = "Journal of Open Source Software, 2026"
+year = 2026
+type = "journal-article"
+authors = "Sira Pornsiriprasert"
+url = "https://doi.org/10.21105/joss.09386"
+
+[[publication]]
 title = "Barriers to Achieving Passing BioMedical Admissions Test Scores for Medical and Dental School Admission in Thailand"
 subtitle = "Ramathibodi Medical Journal, 2025"
 year = 2025
