@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '25'
           
       - name: Install dependencies
         working-directory: data/fetcher/
@@ -25,11 +25,6 @@ jobs:
       - name: Fetch and save ORCID data
         working-directory: data/fetcher/
         run: node main.js
-          
-      - name: Verify file change
-        run: |
-          ls -l data/research.toml
-          git diff data/research.toml
       
       - name: Commit and push if there are changes
         run: |
