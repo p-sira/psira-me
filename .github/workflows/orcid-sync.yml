@@ -26,6 +26,9 @@ jobs:
         working-directory: data/fetcher/
         run: node main.js
       
+      - name: Sanity check
+        run: cat data/research.toml
+
       - name: Commit and push if there are changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
