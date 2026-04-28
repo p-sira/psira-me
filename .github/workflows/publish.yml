@@ -47,6 +47,13 @@ jobs:
         run: corepack enable
       - name: Install dependencies
         run: yarn install
+      - name: Remove unsupported data files
+        run: |
+          # Hugo data files must be structured formats. Ignore accidental marker files.
+          while IFS= read -r file; do
+            echo "Ignoring unsupported data file: ${file}"
+            rm -f "${file}"
+          done < <(find data -maxdepth 1 -type f ! -name "*.json" ! -name "*.yaml" ! -name "*.yml" ! -name "*.toml")
       - name: Build
         run: yarn build
       - name: Push to `build` branch
