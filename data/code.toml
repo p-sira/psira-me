@@ -8,7 +8,7 @@ icons = [
   { name = "github", url = "https://github.com/p-sira/ellip", label = "GitHub" },
   { name = "rust", url = "https://crates.io/crates/ellip", label = "Crates.io" },
   { name = "book", url = "https://docs.rs/ellip", label = "Documentation" },
-  { name = "doi", url = "https://doi.org/10.5281/zenodo.17990805", label = "DOI" }
+  { name = "doi", url = "https://doi.org/10.5281/zenodo.17990805", label = "DOI" },
 ]
 badges = [
   { base = "https://img.shields.io/crates/d/ellip?label=Downloads", url = "https://crates.io/crates/ellip", alt = "Downloads" },
@@ -26,7 +26,7 @@ icons = [
   { name = "github", url = "https://github.com/p-sira/deeplabcut2yolo", label = "GitHub" },
   { name = "python", url = "https://pypi.org/project/deeplabcut2yolo/", label = "PYPI Package" },
   { name = "book", url = "https://p-sira.github.io/deeplabcut2yolo/", label = "Documentation" },
-  { name = "doi", url = "https://doi.org/10.5281/zenodo.17839736", label = "DOI" }
+  { name = "doi", url = "https://doi.org/10.5281/zenodo.17839736", label = "DOI" },
 ]
 badges = [
   { base = "https://img.shields.io/pepy/dt/deeplabcut2yolo?label=Downloads", url = "https://pypi.org/project/deeplabcut2yolo/", alt = "Downloads" },
@@ -93,7 +93,7 @@ url = "https://appdb.winehq.org/objectManager.php?sClass=version&iId=42184"
 tags = ["Linux", "Emulator", "WINE"]
 icons = [
   { name = "wine", url = "https://appdb.winehq.org/objectManager.php?sClass=version&iId=42184", label = "WINE AppDB" },
-  { name = "line_icon", url = "https://www.line.me/en/", label = "LINE" }
+  { name = "line_icon", url = "https://www.line.me/en/", label = "LINE" },
 ]
 
 [[project.stacked]]
@@ -163,4 +163,27 @@ badges = [
   { base = "https://img.shields.io/pepy/dt/hycrypt?label=Downloads", url = "https://pypi.org/project/hycrypt/", alt = "Downloads" },
   { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
   { base = "https://img.shields.io/github/stars/p-sira/hycrypt?label=★", url = "https://github.com/p-sira/hycrypt", alt = "GitHub Stars" },
+]
+
+[[project]]
+[[project.stacked]]
+title = "RayX"
+description = "Rust ray intersection library using Baldwin-Weber's Intersection."
+url = "https://github.com/p-sira/rayx"
+tags = ["graphics", "mathematics", "game-development", "algorithms"]
+badges = [
+  { base = "https://img.shields.io/crates/d/rayx?label=Downloads", url = "https://crates.io/crates/rayx", alt = "Downloads" },
+  { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
+  { base = "https://img.shields.io/github/stars/p-sira/rayx?label=★", url = "https://github.com/p-sira/rayx", alt = "GitHub Stars" },
+]
+
+[[project.stacked]]
+title = "OpenMesh"
+description = "Rust mesh validation using face-vertex data structure."
+url = "https://github.com/p-sira/openmesh"
+tags = ["mesh", "validation", "geometry", "graphics", "mathematics", "algorithms"]
+badges = [
+  { base = "https://img.shields.io/crates/d/openmesh?label=Downloads", url = "https://crates.io/crates/openmesh", alt = "Downloads" },
+  { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
+  { base = "https://img.shields.io/github/stars/p-sira/openmesh?label=★", url = "https://github.com/p-sira/openmesh", alt = "GitHub Stars" },
 ]
