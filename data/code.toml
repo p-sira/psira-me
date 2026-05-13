@@ -170,7 +170,7 @@ badges = [
 title = "RayX"
 description = "Rust ray intersection library using Baldwin-Weber's Intersection."
 url = "https://github.com/p-sira/rayx"
-tags = ["graphics", "mathematics", "game-development", "algorithms"]
+tags = ["graphics", "mathematics", "algorithms"]
 badges = [
   { base = "https://img.shields.io/crates/d/rayx?label=Downloads", url = "https://crates.io/crates/rayx", alt = "Downloads" },
   { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
@@ -181,7 +181,7 @@ badges = [
 title = "OpenMesh"
 description = "Rust mesh validation using face-vertex data structure."
 url = "https://github.com/p-sira/openmesh"
-tags = ["mesh", "validation", "geometry", "graphics", "mathematics", "algorithms"]
+tags = ["mesh", "graphics", "algorithms"]
 badges = [
   { base = "https://img.shields.io/crates/d/openmesh?label=Downloads", url = "https://crates.io/crates/openmesh", alt = "Downloads" },
   { base = "https://img.shields.io/badge/License-BSD--3-blue.svg", url = "https://opensource.org/license/BSD-3-clause", alt = "BSD-3-Clause License" },
